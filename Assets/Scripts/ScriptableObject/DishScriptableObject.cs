@@ -2,17 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DishScriptableObject : MonoBehaviour
+[CreateAssetMenu(fileName = "DishScriptableObject", menuName = "ScriptableObjects/Dish")]
+public class DishScriptableObject : ScriptableObject
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] private string[] ingredients;
 
-    // Update is called once per frame
-    void Update()
+    enum Ingredients
     {
-        
+        Salat,
+        Bred,
+        Cheese
+    }
+    
+    public string[] getIngredients()
+    {
+        return ingredients;
     }
 }
