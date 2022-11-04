@@ -1,21 +1,23 @@
-using System.Collections;
+using System;
 using System.Collections.Generic;
+using Unity.VisualScripting;
+using Unity.VisualScripting.FullSerializer;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "DishScriptableObject", menuName = "ScriptableObjects/Dish")]
 public class DishScriptableObject : ScriptableObject
 {
-    [SerializeField] private string[] ingredients;
-
-    enum Ingredients
-    {
-        Salat,
-        Bred,
-        Cheese
-    }
+    public new string name;
+    public int points;
+    public Sprite dishArt;
+    public List<avalaibleIngredients> ingredients;
     
-    public string[] getIngredients()
+    public enum avalaibleIngredients
     {
-        return ingredients;
+        bred,
+        salat,
+        ham,
+        cheese,
+        fries
     }
 }

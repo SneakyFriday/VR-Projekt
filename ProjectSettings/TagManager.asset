@@ -9,6 +9,7 @@ TagManager:
   - Cucumber
   - Bread
   - Tomato
+  - Salat
   layers:
   - Default
   - TransparentFX
