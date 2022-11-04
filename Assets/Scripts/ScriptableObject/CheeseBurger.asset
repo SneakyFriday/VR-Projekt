@@ -12,4 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 725cd17fdbdba0c43a17cf203f5bb4a7, type: 3}
   m_Name: CheeseBurger
   m_EditorClassIdentifier: 
-  ingredients: []
+  name: 
+  ingredients: 
+  points: 0
+  dishArt: {fileID: 0}

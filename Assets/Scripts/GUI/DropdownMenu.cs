@@ -2,10 +2,10 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 
-[CustomEditor(typeof(DishScriptableObject))]
+//[CustomEditor(typeof(DishScriptableObject))]
 public class DropdownMenu : Editor
 {
-    public enum Ingredients
+    /*public enum Ingredients
     {
         Salat,
         Bred,
@@ -20,5 +20,5 @@ public class DropdownMenu : Editor
         EditorGUILayout.Space(); 
         serializedObject.ApplyModifiedProperties();
 
-    }
+    }*/
 }
