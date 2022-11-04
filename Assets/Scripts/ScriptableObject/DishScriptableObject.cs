@@ -17,6 +17,7 @@ public class DishScriptableObject : ScriptableObject
         bred,
         salat,
         ham,
-        cheese
+        cheese,
+        fries
     }
 }
