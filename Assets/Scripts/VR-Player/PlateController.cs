@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlateController : MonoBehaviour
@@ -16,10 +14,10 @@ public class PlateController : MonoBehaviour
     
     void Update()
     {
-        for (int i = 0; i < _stackingColliderController.ingredientNames.Length; i++)
-        {
-            print("Names: " + _stackingColliderController.ingredientNames[i]);
-        }
+        // for (int i = 0; i < _stackingColliderController.ingredientNames.Length; i++)
+        // {
+        //     print("Names: " + _stackingColliderController.ingredientNames[i]);
+        // }
         
     }
 }
