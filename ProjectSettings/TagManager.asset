@@ -12,6 +12,8 @@ TagManager:
   - Salat
   - Fries
   - Cheese
+  - LeftHand
+  - RightHand
   layers:
   - Default
   - TransparentFX
