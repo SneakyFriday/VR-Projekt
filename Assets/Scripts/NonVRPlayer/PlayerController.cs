@@ -33,9 +33,9 @@ public class PlayerController : MonoBehaviour
     // hasDashed dementsprechend auf true (wurde gedrückt oder false (wurde nicht gedrückt)
     public void OnDash(InputAction.CallbackContext context)
     {
-        // hasDashed = context.ReadValue<bool>();
-        hasDashed = context.action.triggered;
-        print("Is Dashing: " + hasDashed);
+        //hasDashed = context.ReadValue<bool>();
+        //hasDashed = context.action.triggered;
+        print("Is Dashing");
     }
 
     void Update()
