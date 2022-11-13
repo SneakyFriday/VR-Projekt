@@ -29,6 +29,11 @@ public class SoundManager : MonoBehaviour
         _musicSource.PlayOneShot(_backgroundMusic);
     }
 
+    public void StopMusicSound()
+    {
+        _musicSource.Stop();
+    }
+
     /**
      * Methode für Volume-Slider.
      * Parameter: Slider Value

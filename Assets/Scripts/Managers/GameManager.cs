@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     public void RestartGame()
     {
         int currentScene = SceneManager.GetActiveScene().buildIndex;
+        SoundManager.Instance.StopMusicSound();
         SceneManager.LoadScene(currentScene);
     }
 }
