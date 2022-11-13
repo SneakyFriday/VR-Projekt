@@ -14,9 +14,10 @@ GameObject:
   - component: {fileID: 1866131828336519601}
   - component: {fileID: 1722694881274492017}
   - component: {fileID: 1952347981560729499}
+  - component: {fileID: -6660911699471030547}
   m_Layer: 0
   m_Name: Onion_fried
-  m_TagString: Ingredient
+  m_TagString: IngredientCooked
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -64,7 +65,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 33221b162e26dfa4d8514fbf7316a8f8, type: 2}
+  - {fileID: 2100000, guid: 492f96829c484df458aae9f7c23942a0, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -235,3 +236,16 @@ MonoBehaviour:
   m_ForceGravityOnDetach: 0
   m_RetainTransformParent: 1
   m_AttachPointCompatibilityMode: 0
+--- !u!114 &-6660911699471030547
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4822761848562598807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ac666bb46dcd724b9b66bf08f8484b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _clip: {fileID: 8300000, guid: dd98f4f30f6060742ae2c4d16317d6b9, type: 3}

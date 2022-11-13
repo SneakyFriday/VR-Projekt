@@ -4,7 +4,7 @@ public class SoundManager : MonoBehaviour
 {
     public static SoundManager Instance;
 
-    [SerializeField] private AudioSource _musicSource, _effectsSource;
+    [SerializeField] private AudioSource _musicSource;
     [SerializeField] private AudioClip _backgroundMusic;
 
     #region Singleton
@@ -21,12 +21,7 @@ public class SoundManager : MonoBehaviour
             }
         }
     #endregion
-    
-    public void PlayEffectSound(AudioClip clip)
-    {
-        _effectsSource.PlayOneShot(clip);
-    }
-    
+
     public void PlayMusicSound()
     {
         _musicSource.playOnAwake = true;
