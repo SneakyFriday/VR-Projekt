@@ -23,6 +23,11 @@ public class CookFoodOverTime : MonoBehaviour
         }
     }
 
+    private void OnCollisionExit(Collision other)
+    {
+        StopCoroutine(FryFoodOverTime(other.gameObject));
+    }
+
     IEnumerator FryFoodOverTime(GameObject cookingItem)
     {
         // Sound + Particle Effekt auf Objekt Starten

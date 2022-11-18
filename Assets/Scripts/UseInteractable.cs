@@ -1,11 +1,18 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
+using UnityEngine.UIElements;
+using UnityEngine.XR;
+using InputDevice = UnityEngine.InputSystem.InputDevice;
 
 public class UseInteractable : MonoBehaviour
 {
     [SerializeField] private GameObject interactionObject;
+    private InputDevice targetDevice;
+    private bool isGrabbing;
+    private Transform handPosition;
+
 
     /**
      * Logik:
@@ -16,18 +23,20 @@ public class UseInteractable : MonoBehaviour
      * Dann instanziiere Objekt bei Hand Transform
      */
     
-    public GameObject TakeObject()
+    public void TakeObject()
     {
         // Gibt dem Nutzer das Object aus
-        return interactionObject;
+        Instantiate(interactionObject, handPosition.position, Quaternion.identity);
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        // InputFeatureUsage<bool> primaryButton;
-        if (other.CompareTag("RightHand") || other.CompareTag("LeftHand"))
-        {
-            Instantiate(interactionObject, other.transform.position, Quaternion.identity);
-        }
+        handPosition = other.transform;
     }
+
+    private void OnTriggerExit(Collider other)
+    {
+        isGrabbing = false;
+    }
+    
 }

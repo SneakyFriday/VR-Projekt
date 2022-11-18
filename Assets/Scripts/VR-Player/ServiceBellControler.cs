@@ -14,7 +14,7 @@ public class ServiceBellControler : MonoBehaviour
     {
         if (other.CompareTag("LeftHand") || other.CompareTag("RightHand"))
         {
-           _fixMenuElements.FixateMenu(); 
+           //_fixMenuElements.FixateMenu(); 
         }
         
     }
