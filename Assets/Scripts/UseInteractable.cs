@@ -11,7 +11,7 @@ public class UseInteractable : MonoBehaviour
     [SerializeField] private GameObject interactionObject;
     private InputDevice targetDevice;
     private bool isGrabbing;
-    private Transform handPosition;
+    private GameObject hand;
 
 
     /**
@@ -25,18 +25,19 @@ public class UseInteractable : MonoBehaviour
     
     public void TakeObject()
     {
+        Transform handPosition = hand.transform;
         // Gibt dem Nutzer das Object aus
         Instantiate(interactionObject, handPosition.position, Quaternion.identity);
     }
-
+    
     private void OnTriggerEnter(Collider other)
     {
-        handPosition = other.transform;
+        if(other.CompareTag("LeftHand") || other.CompareTag("RightHand")) hand = other.gameObject;
     }
 
     private void OnTriggerExit(Collider other)
     {
-        isGrabbing = false;
+        if(other.CompareTag("LeftHand") || other.CompareTag("RightHand")) hand = null;
     }
     
 }
