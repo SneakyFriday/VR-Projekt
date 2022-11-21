@@ -18,12 +18,13 @@ public class CutThingsController : MonoBehaviour
     {
         if (other.CompareTag("Knife"))
         {
-            if (currentCutStrokes > 0) currentCutStrokes--;
+            if (currentCutStrokes > 1) currentCutStrokes--;
             else
             {
                 var offset = new Vector3(0, 0.2f, 0);
                 Destroy(gameObject, 0.1f);
-                Instantiate(cuttedPrefab, transform.position + offset, transform.rotation);
+                var transform1 = transform;
+                Instantiate(cuttedPrefab, transform1.position + offset, transform1.rotation);
             }
         }
         
