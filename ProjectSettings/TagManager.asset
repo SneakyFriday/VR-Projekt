@@ -17,6 +17,7 @@ TagManager:
   - Ingredient
   - MenuItem
   - IngredientCooked
+  - Knife
   layers:
   - Default
   - TransparentFX
