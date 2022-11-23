@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+
 public class PlayerInteraction : MonoBehaviour
 {
     bool bestellt = false;
@@ -9,12 +10,18 @@ public class PlayerInteraction : MonoBehaviour
     public bool isInRange;
     public UnityEvent InteractAction;
     GameObject order;
+    public int orderNumber;
     public GameObject[] menues = new GameObject[3];
+    public GameObject[] menuIcons = new GameObject[3];
+    public GameObject willBestellen;
+
 
     private void Start()
     {
         //Sucht sich zu beginn ein Menue aus.
-        order = menues[Random.Range(0, 3)];
+        orderNumber = Random.Range(0, 3);
+        order = menues[orderNumber];
+        
     }
 
     // Update is called once per frame
@@ -74,6 +81,11 @@ public class PlayerInteraction : MonoBehaviour
         {
             // der Gast nimmt random das menü 1,2 oder 3 und gibt die entscheidung per Debug aus.
             Debug.Log("Gast hat Menü " + order.name + " gewählt");
+
+            // Sobald der Spieler mit dem Gast interagiert wird die Bestellung angezeigt.
+            menuIcons[orderNumber].SetActive(true);
+            // Das ! wird dann nur ausgeblendet.
+            willBestellen.SetActive(false);
             bestellt = true;
         }
     }
