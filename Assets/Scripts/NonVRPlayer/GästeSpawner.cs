@@ -24,7 +24,7 @@ public class GästeSpawner : MonoBehaviour
         {
             Instantiate(whatToSpawnPrefab, waypoints[seatNumber].transform.position, Quaternion.identity); // Spawnt das Prefab, an einem random Platz. 
             seatTaken[seatNumber] = true; // Der Sitzplatz wird als besetzt markiert.
-            Debug.Log("Gast an Tisch "+ seatNumber+" Eingetroffen");
+            //Debug.Log("Gast an Tisch "+ seatNumber+" Eingetroffen");
             
         }
     }
