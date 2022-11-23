@@ -12,7 +12,6 @@ public class PlayerController : MonoBehaviour
     private CharacterController controller;
     private Vector3 playerVelocity;
     private bool groundedPlayer;
-    
     private Vector2 movementInput = Vector2.zero;
     private bool hasDashed = false;
     
@@ -35,7 +34,7 @@ public class PlayerController : MonoBehaviour
     {
         //hasDashed = context.ReadValue<bool>();
         //hasDashed = context.action.triggered;
-        print("Is Dashing");
+        //print("Is Dashing");
     }
 
     void Update()

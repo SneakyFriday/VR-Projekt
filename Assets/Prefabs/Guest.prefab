@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1525834254564945219}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Guest
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -129,7 +129,7 @@ GameObject:
   - component: {fileID: -2883736962318656494}
   m_Layer: 0
   m_Name: Guest
-  m_TagString: PlayerContainer
+  m_TagString: Guest
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -176,7 +176,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.5, y: 1.5, z: 1.5}
+  m_Size: {x: 3.5, y: 3.5, z: 3.5}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &-2883736962318656494
 MonoBehaviour:
@@ -191,3 +191,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gast: {fileID: 1525834255203129913}
+  isInRange: 0
+  InteractAction:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: -2883736962318656494}
+        m_TargetAssemblyTypeName: PlayerInteraction, Assembly-CSharp
+        m_MethodName: BestellungAufnehmen
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  menues:
+  - {fileID: 5866359415122226976, guid: dfaf1684f0e76be46a54b9b487525a64, type: 3}
+  - {fileID: 4822761848562598807, guid: 06edd2438b13a6141a9edac365863c56, type: 3}
+  - {fileID: 6154133101075188322, guid: 394741e62490b664594fe845739dd23f, type: 3}
