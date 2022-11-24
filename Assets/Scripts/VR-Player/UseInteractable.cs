@@ -9,10 +9,10 @@ using InputDevice = UnityEngine.InputSystem.InputDevice;
 public class UseInteractable : MonoBehaviour
 {
     [SerializeField] private GameObject interactionObject;
+    [SerializeField] private Sprite menuItemSprite;
     private InputDevice targetDevice;
     private bool isGrabbing;
     private GameObject hand;
-
 
     /**
      * Logik:
@@ -22,6 +22,15 @@ public class UseInteractable : MonoBehaviour
      * Wenn Collision mit Spielerhand und Trigger gedrückt
      * Dann instanziiere Objekt bei Hand Transform
      */
+    private void Start()
+    {
+        //SetDisposerProperties();
+    }
+
+    private void SetDisposerProperties()
+    {
+        GetComponentInChildren<Image>().sprite = menuItemSprite;
+    }
     
     public void TakeObject()
     {
