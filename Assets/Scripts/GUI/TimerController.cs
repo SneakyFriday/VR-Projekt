@@ -17,6 +17,8 @@ public class TimerController : MonoBehaviour
     [SerializeField] private Image fillImage;
     [Header("Analoge Anzeige")]
     [SerializeField] private TextMeshProUGUI timeText;
+    [Header("Schichtende Text")]
+    [SerializeField] private TextMeshProUGUI shiftIsOver;
     
     private float _currentTimeValue;
     private float _timeForFill;
@@ -63,6 +65,7 @@ public class TimerController : MonoBehaviour
     {
         if (timeToDisplay < 0)
         {
+            shiftIsOver.gameObject.SetActive(true);
             timeToDisplay = 0;
         }
 
