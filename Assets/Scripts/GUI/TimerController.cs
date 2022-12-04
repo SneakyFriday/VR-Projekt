@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class TimerController : MonoBehaviour
 {
     
-    [Header("Länge der Schichten")]
+    [Header("Länge der Schichten (Sec.)")]
     [SerializeField] private int morningShiftLength;
     [SerializeField] private int middayShiftLength;
     [SerializeField] private int eveningShiftLength;
@@ -19,6 +19,8 @@ public class TimerController : MonoBehaviour
     [SerializeField] private TextMeshProUGUI timeText;
     [Header("Schichtende Text")]
     [SerializeField] private TextMeshProUGUI shiftIsOver;
+    [Header("Aktuelle Schichtanzeige")]
+    [SerializeField] private TextMeshProUGUI currentShift;
     
     private float _currentTimeValue;
     private float _timeForFill;
@@ -54,6 +56,7 @@ public class TimerController : MonoBehaviour
         }
         
         DisplayTime(_currentTimeValue, _timeForFill);
+        DisplayShift();
     }
 
     private void SetTime()
@@ -75,7 +78,21 @@ public class TimerController : MonoBehaviour
         
         timeText.text = $"{minute:00}:{second:00}";
         fillImage.fillAmount = _maxFillAmount * timeForFill;
-        //print((timeForFill));
-        //print(fillImage.fillAmount);
+    }
+
+    private void DisplayShift()
+    {
+        if (fillImage.fillAmount < morningShiftImage.fillAmount)
+        {
+            currentShift.text = "Morning Shift";
+        }
+        else if (fillImage.fillAmount > morningShiftImage.fillAmount && fillImage.fillAmount < middayShiftImage.fillAmount)
+        {
+            currentShift.text = "Midday Shift";
+        }
+        else if (fillImage.fillAmount > middayShiftImage.fillAmount && fillImage.fillAmount < eveningShiftImage.fillAmount)
+        {
+            currentShift.text = "Evening Shift";
+        }
     }
 }
