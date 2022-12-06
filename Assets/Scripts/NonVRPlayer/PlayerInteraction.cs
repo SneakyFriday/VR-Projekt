@@ -2,29 +2,35 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.AI;
 
 public class PlayerInteraction : MonoBehaviour
 {
     bool bestellt = false;
     public GameObject gast;
-    public bool isInRange;
+    bool isInRange;
     public UnityEvent InteractAction;
     GameObject order;
     public int orderNumber;
     public GameObject[] menues = new GameObject[3];
     public GameObject[] menuIcons = new GameObject[3];
     public GameObject willBestellen;
+    private NavMeshAgent agent;
+    [SerializeField] public Transform target;
+    public GästeSpawner spawner;
 
-
+    
     private void Start()
     {
         //Sucht sich zu beginn ein Menue aus.
         orderNumber = Random.Range(0, 3);
         order = menues[orderNumber];
-        
+
+        Debug.Log(spawner+ " spawner----");
+        agent = GetComponent<NavMeshAgent>(); // Der NavMeshAgent wird an den Agent gebunden.
+        target = spawner.seatTransform(); // Der Sitzplatz wird als Ziel gesetzt.
     }
 
-    // Update is called once per frame
     void Update()
     {
         //Wenn der Spieler im Interaktionsbereich ist und die erste Taste auf dem Controller gedrückt wird, wird die Interaktion ausgeführt.
@@ -32,6 +38,9 @@ public class PlayerInteraction : MonoBehaviour
         {
             // Triggert die Interaktion, die in der Unity-Event-Liste hinterlegt ist. In diesem falle ist es der aufruf der Funktion "BestellungAufnehmen".
             InteractAction.Invoke();
+        }
+        if (target != null){
+        agent.destination = target.position; // Der Agent soll sich zum Sitzplatz bewegen.
         }
     }
 

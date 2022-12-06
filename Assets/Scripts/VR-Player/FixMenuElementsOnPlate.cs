@@ -43,27 +43,6 @@ public class FixMenuElementsOnPlate : MonoBehaviour
         
     }
 
-    // private void OnCollisionEnter(Collision coll)
-    // {
-    //     if (coll.gameObject.CompareTag("Ingredient") || coll.gameObject.CompareTag("IngredientCooked"))
-    //     {
-    //         _items.Add(coll.gameObject);
-    //         print("Item added to list: " + coll.gameObject.name);
-    //         print("Size: " + _items.Count);
-    //     }
-    // }
-    
-
-    // private void OnCollisionExit(Collision coll)
-    // {
-    //     if (coll.gameObject.CompareTag("Ingredient") || coll.gameObject.CompareTag("IngredientCooked"))
-    //     {
-    //         _items.Remove(coll.gameObject);
-    //         print("Item removed from list: " + coll.gameObject.name);
-    //         print("Size: " + _items.Count);
-    //     }
-    // }
-
     public void FixateMenuOnPlate()
     {
         print("Grab Plate");
@@ -86,8 +65,8 @@ public class FixMenuElementsOnPlate : MonoBehaviour
         }
     }
 
-    public List<GameObject> CheckMenu()
+    public List<String> CheckMenu()
     {
-        return _items;
+        return _itemNames;
     }
 }

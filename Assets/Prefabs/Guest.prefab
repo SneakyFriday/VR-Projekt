@@ -127,6 +127,7 @@ GameObject:
   - component: {fileID: 4513006217113369211}
   - component: {fileID: 6986797083650000623}
   - component: {fileID: -2883736962318656494}
+  - component: {fileID: -3159717896311453461}
   m_Layer: 0
   m_Name: Guest
   m_TagString: Guest
@@ -192,7 +193,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gast: {fileID: 1525834255203129913}
-  isInRange: 0
   InteractAction:
     m_PersistentCalls:
       m_Calls:
@@ -218,6 +218,30 @@ MonoBehaviour:
   - {fileID: 1595099956014505485}
   - {fileID: 4460777976903917067}
   willBestellen: {fileID: 8872954345671353612}
+  target: {fileID: 0}
+  spawner: {fileID: 1128529267569615636, guid: f897414d022036245bb0ec85a096d752, type: 3}
+--- !u!195 &-3159717896311453461
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1525834255203129913}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!1 &1595099956014505485
 GameObject:
   m_ObjectHideFlags: 0
