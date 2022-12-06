@@ -209,6 +209,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: ae545529-2da4-44ef-b69b-0efe0c2be8d7
     m_ActionName: Player/Dash[/Keyboard/space,/XInputControllerWindows/buttonSouth]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1951647458595322618}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: Interaction
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 46b7eeb1-312b-4afb-929f-0953a46ce5b3
+    m_ActionName: Player/Interaction[/Keyboard/e,/XInputControllerWindows/buttonEast]
   m_NeverAutoSwitchControlSchemes: 1
   m_DefaultControlScheme: Gamepad
   m_DefaultActionMap: Player
@@ -247,6 +263,9 @@ MonoBehaviour:
   playerSpeed: 5
   dashPower: 1
   gravityValue: -9.81
+  playerInteraction:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &1148564553894639440
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -261,6 +280,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tray: {fileID: 4691822269221819374}
   isCarrying: 0
+  _playerInteraction: {fileID: -2883736962318656494, guid: 155b2017e05ba6140894d1e535adb795, type: 3}
 --- !u!1001 &5610881156971425471
 PrefabInstance:
   m_ObjectHideFlags: 0

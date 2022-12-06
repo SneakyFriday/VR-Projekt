@@ -19,6 +19,15 @@ TagManager:
   - IngredientCooked
   - Knife
   - Guest
+  - Patty_done
+  - Patty_raw
+  - Lettuce
+  - egg_raw
+  - egg
+  - steak_raw
+  - steak
+  - bun_buttom
+  - bun_top
   layers:
   - Default
   - TransparentFX

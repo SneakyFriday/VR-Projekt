@@ -23,22 +23,22 @@ public class FixMenuElementsOnPlate : MonoBehaviour
         //     
         // }
         
-        if (coll.CompareTag("Ingredient") || coll.CompareTag("IngredientCooked"))
+        if (coll.CompareTag("Ingredient") || coll.GetComponent<MenuItem>())
         {
             _items.Add(coll.gameObject);
-            _itemNames.Add(coll.name);
-            print("Item added to list: " + coll.name);
+            _itemNames.Add(coll.tag);
+            print("Item added to list: " + coll.tag);
             print("Size: " + _items.Count);
         }
     }
 
     private void OnTriggerExit(Collider coll)
     {
-        if (coll.CompareTag("Ingredient") || coll.CompareTag("IngredientCooked"))
+        if (coll.CompareTag("Ingredient") || coll.GetComponent<MenuItem>())
         {
           _items.Remove(coll.gameObject);
-          _itemNames.Remove(coll.name);
-          print("Item removed from list: " + coll.name);
+          _itemNames.Remove(coll.tag);
+          print("Item removed from list: " + coll.tag);
         }
         
     }

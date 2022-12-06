@@ -1327,7 +1327,7 @@ GameObject:
   - component: {fileID: 3435442278359401400}
   - component: {fileID: 3435442278359401401}
   m_Layer: 5
-  m_Name: Score (TMP)
+  m_Name: Score
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1463,6 +1463,7 @@ GameObject:
   - component: {fileID: 3435442278455871681}
   - component: {fileID: 3435442278455871682}
   - component: {fileID: 825274838}
+  - component: {fileID: 236334915}
   m_Layer: 5
   m_Name: HUD
   m_TagString: Untagged
@@ -1580,3 +1581,17 @@ MonoBehaviour:
   timeText: {fileID: 3435442277837175484}
   shiftIsOver: {fileID: 405158928}
   currentShift: {fileID: 1825766987}
+--- !u!114 &236334915
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3435442278455871683}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1dd8dd0b727fd7a429dcb4bb5d9043f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentScore: {fileID: 3435442278359401401}
+  playerInteraction: {fileID: -2883736962318656494, guid: 155b2017e05ba6140894d1e535adb795, type: 3}

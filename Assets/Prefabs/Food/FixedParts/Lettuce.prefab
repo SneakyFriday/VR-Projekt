@@ -44,9 +44,10 @@ GameObject:
   - component: {fileID: 7511566469128112612}
   - component: {fileID: 7756162802390429543}
   - component: {fileID: 1261986559560868824}
+  - component: {fileID: 8920335668610170710}
   m_Layer: 0
   m_Name: Lettuce
-  m_TagString: IngredientCooked
+  m_TagString: Lettuce
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -216,6 +217,18 @@ MonoBehaviour:
   m_ForceGravityOnDetach: 0
   m_RetainTransformParent: 0
   m_AttachPointCompatibilityMode: 0
+--- !u!114 &8920335668610170710
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5616316769546675609}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bf70cf14b8e8d04fa8982339c090ac8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8626123577541292103
 GameObject:
   m_ObjectHideFlags: 0
