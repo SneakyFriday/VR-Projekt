@@ -14,7 +14,7 @@ public class PointsController : MonoBehaviour
         playerInteraction.servedCustomerRight.AddListener(SetScore);
     }
 
-    private void SetScore()
+    public void SetScore()
     {
         print("Player Scores!");
         _score += 100;

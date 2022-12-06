@@ -15,7 +15,9 @@ public class PlayerInteraction : MonoBehaviour
     public GameObject[] menuIcons = new GameObject[3];
     public GameObject willBestellen;
     public UnityEvent servedCustomerRight;
+    
     [SerializeField] private MenuTable _menuTable;
+    
     private PlayerController _playerController;
     private PlayerPickUpController _playerPickUpController;
     private bool _bestellt;
@@ -71,7 +73,7 @@ public class PlayerInteraction : MonoBehaviour
     }
 
     // Funktion "BestellungAufnehmen", regelt das Bestellen und Bedienen. 
-    public void BestellungAufnehmen()
+    private void BestellungAufnehmen()
     {
         print("Bestellung soll aufgenommen werden");
         if (_bestellt && (_orderItems != null || _playerPickUpController != null))

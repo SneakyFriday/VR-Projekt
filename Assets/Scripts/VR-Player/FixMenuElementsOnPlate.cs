@@ -11,18 +11,6 @@ public class FixMenuElementsOnPlate : MonoBehaviour
 
     private void OnTriggerEnter(Collider coll)
     {
-        // if (coll.CompareTag("Ingredient"))
-        // {
-        //    _menuItems.Enqueue(coll.gameObject);
-        //     print("New GameObject in Queue: " + coll.gameObject.name);
-        //     foreach (var item in _menuItems)
-        //     {
-        //        print("Current Queue Items: " + item.name);
-        //     }
-        //     print("Size:" + _menuItems.Count);
-        //     
-        // }
-        
         if (coll.CompareTag("Ingredient") || coll.GetComponent<MenuItem>())
         {
             _items.Add(coll.gameObject);

@@ -206,7 +206,19 @@ MonoBehaviour:
   willBestellen: {fileID: 8872954345671353612}
   servedCustomerRight:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4001942905350769098, guid: 80dbd8f9285b37c478529d5f64bd97b0, type: 3}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _menuTable: {fileID: -5459022510430821124}
 --- !u!114 &-5459022510430821124
 MonoBehaviour:
