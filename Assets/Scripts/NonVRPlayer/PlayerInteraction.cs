@@ -23,8 +23,6 @@ public class PlayerInteraction : MonoBehaviour
         order = menues[orderNumber];
         
     }
-
-    // Update is called once per frame
     void Update()
     {
         //Wenn der Spieler im Interaktionsbereich ist und die erste Taste auf dem Controller gedrückt wird, wird die Interaktion ausgeführt.
