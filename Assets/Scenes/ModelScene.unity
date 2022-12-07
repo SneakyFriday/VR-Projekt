@@ -5300,6 +5300,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 825274838, guid: 343c38af19bdd40448d4dac7d2fdd216, type: 3}
+      propertyPath: middayShiftLength
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 825274838, guid: 343c38af19bdd40448d4dac7d2fdd216, type: 3}
+      propertyPath: eveningShiftLength
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 825274838, guid: 343c38af19bdd40448d4dac7d2fdd216, type: 3}
+      propertyPath: morningShiftLength
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 3435442278455871683, guid: 343c38af19bdd40448d4dac7d2fdd216, type: 3}
       propertyPath: m_Name
       value: HUD
