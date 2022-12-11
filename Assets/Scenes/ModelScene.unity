@@ -5312,6 +5312,18 @@ PrefabInstance:
       propertyPath: morningShiftLength
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 3435442278359401401, guid: 343c38af19bdd40448d4dac7d2fdd216, type: 3}
+      propertyPath: m_text
+      value: 'Score: 0'
+      objectReference: {fileID: 0}
+    - target: {fileID: 3435442278359401402, guid: 343c38af19bdd40448d4dac7d2fdd216, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 263
+      objectReference: {fileID: 0}
+    - target: {fileID: 3435442278455871680, guid: 343c38af19bdd40448d4dac7d2fdd216, type: 3}
+      propertyPath: m_PixelPerfect
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3435442278455871683, guid: 343c38af19bdd40448d4dac7d2fdd216, type: 3}
       propertyPath: m_Name
       value: HUD

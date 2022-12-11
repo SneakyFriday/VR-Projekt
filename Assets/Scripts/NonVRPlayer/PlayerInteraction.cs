@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
@@ -78,7 +79,7 @@ public class PlayerInteraction : MonoBehaviour
         print("Bestellung soll aufgenommen werden");
         if (_bestellt && (_orderItems != null || _playerPickUpController != null))
         {
-            var contains = false;
+            var containsMenuItem = false;
             // foreach (var item in _playerPickUpController.GetMenuItemsFromPlayer())
             // {
             //     print("Menu on Player: " + item);
@@ -88,10 +89,10 @@ public class PlayerInteraction : MonoBehaviour
             {
                 foreach (var item in _orderItems[_order])
                 {
-                    contains = _playerPickUpController.GetMenuItemsFromPlayer().Contains(item);
+                    containsMenuItem = _playerPickUpController.GetMenuItemsFromPlayer().Contains(item);
                 }
 
-                if (contains)
+                if (containsMenuItem)
                 {
                     print("Richtige Bestellung erhalten");
                     servedCustomerRight.Invoke();

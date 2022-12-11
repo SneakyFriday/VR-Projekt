@@ -11,7 +11,7 @@ public class PointsController : MonoBehaviour
     {
         _score = 0;
         currentScore.text = "Score: " + _score;
-        playerInteraction.servedCustomerRight.AddListener(SetScore);
+        //playerInteraction.servedCustomerRight.AddListener(SetScore);
     }
 
     public void SetScore()
