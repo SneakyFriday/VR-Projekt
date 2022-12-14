@@ -21,10 +21,12 @@ public class PlayerInteraction : MonoBehaviour
     
     private PlayerController _playerController;
     private PlayerPickUpController _playerPickUpController;
+    private PointsController _pointsController;
     private bool _bestellt;
     private bool _isInteracting;
     private string _order;
     private Dictionary<string, List<string>> _orderItems;
+
 
 
     private void Start()
@@ -94,9 +96,12 @@ public class PlayerInteraction : MonoBehaviour
 
                 if (containsMenuItem)
                 {
+
                     print("Richtige Bestellung erhalten");
                     servedCustomerRight.Invoke();
+                    _pointsController.SetScore();
                     Destroy(gast);
+
                 }
             }
         }
