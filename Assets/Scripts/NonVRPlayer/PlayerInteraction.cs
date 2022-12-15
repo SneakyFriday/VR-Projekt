@@ -11,17 +11,17 @@ public class PlayerInteraction : MonoBehaviour
 {
     public GameObject gast;
     public bool isInRange;
-    public int orderNumber;
-    public string[] menues = { };
     public GameObject[] menuIcons = new GameObject[3];
     public GameObject willBestellen;
     public UnityEvent servedCustomerRight;
     
     [SerializeField] private MenuTable _menuTable;
-    
+
+    private int _orderNumber;
+    private string[] _menues = { };
     private PlayerController _playerController;
     private PlayerPickUpController _playerPickUpController;
-    private PointsController _pointsController;
+    
     private bool _bestellt;
     private bool _isInteracting;
     private string _order;
@@ -31,7 +31,7 @@ public class PlayerInteraction : MonoBehaviour
 
     private void Start()
     {
-        menues = new[]
+        _menues = new[]
         {
             "burgerStandard",
             "burgerExpert",
@@ -41,8 +41,8 @@ public class PlayerInteraction : MonoBehaviour
 
         //Sucht sich zu beginn ein Menue aus.
         //orderNumber = Random.Range(0, menues.Length);
-        orderNumber = 0;
-        _order = menues[orderNumber];
+        _orderNumber = 0;
+        _order = _menues[_orderNumber];
         print("Order: " + _order);
         _orderItems = _menuTable.GetMenuItems(_order);
         print("Order Items: " + _orderItems.Values.Count);
@@ -82,10 +82,6 @@ public class PlayerInteraction : MonoBehaviour
         if (_bestellt && (_orderItems != null || _playerPickUpController != null))
         {
             var containsMenuItem = false;
-            // foreach (var item in _playerPickUpController.GetMenuItemsFromPlayer())
-            // {
-            //     print("Menu on Player: " + item);
-            // }
 
             if (_orderItems != null)
             {
@@ -96,12 +92,9 @@ public class PlayerInteraction : MonoBehaviour
 
                 if (containsMenuItem)
                 {
-
                     print("Richtige Bestellung erhalten");
                     servedCustomerRight.Invoke();
-                    _pointsController.SetScore();
                     Destroy(gast);
-
                 }
             }
         }
@@ -109,7 +102,7 @@ public class PlayerInteraction : MonoBehaviour
         // Wenn der Gast noch nicht bestellt hat, wird ausgegeben welches Menü der Gast möchte.
         if (!_bestellt)
         {
-            menuIcons[orderNumber].SetActive(true);
+            menuIcons[_orderNumber].SetActive(true);
             willBestellen.SetActive(false);
             _bestellt = true;
         }

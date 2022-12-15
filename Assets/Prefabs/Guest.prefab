@@ -194,11 +194,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gast: {fileID: 1525834255203129913}
   isInRange: 0
-  orderNumber: 0
-  menues:
-  - 
-  - 
-  - 
   menuIcons:
   - {fileID: 6801598451486852152}
   - {fileID: 1595099956014505485}

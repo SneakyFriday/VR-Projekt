@@ -1,23 +1,25 @@
+using System;
+using System.Diagnostics;
 using TMPro;
 using UnityEngine;
 
 public class PointsController : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI currentScore;
-    [SerializeField] private PlayerInteraction playerInteraction;
-    private int _score;
+    [SerializeField] private TextMeshProUGUI currentScoreTxt;
+    private int _currentScore;
+    private int _burgerScore = 100;
 
-    private void Start()
+    private void Awake()
     {
-        _score = 0;
-        currentScore.text = "Score: " + _score;
-        //playerInteraction.servedCustomerRight.AddListener(SetScore);
+        _currentScore = 0;
+        currentScoreTxt.text = "Score: ";
     }
 
     public void SetScore()
     {
         print("Player Scores!");
-        _score += 100;
-        currentScore.text = "Score: " + _score;
+        _currentScore += _burgerScore;
+        currentScoreTxt.text = "Score: " + _currentScore;
+        print(_currentScore);
     }
 }
