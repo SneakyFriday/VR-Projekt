@@ -11,34 +11,22 @@ public class FixMenuElementsOnPlate : MonoBehaviour
 
     private void OnTriggerEnter(Collider coll)
     {
-        // if (coll.CompareTag("Ingredient"))
-        // {
-        //    _menuItems.Enqueue(coll.gameObject);
-        //     print("New GameObject in Queue: " + coll.gameObject.name);
-        //     foreach (var item in _menuItems)
-        //     {
-        //        print("Current Queue Items: " + item.name);
-        //     }
-        //     print("Size:" + _menuItems.Count);
-        //     
-        // }
-        
-        if (coll.CompareTag("Ingredient") || coll.CompareTag("IngredientCooked"))
+        if (coll.CompareTag("Ingredient") || coll.GetComponent<MenuItem>())
         {
             _items.Add(coll.gameObject);
-            _itemNames.Add(coll.name);
-            print("Item added to list: " + coll.name);
+            _itemNames.Add(coll.tag);
+            print("Item added to list: " + coll.tag);
             print("Size: " + _items.Count);
         }
     }
 
     private void OnTriggerExit(Collider coll)
     {
-        if (coll.CompareTag("Ingredient") || coll.CompareTag("IngredientCooked"))
+        if (coll.CompareTag("Ingredient") || coll.GetComponent<MenuItem>())
         {
           _items.Remove(coll.gameObject);
-          _itemNames.Remove(coll.name);
-          print("Item removed from list: " + coll.name);
+          _itemNames.Remove(coll.tag);
+          print("Item removed from list: " + coll.tag);
         }
         
     }

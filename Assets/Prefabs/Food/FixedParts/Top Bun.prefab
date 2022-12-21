@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 1707047440387523593}
   - component: {fileID: 8597215880201027301}
   - component: {fileID: 6512976384458781885}
+  - component: {fileID: 5987707341522726461}
   m_Layer: 0
   m_Name: Top Bun
-  m_TagString: IngredientCooked
+  m_TagString: bun_top
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -184,6 +185,18 @@ MonoBehaviour:
   m_ForceGravityOnDetach: 0
   m_RetainTransformParent: 0
   m_AttachPointCompatibilityMode: 0
+--- !u!114 &5987707341522726461
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 452136946655479785}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bf70cf14b8e8d04fa8982339c090ac8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3756351179925998593
 GameObject:
   m_ObjectHideFlags: 0

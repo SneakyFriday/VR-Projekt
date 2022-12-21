@@ -1,31 +1,57 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.InputSystem;
 using UnityEngine.AI;
 
 public class PlayerInteraction : MonoBehaviour
 {
-    bool bestellt = false;
     public GameObject gast;
-    bool isInRange;
-    public UnityEvent InteractAction;
-    GameObject order;
-    public int orderNumber;
-    public GameObject[] menues = new GameObject[3];
+    public bool isInRange;
     public GameObject[] menuIcons = new GameObject[3];
     public GameObject willBestellen;
+    public UnityEvent servedCustomerRight;
+    
+    [SerializeField] private MenuTable _menuTable;
+
+    private int _orderNumber;
+    private string[] _menues = { };
+    private PlayerController _playerController;
+    private PlayerPickUpController _playerPickUpController;
+    
+    private bool _bestellt;
+    private bool _isInteracting;
+    private string _order;
+    private Dictionary<string, List<string>> _orderItems;
+   
     private NavMeshAgent agent;
     [SerializeField] public Transform target;
     public GästeSpawner spawner;
 
+
     
     private void Start()
     {
-        //Sucht sich zu beginn ein Menue aus.
-        orderNumber = Random.Range(0, 3);
-        order = menues[orderNumber];
+        _menues = new[]
+        {
+            "burgerStandard",
+            "burgerExpert",
+            "steakMenu",
+            "eggMenu"
+        };
 
+        //Sucht sich zu beginn ein Menue aus.
+        //orderNumber = Random.Range(0, menues.Length);
+        _orderNumber = 0;
+        _order = _menues[_orderNumber];
+        print("Order: " + _order);
+        _orderItems = _menuTable.GetMenuItems(_order);
+        print("Order Items: " + _orderItems.Values.Count);
+        
         Debug.Log(spawner+ " spawner----");
         agent = GetComponent<NavMeshAgent>(); // Der NavMeshAgent wird an den Agent gebunden.
         target = spawner.seatTransform(); // Der Sitzplatz wird als Ziel gesetzt.
@@ -33,12 +59,6 @@ public class PlayerInteraction : MonoBehaviour
 
     void Update()
     {
-        //Wenn der Spieler im Interaktionsbereich ist und die erste Taste auf dem Controller gedrückt wird, wird die Interaktion ausgeführt.
-        if (isInRange == true && Input.GetKeyDown(KeyCode.JoystickButton1))
-        {
-            // Triggert die Interaktion, die in der Unity-Event-Liste hinterlegt ist. In diesem falle ist es der aufruf der Funktion "BestellungAufnehmen".
-            InteractAction.Invoke();
-        }
         if (target != null){
         agent.destination = target.position; // Der Agent soll sich zum Sitzplatz bewegen.
         }
@@ -49,24 +69,18 @@ public class PlayerInteraction : MonoBehaviour
         // Wenn der Gast noch besteht, und der Spieler in den Interaktionsbereich kommt, wird isInRange auf true gesetzt.
         if (gast != null)
         {
-            if (collider.tag == "PlayerContainer")
+            if (collider.CompareTag("PlayerContainer"))
             {
                 isInRange = true;
+                _playerController = collider.GetComponent<PlayerController>();
+                _playerController.playerInteraction.AddListener(BestellungAufnehmen);
+                _playerPickUpController = collider.GetComponent<PlayerPickUpController>();
             }
         }
-
         //Wenn der Gast nicht mehr besteht, wird der Interaktionsbereich deaktiviert.
         else
         {
             gameObject.SetActive(false);
-        }
-
-        //Wenn das richtige Essen ankommt, bezahlt der Gast und verschwindet.
-        if (collider.gameObject.name == order.name)
-        {
-            // Wenn der Gast bedient wurde, wird der Gast gelöscht.
-            Debug.Log("Gast hat richtiges Essen bekommen.");
-            Destroy(gast);
         }
     }
 
@@ -74,28 +88,39 @@ public class PlayerInteraction : MonoBehaviour
     private void OnTriggerExit(Collider collider)
     {
         isInRange = false;
+        _playerController.playerInteraction.RemoveListener(BestellungAufnehmen);
     }
 
     // Funktion "BestellungAufnehmen", regelt das Bestellen und Bedienen. 
-    public void BestellungAufnehmen()
+    private void BestellungAufnehmen()
     {
-        // Wenn der Gast bestellt hat, wird nochmals ausgegeben was der Gast bestellt hat.
-        if (bestellt == true)
+        print("Bestellung soll aufgenommen werden");
+        if (_bestellt && (_orderItems != null || _playerPickUpController != null))
         {
-            Debug.Log("Gast wartet auf sein Essen! Menü : " + order.name);
+            var containsMenuItem = false;
+
+            if (_orderItems != null)
+            {
+                foreach (var item in _orderItems[_order])
+                {
+                    containsMenuItem = _playerPickUpController.GetMenuItemsFromPlayer().Contains(item);
+                }
+
+                if (containsMenuItem)
+                {
+                    print("Richtige Bestellung erhalten");
+                    servedCustomerRight.Invoke();
+                    Destroy(gast);
+                }
+            }
         }
 
         // Wenn der Gast noch nicht bestellt hat, wird ausgegeben welches Menü der Gast möchte.
-        if (bestellt == false)
+        if (!_bestellt)
         {
-            // der Gast nimmt random das menü 1,2 oder 3 und gibt die entscheidung per Debug aus.
-            Debug.Log("Gast hat Menü " + order.name + " gewählt");
-
-            // Sobald der Spieler mit dem Gast interagiert wird die Bestellung angezeigt.
-            menuIcons[orderNumber].SetActive(true);
-            // Das ! wird dann nur ausgeblendet.
+            menuIcons[_orderNumber].SetActive(true);
             willBestellen.SetActive(false);
-            bestellt = true;
+            _bestellt = true;
         }
     }
 }

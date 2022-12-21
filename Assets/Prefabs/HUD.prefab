@@ -1327,7 +1327,7 @@ GameObject:
   - component: {fileID: 3435442278359401400}
   - component: {fileID: 3435442278359401401}
   m_Layer: 5
-  m_Name: Score (TMP)
+  m_Name: Score
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1381,7 +1381,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Score:'
+  m_text: 'Score: 0'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1463,6 +1463,7 @@ GameObject:
   - component: {fileID: 3435442278455871681}
   - component: {fileID: 3435442278455871682}
   - component: {fileID: 825274838}
+  - component: {fileID: 236334915}
   m_Layer: 5
   m_Name: HUD
   m_TagString: Untagged
@@ -1514,7 +1515,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 25
+  m_AdditionalShaderChannelsFlag: -1
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -1557,7 +1558,7 @@ MonoBehaviour:
   m_BlockingObjects: 0
   m_BlockingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 2147483647
 --- !u!114 &825274838
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1570,9 +1571,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed87de641f2ad05468b514df1b0e64b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  morningShiftLength: 3
-  middayShiftLength: 5
-  eveningShiftLength: 2
+  morningShiftLength: 60
+  middayShiftLength: 60
+  eveningShiftLength: 60
   morningShiftImage: {fileID: 556419434}
   middayShiftImage: {fileID: 253494529}
   eveningShiftImage: {fileID: 1950615471}
@@ -1580,3 +1581,16 @@ MonoBehaviour:
   timeText: {fileID: 3435442277837175484}
   shiftIsOver: {fileID: 405158928}
   currentShift: {fileID: 1825766987}
+--- !u!114 &236334915
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3435442278455871683}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1dd8dd0b727fd7a429dcb4bb5d9043f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentScoreTxt: {fileID: 3435442278359401401}
