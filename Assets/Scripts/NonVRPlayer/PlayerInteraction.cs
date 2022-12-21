@@ -1,12 +1,6 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.InputSystem;
-using UnityEngine.AI;
 
 public class PlayerInteraction : MonoBehaviour
 {
@@ -15,25 +9,20 @@ public class PlayerInteraction : MonoBehaviour
     public GameObject[] menuIcons = new GameObject[3];
     public GameObject willBestellen;
     public UnityEvent servedCustomerRight;
-    
+
     [SerializeField] private MenuTable _menuTable;
 
     private int _orderNumber;
     private string[] _menues = { };
     private PlayerController _playerController;
     private PlayerPickUpController _playerPickUpController;
-    
+
     private bool _bestellt;
     private bool _isInteracting;
     private string _order;
     private Dictionary<string, List<string>> _orderItems;
-   
-    private NavMeshAgent agent;
-    [SerializeField] public Transform target;
-    public GästeSpawner spawner;
 
 
-    
     private void Start()
     {
         _menues = new[]
@@ -51,17 +40,6 @@ public class PlayerInteraction : MonoBehaviour
         print("Order: " + _order);
         _orderItems = _menuTable.GetMenuItems(_order);
         print("Order Items: " + _orderItems.Values.Count);
-        
-        Debug.Log(spawner+ " spawner----");
-        agent = GetComponent<NavMeshAgent>(); // Der NavMeshAgent wird an den Agent gebunden.
-        target = spawner.seatTransform(); // Der Sitzplatz wird als Ziel gesetzt.
-    }
-
-    void Update()
-    {
-        if (target != null){
-        agent.destination = target.position; // Der Agent soll sich zum Sitzplatz bewegen.
-        }
     }
 
     private void OnTriggerEnter(Collider collider)
