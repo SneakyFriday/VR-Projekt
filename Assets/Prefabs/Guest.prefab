@@ -200,6 +200,7 @@ MonoBehaviour:
   - {fileID: 4460777976903917067}
   willBestellen: {fileID: 8872954345671353612}
   servedCustomerRight:
+  InteractAction:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 236334915, guid: 343c38af19bdd40448d4dac7d2fdd216, type: 3}
