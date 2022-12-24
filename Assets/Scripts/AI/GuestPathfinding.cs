@@ -11,6 +11,6 @@ public class GuestPathfinding : MonoBehaviour
     void Start()
     {
         agent = GetComponent<NavMeshAgent>(); // Der NavMeshAgent wird an den Agent gebunden.
-        agent.destination = spawner.seatTransform().transform.position;
+        //agent.destination = spawner.seatTransform().transform.position;
     }
 }

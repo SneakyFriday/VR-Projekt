@@ -281,6 +281,7 @@ MonoBehaviour:
   tray: {fileID: 4691822269221819374}
   isCarrying: 0
   _playerInteraction: {fileID: -2883736962318656494, guid: 155b2017e05ba6140894d1e535adb795, type: 3}
+  testScore: {fileID: 0}
 --- !u!1001 &5610881156971425471
 PrefabInstance:
   m_ObjectHideFlags: 0

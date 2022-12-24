@@ -1,5 +1,3 @@
-using System;
-using System.Diagnostics;
 using TMPro;
 using UnityEngine;
 
@@ -9,17 +7,17 @@ public class PointsController : MonoBehaviour
     private int _currentScore;
     private int _burgerScore = 100;
 
-    private void Awake()
+    private void Start()
     {
-        _currentScore = 0;
-        currentScoreTxt.text = "Score: ";
+        //_currentScore = 0;
+        //currentScoreTxt.text = "Score: " + _currentScore;
     }
 
     public void SetScore()
     {
         print("Player Scores!");
         _currentScore += _burgerScore;
-        currentScoreTxt.text = "Score: " + _currentScore;
         print(_currentScore);
+        currentScoreTxt.text = "Score: " + _currentScore;
     }
 }

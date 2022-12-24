@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -8,9 +9,10 @@ public class PlayerInteraction : MonoBehaviour
     public bool isInRange;
     public GameObject[] menuIcons = new GameObject[3];
     public GameObject willBestellen;
-    public UnityEvent servedCustomerRight;
+    //public UnityEvent servedCustomerRight;
 
     [SerializeField] private MenuTable _menuTable;
+    [SerializeField] private PointsController _pointsController;
 
     private int _orderNumber;
     private string[] _menues = { };
@@ -87,7 +89,9 @@ public class PlayerInteraction : MonoBehaviour
                 if (containsMenuItem)
                 {
                     print("Richtige Bestellung erhalten");
-                    servedCustomerRight.Invoke();
+                    _playerPickUpController.DisableTray();
+                    _pointsController.SetScore();
+                    //servedCustomerRight.Invoke();
                     Destroy(gast);
                 }
             }
