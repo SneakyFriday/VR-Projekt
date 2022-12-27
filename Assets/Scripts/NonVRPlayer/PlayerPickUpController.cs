@@ -1,18 +1,28 @@
 using System;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class PlayerPickUpController : MonoBehaviour
 {
     [SerializeField] private GameObject tray;
     [SerializeField] private bool isCarrying;
-    [SerializeField] private PlayerInteraction _playerInteraction;
+
     private List<String> _carriedMenu;
+    private List<String> testMenu = new();
+    public TextMeshProUGUI testScore;
+    private int _currentScore;
+    private int _burgerScore = 100;
 
     private void Start()
     {
+        testMenu.Add("bun_top");
+        testMenu.Add("Lettuce");
+        testMenu.Add("Cheese");
+        testMenu.Add("Patty_done");
+        testMenu.Add("bun_buttom");
+        
         _carriedMenu = new List<string>();
-        _playerInteraction.servedCustomerRight.AddListener(DisableTray);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -32,15 +42,23 @@ public class PlayerPickUpController : MonoBehaviour
         }
     }
 
-    private void DisableTray()
+    public void DisableTray()
     {
+        print("Disabling Tray");
         tray.SetActive(false);
         _carriedMenu.Clear();
         isCarrying = false;
     }
 
+    public void SetScore()
+    {
+        _currentScore += _burgerScore;
+        testScore.text = "Score: " + _currentScore;
+    }
+
     public List<string> GetMenuItemsFromPlayer()
     {
-        return _carriedMenu;
+        return testMenu;
+        //return _carriedMenu;
     }
 }

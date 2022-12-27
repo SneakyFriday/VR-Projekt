@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -11,6 +12,7 @@ public class PlayerInteraction : MonoBehaviour
     public UnityEvent servedCustomerRight;
 
     [SerializeField] private MenuTable _menuTable;
+    [SerializeField] private PointsController _pointsController;
 
     private int _orderNumber;
     private string[] _menues = { };
@@ -65,8 +67,12 @@ public class PlayerInteraction : MonoBehaviour
     // Verlässt der Gast den Interaktionsbereich, wird isInRange auf false gesetzt.
     private void OnTriggerExit(Collider collider)
     {
-        isInRange = false;
-        _playerController.playerInteraction.RemoveListener(BestellungAufnehmen);
+        if (collider.CompareTag("PlayerContainer"))
+        {
+          isInRange = false;
+          _playerController.playerInteraction.RemoveListener(BestellungAufnehmen);  
+        }
+        
     }
 
     // Funktion "BestellungAufnehmen", regelt das Bestellen und Bedienen. 
@@ -87,7 +93,10 @@ public class PlayerInteraction : MonoBehaviour
                 if (containsMenuItem)
                 {
                     print("Richtige Bestellung erhalten");
-                    servedCustomerRight.Invoke();
+                    _playerPickUpController.DisableTray();
+                    _playerPickUpController.SetScore();
+                    //_pointsController.SetScore();
+                    //servedCustomerRight.Invoke();
                     Destroy(gast);
                 }
             }

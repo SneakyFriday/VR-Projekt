@@ -4,33 +4,34 @@ using UnityEngine;
 
 public class GästeSpawner : MonoBehaviour
 {
-    [SerializeField] private GameObject[] waypoints; // Array aus Gameobjekten, beinhaltet jeden Sitzplatz.
-    public GameObject whatToSpawnPrefab; // Das Prefab, welches gespawnt werden soll.
-    public float spawnTime = 1f; // Zeit zwischen den Spawns.
-    float spawnDelay; // Zeit bis zum ersten Spawn.
-    bool[] seatTaken; // Array aus bools, beinhaltet ob ein Sitzplatz besetzt ist oder nicht.
-    public GameObject spawnPoint; // Das Objekt, welches den Spawnpunkt darstellt.
+    [SerializeField] private GameObject[] waypoints;
+    [SerializeField] private GameObject whatToSpawnPrefab;
+    public float spawnTime = 1f;
+    private float spawnDelay;
+    private bool[] seatTaken;
+    public GameObject spawnPoint;
     public GameObject seat;
+    private int seatNumber;
     
     void Start()
     {
-        seatTaken = new bool[waypoints.Length]; // Initialisiert das Array mit der Länge des waypoints Arrays.
-        //InvokeRepeating("spawnObjekt", spawnTime, spawnDelay= Random.Range(3, 7)); // Ruft wiederholt die spawnObjekt Methode auf, mit einer Startzeit und einem Delay bis zum nächsten Spawnen.
-        spawnObjekt();
+        seatTaken = new bool[waypoints.Length];
+        InvokeRepeating("spawnObjekt", spawnTime, spawnDelay = Random.Range(3, 7));
     }
 
     public void spawnObjekt()
     { 
-        int seatNumber = Random.Range(0, waypoints.Length);
+        seatNumber = Random.Range(0, waypoints.Length);
         if (!seatTaken[seatNumber]) {
-            Instantiate(whatToSpawnPrefab, spawnPoint.transform.position, Quaternion.identity);
             seatTaken[seatNumber] = true;
             seat = waypoints[seatNumber];
+            Instantiate(whatToSpawnPrefab, spawnPoint.transform.position, Quaternion.identity);
         }
-    } 
-    public GameObject seatTransform()
+    }
+
+    public Transform SetAgentDestination()
     {
-        return seat;
+        return seat.transform;
     }
 }
 
