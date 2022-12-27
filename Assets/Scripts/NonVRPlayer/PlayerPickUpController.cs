@@ -48,6 +48,10 @@ public class PlayerPickUpController : MonoBehaviour
         tray.SetActive(false);
         _carriedMenu.Clear();
         isCarrying = false;
+        foreach (var item in _carriedMenu)
+        {
+            print(item);
+        }
     }
 
     public void SetScore()
