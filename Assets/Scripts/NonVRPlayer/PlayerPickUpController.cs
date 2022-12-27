@@ -11,6 +11,8 @@ public class PlayerPickUpController : MonoBehaviour
     private List<String> _carriedMenu;
     private List<String> testMenu = new();
     public TextMeshProUGUI testScore;
+    private int _currentScore;
+    private int _burgerScore = 100;
 
     private void Start()
     {
@@ -46,6 +48,12 @@ public class PlayerPickUpController : MonoBehaviour
         tray.SetActive(false);
         _carriedMenu.Clear();
         isCarrying = false;
+    }
+
+    public void SetScore()
+    {
+        _currentScore += _burgerScore;
+        testScore.text = "Score: " + _currentScore;
     }
 
     public List<string> GetMenuItemsFromPlayer()

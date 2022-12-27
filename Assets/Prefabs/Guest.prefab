@@ -201,6 +201,9 @@ MonoBehaviour:
   - {fileID: 1595099956014505485}
   - {fileID: 4460777976903917067}
   willBestellen: {fileID: 8872954345671353612}
+  servedCustomerRight:
+    m_PersistentCalls:
+      m_Calls: []
   _menuTable: {fileID: -5459022510430821124}
   _pointsController: {fileID: 236334915, guid: 343c38af19bdd40448d4dac7d2fdd216, type: 3}
 --- !u!114 &-5459022510430821124
@@ -231,11 +234,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1525834255203129913}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ae36dfb1e6050324097bd6b0756b31d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _agent: {fileID: 2845774198221166827}
   spawner: {fileID: 7477430962645999231, guid: 03853d5362a630344be804d28dff9f0f, type: 3}
 --- !u!195 &2845774198221166827
 NavMeshAgent:
@@ -244,7 +248,7 @@ NavMeshAgent:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1525834255203129913}
-  m_Enabled: 0
+  m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
   m_Speed: 3.5

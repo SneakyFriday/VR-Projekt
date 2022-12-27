@@ -331,4 +331,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tray: {fileID: 5373149813377397360}
   isCarrying: 0
+  currentScoreTxt: {fileID: 4824301454719909244, guid: 9456b6df404d87342bf4ce7e5a887172, type: 3}
   testScore: {fileID: 0}
