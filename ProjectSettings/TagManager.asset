@@ -28,6 +28,7 @@ TagManager:
   - steak
   - bun_buttom
   - bun_top
+  - SpawnPoint
   layers:
   - Default
   - TransparentFX

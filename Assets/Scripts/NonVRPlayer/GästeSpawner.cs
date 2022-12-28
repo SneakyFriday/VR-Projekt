@@ -16,7 +16,7 @@ public class GästeSpawner : MonoBehaviour
     void Start()
     {
         seatTaken = new bool[waypoints.Length];
-        InvokeRepeating("spawnObjekt", spawnTime, spawnDelay = Random.Range(3, 7));
+        InvokeRepeating("spawnObjekt", spawnTime, spawnDelay = Random.Range(45,90));
     }
 
     public void spawnObjekt()
