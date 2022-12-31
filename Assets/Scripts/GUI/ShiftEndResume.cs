@@ -15,21 +15,21 @@ public class ShiftEndResume : MonoBehaviour
         servedValues[2].text = s3c.ToString();
 
         pointValues[0].text = s1p.ToString();
-        pointValues[0].text = s2p.ToString();
-        pointValues[0].text = s3p.ToString();
+        pointValues[1].text = s2p.ToString();
+        pointValues[2].text = s3p.ToString();
 
         int totalPoints = s1p + s2p + s3p;
         print("Total Points: " + totalPoints);
 
-        if (totalPoints <= 5)
+        if (totalPoints <= 500)
         {
             pointsTierValue.text = "B";
         }
-        else if (totalPoints < 10)
+        if (totalPoints < 500)
         {
             pointsTierValue.text = "A";
         }
-        else if (totalPoints >= 15)
+        if (totalPoints >= 1500)
         {
             pointsTierValue.text = "S";
         }
