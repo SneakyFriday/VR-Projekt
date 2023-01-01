@@ -7,6 +7,7 @@ public class PlayerPickUpController : MonoBehaviour
 {
     [SerializeField] private GameObject tray;
     [SerializeField] private bool isCarrying;
+    [SerializeField] private ShiftEndResume shiftEndResume;
 
     private List<String> _carriedMenu;
     private List<String> testMenu = new();
@@ -58,6 +59,12 @@ public class PlayerPickUpController : MonoBehaviour
     {
         _currentScore += _burgerScore;
         testScore.text = "Score: " + _currentScore;
+        shiftEndResume.HandleTextValues(0, 0, 0, _currentScore, 0, 0);
+    }
+
+    public int GetScore()
+    {
+        return _currentScore;
     }
 
     public List<string> GetMenuItemsFromPlayer()

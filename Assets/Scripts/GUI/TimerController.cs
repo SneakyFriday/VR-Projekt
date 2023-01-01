@@ -1,4 +1,3 @@
-using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -17,17 +16,18 @@ public class TimerController : MonoBehaviour
     [SerializeField] private Image fillImage;
     [Header("Analoge Anzeige")]
     [SerializeField] private TextMeshProUGUI timeText;
-    [Header("Schichtende Text")]
-    [SerializeField] private TextMeshProUGUI shiftIsOver;
     [Header("Aktuelle Schichtanzeige")]
     [SerializeField] private TextMeshProUGUI currentShift;
+    [Header("Handle Endscreen")]
+    [SerializeField] private ShiftEndResume _shiftEndResume;
+
+    [SerializeField] private PlayerPickUpController playerPickUpController;
     
     private float _currentTimeValue;
     private float _timeForFill;
     private bool _timerOn;
     private float _maxTimeValue;
     private float _maxFillAmount;
-
 
     private void Start()
     {
@@ -68,7 +68,7 @@ public class TimerController : MonoBehaviour
     {
         if (timeToDisplay < 0)
         {
-            shiftIsOver.gameObject.SetActive(true);
+            _shiftEndResume.ShowEndScreen();
             timeToDisplay = 0;
         }
 

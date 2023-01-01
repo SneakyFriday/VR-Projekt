@@ -8,11 +8,21 @@ public class GameManager : MonoBehaviour
     {
         SoundManager.Instance.PlayMusicSound();
     }
+    
+    public void StartMenu() {   
+        SceneManager.LoadScene(0);
+    }
 
     public void RestartGame()
     {
+        Time.timeScale = 1;
         int currentScene = SceneManager.GetActiveScene().buildIndex;
         SoundManager.Instance.StopMusicSound();
         SceneManager.LoadScene(currentScene);
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
     }
 }
