@@ -23,11 +23,11 @@ TagManager:
   - Patty_raw
   - Lettuce
   - egg_raw
-  - egg
   - steak_raw
-  - steak
   - bun_buttom
   - bun_top
+  - steak_done
+  - egg_done
   layers:
   - Default
   - TransparentFX

@@ -10,7 +10,7 @@ public class PointsController : MonoBehaviour
     private void Start()
     {
         //_currentScore = 0;
-        currentScoreTxt.text = "Score: ";
+        currentScoreTxt.text = "Score: 0";
     }
 
     // public void SetScore()

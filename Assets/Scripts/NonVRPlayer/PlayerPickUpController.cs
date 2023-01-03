@@ -19,7 +19,6 @@ public class PlayerPickUpController : MonoBehaviour
     private void Start()
     {
         testMenu.Add("bun_top");
-        testMenu.Add("Lettuce");
         testMenu.Add("Cheese");
         testMenu.Add("Patty_done");
         testMenu.Add("bun_buttom");
