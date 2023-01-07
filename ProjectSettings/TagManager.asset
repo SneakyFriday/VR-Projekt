@@ -28,6 +28,7 @@ TagManager:
   - bun_top
   - steak_done
   - egg_done
+  - SpawnPoint
   layers:
   - Default
   - TransparentFX

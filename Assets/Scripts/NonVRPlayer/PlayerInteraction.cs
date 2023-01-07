@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -7,12 +8,14 @@ public class PlayerInteraction : MonoBehaviour
 {
     public GameObject gast;
     public bool isInRange;
-    public GameObject[] menuIcons = new GameObject[3];
+    public GameObject[] menuIcons = new GameObject[4];
     public GameObject willBestellen;
     public UnityEvent servedCustomerRight;
 
     [SerializeField] private MenuTable _menuTable;
     [SerializeField] private PointsController _pointsController;
+    [SerializeField] private GuestPathfinding guestPathfinding;
+
 
     private int _orderNumber;
     private string[] _menues = { };
@@ -23,10 +26,13 @@ public class PlayerInteraction : MonoBehaviour
     private bool _isInteracting;
     private string _order;
     private Dictionary<string, List<string>> _orderItems;
+    public bool istBedient;
 
 
     private void Start()
     {
+        istBedient = false;
+
         _menues = new[]
         {
             "burgerStandard",
@@ -53,7 +59,15 @@ public class PlayerInteraction : MonoBehaviour
             {
                 isInRange = true;
                 _playerController = collider.GetComponent<PlayerController>();
-                _playerController.playerInteraction.AddListener(BestellungAufnehmen);
+                if (guestPathfinding.isSeated() == true)
+                {
+                    _playerController.playerInteraction.AddListener(BestellungAufnehmen);
+                    if (_bestellt == false)
+                    {
+                        menuIcons[3].SetActive(true);
+                        willBestellen.SetActive(false);
+                    }
+                }
                 _playerPickUpController = collider.GetComponent<PlayerPickUpController>();
             }
         }
@@ -70,9 +84,12 @@ public class PlayerInteraction : MonoBehaviour
         if (collider.CompareTag("PlayerContainer"))
         {
           isInRange = false;
-          _playerController.playerInteraction.RemoveListener(BestellungAufnehmen);  
+          _playerController.playerInteraction.RemoveListener(BestellungAufnehmen); 
+          if (  _bestellt == false ){
+            menuIcons[3].SetActive(false);
+            willBestellen.SetActive(true);
+          }
         }
-        
     }
 
     // Funktion "BestellungAufnehmen", regelt das Bestellen und Bedienen. 
@@ -97,7 +114,7 @@ public class PlayerInteraction : MonoBehaviour
                     _playerPickUpController.SetScore();
                     //_pointsController.SetScore();
                     //servedCustomerRight.Invoke();
-                    Destroy(gast);
+                    istBedient = true;
                 }
             }
         }
@@ -107,7 +124,21 @@ public class PlayerInteraction : MonoBehaviour
         {
             menuIcons[_orderNumber].SetActive(true);
             willBestellen.SetActive(false);
+            menuIcons[3].SetActive(false);
             _bestellt = true;
         }
+    }
+    public bool BedienStatus()
+    {
+        return istBedient;
+    }
+
+
+    void Update()
+    {
+     if (guestPathfinding.isSeated() == true && _bestellt == false && isInRange == false)
+          {
+             willBestellen.SetActive(true);
+          }
     }
 }
