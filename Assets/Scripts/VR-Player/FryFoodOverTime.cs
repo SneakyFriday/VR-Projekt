@@ -9,6 +9,7 @@ public class FryFoodOverTime : MonoBehaviour
     [SerializeField] private GameObject cookedPatty;
     [SerializeField] private AudioClip _fryStart, _fryEnd;
     private AudioSource _audioSource;
+    private bool _isCooking;
     
     private void Start()
     {
@@ -17,29 +18,31 @@ public class FryFoodOverTime : MonoBehaviour
 
     public void StartCooking()
     {
-        StartCoroutine(FryFood(gameObject));
+        StartCoroutine(FryFood());
+        _isCooking = true;
     }
 
     public void StopCooking()
     {
-        StopCoroutine(FryFood(gameObject));
+        StopCoroutine(FryFood());
+        _audioSource.Stop();
+        _isCooking = false;
     }
     
-    IEnumerator FryFood(GameObject cookingItem)
+    IEnumerator FryFood()
     {
         // Sound + Particle Effekt auf Objekt Starten
-        print("Cooking Item: " + cookingItem);
+        print("Cooking Item: " + this);
         _audioSource.PlayOneShot(_fryStart);
         yield return new WaitForSeconds(cookingTime);
-        // Objekt durch "gares" Objekt austauschen
-        Destroy(cookingItem);
-        _audioSource.Stop();
-
- 
-        Instantiate(cookedPatty, cookingItem.transform.position, cookingItem.transform.rotation);
-        _audioSource.PlayOneShot(_fryEnd); 
-     
+        if (_isCooking)
+        {
+            Destroy(gameObject);
+            _audioSource.Stop();
+           Instantiate(cookedPatty, transform.position, transform.rotation);
+           _audioSource.PlayOneShot(_fryEnd);  
+        }
         
-        print("Item cooked: " + cookingItem);
+        print("Item cooked: " + name);
     }
 }
