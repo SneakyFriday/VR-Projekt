@@ -5,40 +5,22 @@ using UnityEngine;
 
 public class CookFoodOverTime : MonoBehaviour
 {
-    [SerializeField] private int cookingTime = 3;
-    [SerializeField] private GameObject cookedPatty;
-    [SerializeField] private AudioClip _fryStart, _fryEnd;
-    private AudioSource _stoveAudioSource;
-
-    private void Start()
-    {
-        _stoveAudioSource = GetComponent<AudioSource>();
-    }
+    
+    private bool _isCooking;
 
     private void OnCollisionEnter(Collision coll)
     {
-        if (coll.gameObject.CompareTag("Ingredient"))
+        if (coll.gameObject.GetComponent<FryFoodOverTime>())
         {
-            StartCoroutine(FryFoodOverTime(coll.gameObject));
+            coll.gameObject.GetComponent<FryFoodOverTime>().StartCooking();
         }
     }
 
-    private void OnCollisionExit(Collision other)
+    private void OnCollisionExit(Collision coll)
     {
-        StopCoroutine(FryFoodOverTime(other.gameObject));
-    }
-
-    IEnumerator FryFoodOverTime(GameObject cookingItem)
-    {
-        // Sound + Particle Effekt auf Objekt Starten
-        print("Cooking Item: " + cookingItem);
-        _stoveAudioSource.PlayOneShot(_fryStart);
-        yield return new WaitForSeconds(cookingTime);
-        // Objekt durch "gares" Objekt austauschen
-        Destroy(cookingItem);
-        _stoveAudioSource.Stop();
-        Instantiate(cookedPatty, cookingItem.transform.position, cookingItem.transform.rotation);
-        _stoveAudioSource.PlayOneShot(_fryEnd);
-        print("Item cooked: " + cookingItem);
+        if (coll.gameObject.GetComponent<FryFoodOverTime>())
+        {
+            coll.gameObject.GetComponent<FryFoodOverTime>().StopCooking();
+        }
     }
 }
