@@ -2,7 +2,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class DishController : MonoBehaviour
+public class MenuDisplay : MonoBehaviour
 {
     [SerializeField] private DishScriptableObject dishScriptableObject;
    
@@ -15,5 +15,6 @@ public class DishController : MonoBehaviour
     {
         GetComponentInChildren<Image>().sprite = dishScriptableObject.dishArt;
         GetComponentInChildren<TextMeshPro>().text = dishScriptableObject.name;
+        
     }
 }
