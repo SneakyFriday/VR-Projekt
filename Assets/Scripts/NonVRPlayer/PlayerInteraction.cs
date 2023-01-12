@@ -8,13 +8,17 @@ public class PlayerInteraction : MonoBehaviour
 {
     public GameObject gast;
     public bool isInRange;
-    public GameObject[] menuIcons = new GameObject[4];
+    public GameObject[] menuIcons = new GameObject[5];
     public GameObject willBestellen;
     public UnityEvent servedCustomerRight;
 
     [SerializeField] private MenuTable _menuTable;
     [SerializeField] private PointsController _pointsController;
     [SerializeField] private GuestPathfinding guestPathfinding;
+    [SerializeField] public Timer timer;
+    public GameObject timerObjekt;
+
+
 
 
     private int _orderNumber;
@@ -114,7 +118,7 @@ public class PlayerInteraction : MonoBehaviour
                     _playerPickUpController.SetScore();
                     //_pointsController.SetScore();
                     //servedCustomerRight.Invoke();
-                    istBedient = true;
+                    //istBedient = true;
                 }
             }
         }
@@ -134,11 +138,27 @@ public class PlayerInteraction : MonoBehaviour
     }
 
 
+// Wenn der Gast sitzt, nicht bestellt hat soll er "Will bestellen" anzeigen.
+// Wenn der Gast sitzt, bestellt hat soll der Timer angezeigt werden außer der Spieler ist nahe dem Gast dann wird das Menü angezeigt.
     void Update()
     {
      if (guestPathfinding.isSeated() == true && _bestellt == false && isInRange == false)
           {
              willBestellen.SetActive(true);
+          }
+      if (guestPathfinding.isSeated() == true && _bestellt == true && isInRange == false)
+          {
+            menuIcons[_orderNumber].SetActive(false);
+            willBestellen.SetActive(false);
+            menuIcons[4].SetActive(true);
+            timerObjekt.transform.localScale = new Vector3((float)0.0262,(float) 0.0262,(float) 0.0262);
+
+          } else if (guestPathfinding.isSeated() == true && _bestellt == true && isInRange == true)
+          {
+            menuIcons[_orderNumber].SetActive(true);
+            willBestellen.SetActive(false);
+            timerObjekt.transform.localScale = new Vector3(0, 0, 0);
+            //menuIcons[4].SetActive(false);
           }
     }
 }
