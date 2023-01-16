@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.057826884, g: 0.21448028, b: 0.22025606, a: 1}
+  m_IndirectSpecularColor: {r: 0.057846762, g: 0.2141957, b: 0.22040987, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -8855,10 +8855,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1894630021}
     m_Modifications:
-    - target: {fileID: 8326977060605732400, guid: a49f4ad1536c1fd45b0fa8bb86ff990f, type: 3}
-      propertyPath: dishScriptableObject
-      value: 
-      objectReference: {fileID: 11400000, guid: 37b23b2c6725dfd41a618b55fd491c95, type: 2}
     - target: {fileID: 8326977060605732403, guid: a49f4ad1536c1fd45b0fa8bb86ff990f, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -8947,8 +8943,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: SteakMenu
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 8326977060605732404, guid: a49f4ad1536c1fd45b0fa8bb86ff990f, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a49f4ad1536c1fd45b0fa8bb86ff990f, type: 3}
 --- !u!1001 &1149219816
 PrefabInstance:
@@ -10342,8 +10337,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2, y: 2, z: 2.0000002}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1.8385268, y: 1.4546771, z: 1.8346744}
+  m_Center: {x: -0.0007714516, y: -0.27266192, z: 0.0035949743}
 --- !u!1001 &1307866322
 PrefabInstance:
   m_ObjectHideFlags: 0

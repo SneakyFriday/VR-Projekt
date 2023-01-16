@@ -526,6 +526,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dishScriptableObject: {fileID: 11400000, guid: 37b23b2c6725dfd41a618b55fd491c95, type: 2}
+  menuName: {fileID: 8326977060148338820}
+  menuPoints: {fileID: 7587090956191520367}
 --- !u!1 &8326977061034440594
 GameObject:
   m_ObjectHideFlags: 0

@@ -44,7 +44,7 @@ public class Timer : MonoBehaviour , IPointerClickHandler
                 uiText.text = $"{remainingDuration / 60:00}:{remainingDuration % 60:00}";
                 uiFill.fillAmount = Mathf.InverseLerp(0, duration, remainingDuration);
                 remainingDuration--;
-                print(test);
+                // print(test);
                 yield return new WaitForSeconds(1f);
             }
             yield return null;
@@ -56,6 +56,5 @@ public class Timer : MonoBehaviour , IPointerClickHandler
     {
         //End Time , if want Do something
         playerInteraction.istBedient = true;
-        print("End");
     }
 }
