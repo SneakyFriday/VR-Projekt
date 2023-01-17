@@ -10,7 +10,7 @@ public class PlayerPickUpController : MonoBehaviour
     [SerializeField] private ShiftEndResume shiftEndResume;
 
     private List<String> _carriedMenu;
-    private List<String> testMenu = new();
+    //private List<String> testMenu = new();
     public TextMeshProUGUI testScore;
     private int _currentScore;
     private int _burgerScore = 100;
@@ -18,10 +18,10 @@ public class PlayerPickUpController : MonoBehaviour
 
     private void Start()
     {
-        testMenu.Add("bun_top");
-        testMenu.Add("Cheese");
-        testMenu.Add("Patty_done");
-        testMenu.Add("bun_buttom");
+        //testMenu.Add("bun_top");
+        //testMenu.Add("Cheese");
+        //testMenu.Add("Patty_done");
+        //testMenu.Add("bun_buttom");
         
         _carriedMenu = new List<string>();
     }
@@ -30,7 +30,7 @@ public class PlayerPickUpController : MonoBehaviour
     {
         if (other.GetComponent<FixMenuElementsOnPlate>() && !isCarrying)
         {
-            print("Found Component on Object");
+            //print("Found Component on Object");
             _carriedMenu = other.GetComponent<FixMenuElementsOnPlate>().CheckMenu();
             tray.SetActive(true);
             isCarrying = true;
@@ -45,7 +45,7 @@ public class PlayerPickUpController : MonoBehaviour
 
     public void DisableTray()
     {
-        print("Disabling Tray");
+        //print("Disabling Tray");
         tray.SetActive(false);
         _carriedMenu.Clear();
         isCarrying = false;
@@ -65,7 +65,7 @@ public class PlayerPickUpController : MonoBehaviour
 
     public List<string> GetMenuItemsFromPlayer()
     {
-        return testMenu;
-        //return _carriedMenu;
+        //return testMenu;
+        return _carriedMenu;
     }
 }

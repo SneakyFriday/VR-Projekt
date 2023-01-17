@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
+using Random = UnityEngine.Random;
 
 public class PlayerInteraction : MonoBehaviour
 {
@@ -44,10 +45,10 @@ public class PlayerInteraction : MonoBehaviour
             "steakMenu",
             "eggMenu"
         };
-
+        
         //Sucht sich zu beginn ein Menue aus.
-        //orderNumber = Random.Range(0, menues.Length);
-        _orderNumber = 0;
+        _orderNumber = Random.Range(0, _menues.Length);
+        //_orderNumber = 0;
         _order = _menues[_orderNumber];
         print("Order: " + _order);
         _orderItems = _menuTable.GetMenuItems(_order);
@@ -89,7 +90,7 @@ public class PlayerInteraction : MonoBehaviour
         {
           isInRange = false;
           _playerController.playerInteraction.RemoveListener(BestellungAufnehmen); 
-          if (  _bestellt == false ){
+          if (!_bestellt){
             menuIcons[3].SetActive(false);
             willBestellen.SetActive(true);
           }
@@ -142,18 +143,18 @@ public class PlayerInteraction : MonoBehaviour
 // Wenn der Gast sitzt, bestellt hat soll der Timer angezeigt werden außer der Spieler ist nahe dem Gast dann wird das Menü angezeigt.
     void Update()
     {
-     if (guestPathfinding.isSeated() == true && _bestellt == false && isInRange == false)
+     if (guestPathfinding.isSeated() && _bestellt == false && isInRange == false)
           {
              willBestellen.SetActive(true);
           }
-      if (guestPathfinding.isSeated() == true && _bestellt == true && isInRange == false)
+      if (guestPathfinding.isSeated() && _bestellt && isInRange == false)
           {
             menuIcons[_orderNumber].SetActive(false);
             willBestellen.SetActive(false);
             menuIcons[4].SetActive(true);
             timerObjekt.transform.localScale = new Vector3((float)0.0262,(float) 0.0262,(float) 0.0262);
 
-          } else if (guestPathfinding.isSeated() == true && _bestellt == true && isInRange == true)
+          } else if (guestPathfinding.isSeated() && _bestellt && isInRange)
           {
             menuIcons[_orderNumber].SetActive(true);
             willBestellen.SetActive(false);
