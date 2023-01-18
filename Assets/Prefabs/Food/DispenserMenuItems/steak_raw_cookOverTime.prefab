@@ -12,11 +12,11 @@ GameObject:
   - component: {fileID: 6313387955879778889}
   - component: {fileID: 2811137773098018300}
   - component: {fileID: 7575068604891349717}
-  - component: {fileID: -1184540679425525398}
-  - component: {fileID: -800050189445449992}
-  - component: {fileID: 210555490118916021}
+  - component: {fileID: 2718718617125226067}
+  - component: {fileID: 5859283337916081992}
+  - component: {fileID: 5139092198527413705}
   m_Layer: 0
-  m_Name: steak_done
+  m_Name: steak_raw_cookOverTime
   m_TagString: steak_raw
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -187,7 +187,7 @@ MonoBehaviour:
   m_ForceGravityOnDetach: 0
   m_RetainTransformParent: 0
   m_AttachPointCompatibilityMode: 0
---- !u!114 &-1184540679425525398
+--- !u!114 &2718718617125226067
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -199,7 +199,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bf70cf14b8e8d04fa8982339c090ac8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &-800050189445449992
+--- !u!114 &5859283337916081992
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -212,10 +212,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cookingTime: 3
-  cookedPatty: {fileID: 41215445842743935, guid: d27ed04f68e8f47438214d1ce080912b, type: 3}
+  cookedPatty: {fileID: 41215445842743935, guid: 647e87b3690f031499123e931cbbba44, type: 3}
   _fryStart: {fileID: 8300000, guid: d095d61490756a541a09edb9bb570ddc, type: 3}
   _fryEnd: {fileID: 8300000, guid: dd98f4f30f6060742ae2c4d16317d6b9, type: 3}
---- !u!82 &210555490118916021
+--- !u!82 &5139092198527413705
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -372,7 +372,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 6032c41ade2708e4ab49b54e58e6a2ff, type: 2}
+  - {fileID: 2100000, guid: f98d6eabc665393458d5cc298a38e2c2, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
