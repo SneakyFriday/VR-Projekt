@@ -20,8 +20,6 @@ public class PlayerInteraction : MonoBehaviour
     public GameObject timerObjekt;
 
 
-
-
     private int _orderNumber;
     private string[] _menues = { };
     private PlayerController _playerController;
@@ -32,6 +30,10 @@ public class PlayerInteraction : MonoBehaviour
     private string _order;
     private Dictionary<string, List<string>> _orderItems;
     public bool istBedient;
+    public AudioSource rightOrder;
+    public AudioSource wrongOrder;
+    public bool timeOver = false;
+
 
 
     private void Start()
@@ -119,7 +121,8 @@ public class PlayerInteraction : MonoBehaviour
                     _playerPickUpController.SetScore();
                     //_pointsController.SetScore();
                     //servedCustomerRight.Invoke();
-                    //istBedient = true;
+                    istBedient = true;
+                    
                 }
             }
         }
@@ -135,7 +138,13 @@ public class PlayerInteraction : MonoBehaviour
     }
     public bool BedienStatus()
     {
+
         return istBedient;
+    }
+
+    public bool timeIsOver(){
+
+        return timeOver;
     }
 
 
@@ -160,6 +169,12 @@ public class PlayerInteraction : MonoBehaviour
             willBestellen.SetActive(false);
             timerObjekt.transform.localScale = new Vector3(0, 0, 0);
             //menuIcons[4].SetActive(false);
+          }
+          if (timeOver == true){
+            wrongOrder.Play();
+          }
+          if (istBedient == true){
+            rightOrder.Play();
           }
     }
 }

@@ -55,6 +55,7 @@ public class Timer : MonoBehaviour , IPointerClickHandler
     private void OnEnd()
     {
         //End Time , if want Do something
-        playerInteraction.istBedient = true;
+
+        playerInteraction.timeOver = true;
     }
 }
