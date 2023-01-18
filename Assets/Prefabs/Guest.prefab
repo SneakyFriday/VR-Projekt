@@ -646,18 +646,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   burgerStandardMenuIngredients:
   - {fileID: 452136946655479785, guid: 14b8460d3dcc999459e3a45f86830e9b, type: 3}
-  - {fileID: 3293552400923725614, guid: fa0404e487ee8a3439efa7c6a16a2caa, type: 3}
+  - {fileID: 3293552400923725614, guid: f36dfa5c7d939d140bf10eb638c152ad, type: 3}
   - {fileID: 41215445842743935, guid: bb628b70a78afd44a8f97fbcb4abbd60, type: 3}
   - {fileID: 1486204905247035096, guid: 1e34a485c61f9c546ade186ea690c7d1, type: 3}
   burgerExpertMenuIngredients:
   - {fileID: 452136946655479785, guid: 14b8460d3dcc999459e3a45f86830e9b, type: 3}
   - {fileID: 5616316769546675609, guid: 395ec2d5587aa3c4b859c3f692ce4b82, type: 3}
   - {fileID: 4929124320101024091, guid: 00897eb39945d2d47936656720038671, type: 3}
-  - {fileID: 3293552400923725614, guid: fa0404e487ee8a3439efa7c6a16a2caa, type: 3}
+  - {fileID: 3293552400923725614, guid: f36dfa5c7d939d140bf10eb638c152ad, type: 3}
   - {fileID: 41215445842743935, guid: bb628b70a78afd44a8f97fbcb4abbd60, type: 3}
   - {fileID: 1486204905247035096, guid: 1e34a485c61f9c546ade186ea690c7d1, type: 3}
   steakMenuIngredients:
-  - {fileID: 41215445842743935, guid: d27ed04f68e8f47438214d1ce080912b, type: 3}
+  - {fileID: 41215445842743935, guid: 647e87b3690f031499123e931cbbba44, type: 3}
   eggMenuIngredients:
   - {fileID: 41215445842743935, guid: 277951fcf7e2d6a4d91b4679f353576e, type: 3}
 --- !u!114 &885857268676875466

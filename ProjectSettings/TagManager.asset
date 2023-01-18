@@ -29,6 +29,10 @@ TagManager:
   - steak_done
   - egg_done
   - SpawnPoint
+  - tomato_whole
+  - bun_whole
+  - salat_whole
+  - tray
   layers:
   - Default
   - TransparentFX

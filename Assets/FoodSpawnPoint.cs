@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,20 +6,43 @@ using UnityEngine;
 public class FoodSpawnPoint : MonoBehaviour
 {
     public GameObject spawnedObject;
-    // Start is called before the first frame update
-    void Start()
+    public Transform spawnPosition;
+    public float spawnDelay = 2f;
+
+    private bool itemAvailable = true;
+
+    private void Start()
     {
-        
+        Instantiate(spawnedObject, spawnPosition.position, Quaternion.identity);
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        if (!itemAvailable)
+        {
+             StartCoroutine(SpawnItem());
+        }
     }
 
-    public void GetSpawnedObject()
+    IEnumerator SpawnItem()
+    {
+        itemAvailable = true;
+        yield return new WaitForSeconds(spawnDelay);
+        Instantiate(spawnedObject, spawnPosition.position, Quaternion.identity);
+        itemAvailable = true;
+    }
+
+    private void OnTriggerExit(Collider other)
     {
         
+        if (other.gameObject.CompareTag(spawnedObject.tag))
+        {
+            OnItemTaken();
+        }
+    }
+
+    public void OnItemTaken()
+    {
+        itemAvailable = false;
     }
 }
