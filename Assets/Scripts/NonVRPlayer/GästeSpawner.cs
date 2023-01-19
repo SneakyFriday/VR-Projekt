@@ -37,6 +37,7 @@ public class GästeSpawner : MonoBehaviour
     {
         return seat.transform;
     }    
+    
 }
 
 

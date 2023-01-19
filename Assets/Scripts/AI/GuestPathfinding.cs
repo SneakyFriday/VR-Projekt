@@ -37,7 +37,6 @@ public class GuestPathfinding : MonoBehaviour
         spawner = FindObjectOfType<GästeSpawner>();
         _agent.destination = spawner.SetAgentDestination().position;
         }
-
     }
 
     void Update() {
