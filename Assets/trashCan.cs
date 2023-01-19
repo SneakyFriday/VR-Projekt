@@ -17,14 +17,14 @@ public class trashCan : MonoBehaviour
             trashSound.Play();
         }
     }
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("PlayerContainer"))
-        {
-            //print("Player Entered");
-            _inTrigger = true;
-        }
-    }
+    // private void OnTriggerEnter(Collider other)
+    // {
+    //     if (other.CompareTag("PlayerContainer"))
+    //     {
+    //         //print("Player Entered");
+    //         _inTrigger = true;
+    //     }
+    // }
     private void OnTriggerStay(Collider other)
     {
         if (other.CompareTag("PlayerContainer"))
