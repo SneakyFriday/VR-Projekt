@@ -72,7 +72,7 @@ public class PlayerInteraction : MonoBehaviour
                     _playerController.playerInteraction.AddListener(BestellungAufnehmen);
                     if (_bestellt == false)
                     {
-                        menuIcons[3].SetActive(true);
+                        menuIcons[4].SetActive(true);
                         willBestellen.SetActive(false);
                     }
                 }
@@ -94,9 +94,10 @@ public class PlayerInteraction : MonoBehaviour
           isInRange = false;
           _playerController.playerInteraction.RemoveListener(BestellungAufnehmen); 
           if (!_bestellt){
-            menuIcons[3].SetActive(false);
+            menuIcons[4].SetActive(false);
             willBestellen.SetActive(true);
           }
+          
         }
     }
 
