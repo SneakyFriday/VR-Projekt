@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -9,18 +10,33 @@ public class GuestPathfinding : MonoBehaviour
     [SerializeField] private GästeSpawner spawner;
     [SerializeField] private PlayerInteraction playerInteraction;
     [SerializeField] public GameObject SpawnPoint;
-
-
+    private Vector3 pos;
+    
     void Start()
     {
-        spawner = FindObjectOfType<GästeSpawner>();
-        _agent.destination = spawner.SetAgentDestination().position;
+        _agent.isStopped = true;
+        pos = transform.position;
+        StartCoroutine(FreezeObjekt());
+    }
+    IEnumerator FreezeObjekt()
+    {
+        print("test");
+        yield return new WaitForSeconds(1);
+        _agent.isStopped = false;
+        SetDestination();
     }
 
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(_agent.destination, 1f);
+    }
+
+    private void SetDestination (){
+        if ( _agent.isStopped == false){
+        spawner = FindObjectOfType<GästeSpawner>();
+        _agent.destination = spawner.SetAgentDestination().position;
+        }
     }
 
     void Update() {
@@ -49,7 +65,7 @@ public class GuestPathfinding : MonoBehaviour
     }
     public bool isSeated()
     {
-        if (Vector3.Distance(transform.position, _agent.destination) < 2f)
+        if (Vector3.Distance(transform.position, _agent.destination) < 1f)
         {
 
             return true;
