@@ -13,18 +13,14 @@ public class eggCrackController : MonoBehaviour
         currentCutStrokes = maxCutStrokes;
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision other)
     {
-        if (other.CompareTag("Stove"))
+        if (other.gameObject.CompareTag("Stove"))
         {
-            if (currentCutStrokes > 1) currentCutStrokes--;
-            else
-            {
-                var offset = new Vector3(0, 0.05f, 0);
-                Destroy(gameObject);
-                var transform1 = transform;
-                Instantiate(cuttedPrefab, transform1.position + offset, transform1.rotation);
-            }
+            var offset = new Vector3(0, 0.05f, 0);
+            Destroy(gameObject);
+            var transform1 = transform;
+            Instantiate(cuttedPrefab, transform1.position + offset, transform1.rotation);
         }
         
     }
