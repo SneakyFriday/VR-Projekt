@@ -9,7 +9,6 @@ public class trashCan : MonoBehaviour
     public AudioSource trashSound;
     private void Update()
     {
-        print(_inTrigger);
         if (Input.GetButtonDown("B Button") && _inTrigger == true)
         {
             print("Tray Deleted");
@@ -17,23 +16,15 @@ public class trashCan : MonoBehaviour
             trashSound.Play();
         }
     }
-    // private void OnTriggerEnter(Collider other)
-    // {
-    //     if (other.CompareTag("PlayerContainer"))
-    //     {
-    //         //print("Player Entered");
-    //         _inTrigger = true;
-    //     }
-    // }
-    private void OnTriggerStay(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("PlayerContainer"))
         {
-            //print("Player Stayed");
+            //print("Player Entered");
             _inTrigger = true;
         }
+        
     }
-
     private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("PlayerContainer"))

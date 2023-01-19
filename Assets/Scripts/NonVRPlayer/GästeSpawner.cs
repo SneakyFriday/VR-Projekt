@@ -6,6 +6,7 @@ public class GästeSpawner : MonoBehaviour
 {
     [SerializeField] private GameObject[] waypoints;
     [SerializeField] private GameObject whatToSpawnPrefab;
+    public SettingsScriptableObject settingsScriptableObject;
     public float spawnTime = 1f;
     private float spawnDelay;
     private bool[] seatTaken;
@@ -14,7 +15,7 @@ public class GästeSpawner : MonoBehaviour
     private int seatNumber;
     
     void Start()
-    {
+    {   spawnDelay = settingsScriptableObject.spawnDelay;
         seatTaken = new bool[waypoints.Length];
         InvokeRepeating("spawnObjekt", spawnTime, spawnDelay = Random.Range(45,90));
     }

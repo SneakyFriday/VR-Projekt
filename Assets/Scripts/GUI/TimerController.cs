@@ -4,11 +4,11 @@ using UnityEngine.UI;
 
 public class TimerController : MonoBehaviour
 {
-    
+    public SettingsScriptableObject settingsScriptableObject;
     [Header("Länge der Schichten (Sec.)")]
-    [SerializeField] private int morningShiftLength;
-    [SerializeField] private int middayShiftLength;
-    [SerializeField] private int eveningShiftLength;
+    [SerializeField] public int morningShiftLength;
+    [SerializeField] public int middayShiftLength;
+    [SerializeField] public int eveningShiftLength;
     [Header("Anzeigebilder")]
     [SerializeField] private Image morningShiftImage;
     [SerializeField] private Image middayShiftImage;
@@ -31,6 +31,8 @@ public class TimerController : MonoBehaviour
 
     private void Start()
     {
+        LoadValuesFromScriptableObject();
+        DontDestroyOnLoad(settingsScriptableObject);
         _maxTimeValue = morningShiftLength + middayShiftLength + eveningShiftLength;
 
         _maxFillAmount = 1 / _maxTimeValue;
@@ -41,6 +43,27 @@ public class TimerController : MonoBehaviour
 
         SetTime();
         
+
+
+    }
+
+        public void SaveValuesToScriptableObject()
+    {
+        settingsScriptableObject.morningShiftLength = morningShiftLength;
+        settingsScriptableObject.middayShiftLength = middayShiftLength;
+        settingsScriptableObject.eveningShiftLength = eveningShiftLength;
+    }
+
+    public void LoadValuesFromScriptableObject()
+    {
+        morningShiftLength = settingsScriptableObject.morningShiftLength;
+        middayShiftLength = settingsScriptableObject.middayShiftLength;
+        eveningShiftLength = settingsScriptableObject.eveningShiftLength;
+    }
+
+    public void OnEndEditMorningShiftLength()
+    {
+        SaveValuesToScriptableObject();
     }
 
     void Update()

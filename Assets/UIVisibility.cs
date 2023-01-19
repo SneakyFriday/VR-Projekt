@@ -3,7 +3,6 @@ using UnityEngine.UI;
 
 public class UIVisibility : MonoBehaviour
 {
-    public GameObject uiElement;
     public string nonVRLayer = "NON-VR Layer";
     public Camera NONVRCamera;
 

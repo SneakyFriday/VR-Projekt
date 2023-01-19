@@ -20,7 +20,7 @@ public class FoodSpawnPoint : MonoBehaviour
     {
         if (!itemAvailable)
         {
-             StartCoroutine(SpawnItem());
+            StartCoroutine(SpawnItem());
         }
     }
 

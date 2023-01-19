@@ -10,6 +10,7 @@ public class GuestPathfinding : MonoBehaviour
     [SerializeField] private PlayerInteraction playerInteraction;
     [SerializeField] public GameObject SpawnPoint;
 
+
     void Start()
     {
         spawner = FindObjectOfType<GästeSpawner>();
@@ -28,7 +29,7 @@ public class GuestPathfinding : MonoBehaviour
         {
             _agent.destination = SpawnPoint.transform.position;
 
-              if (Vector3.Distance(transform.position, SpawnPoint.transform.position) < 1f)
+            if (Vector3.Distance(transform.position, SpawnPoint.transform.position) < 1f)
             {
                 Destroy(gameObject);
             }
