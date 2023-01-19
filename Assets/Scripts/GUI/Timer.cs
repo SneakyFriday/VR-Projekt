@@ -24,7 +24,7 @@ public class Timer : MonoBehaviour , IPointerClickHandler
 
     private void Start()
     {
-        duration = Random.Range(30, 75);
+        duration = Random.Range(55, 70);
         Being(duration);
     }
 
