@@ -351,10 +351,10 @@ MonoBehaviour:
   menuIcons:
   - {fileID: 6801598451486852152}
   - {fileID: 1595099956014505485}
+  - {fileID: 2408861495030684180}
   - {fileID: 4460777976903917067}
   - {fileID: 4341449986124821468}
   - {fileID: 6340052451485791016}
-  - {fileID: 2408861495030684180}
   willBestellen: {fileID: 8872954345671353612}
   servedCustomerRight:
     m_PersistentCalls:
@@ -469,8 +469,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -1.06}
-  m_SizeDelta: {x: 10, y: 9.775}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 2, y: 2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7924905319726533858
 CanvasRenderer:
@@ -545,8 +545,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -0.97}
-  m_SizeDelta: {x: 10, y: 9.775}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 2, y: 2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8702786405912087574
 CanvasRenderer:
@@ -855,7 +855,7 @@ GameObject:
   - component: {fileID: 5876634113509847480}
   - component: {fileID: 5666827842897195498}
   m_Layer: 7
-  m_Name: InteractionIcon
+  m_Name: b Button Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -969,8 +969,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -1.01}
-  m_SizeDelta: {x: 10, y: 9.775}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 2, y: 2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4350582420598394920
 CanvasRenderer:
@@ -1264,8 +1264,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -0.97}
-  m_SizeDelta: {x: 10, y: 9.775}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 2, y: 2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &9070602978983515033
 CanvasRenderer:
@@ -1295,7 +1295,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: f6dd37f93f6455043aebd8481725ae8e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 261316c32f77b784e812d370e36c82c8, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -1460,7 +1460,7 @@ GameObject:
   - component: {fileID: 8028522440766932475}
   - component: {fileID: 4592325969014969513}
   m_Layer: 7
-  m_Name: WillBestellen  Icon
+  m_Name: '!willBestellen Icon'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
