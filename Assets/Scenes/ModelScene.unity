@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.057826884, g: 0.21448028, b: 0.22025606, a: 1}
+  m_IndirectSpecularColor: {r: 0.057846762, g: 0.2141957, b: 0.22040987, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -6025,6 +6025,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1894630021}
     m_Modifications:
+    - target: {fileID: 8326977060605732400, guid: a49f4ad1536c1fd45b0fa8bb86ff990f, type: 3}
+      propertyPath: dishScriptableObject
+      value: 
+      objectReference: {fileID: 11400000, guid: f101a398527cc47458f18c725733adba, type: 2}
     - target: {fileID: 8326977060605732403, guid: a49f4ad1536c1fd45b0fa8bb86ff990f, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -8270,6 +8274,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1894630021}
     m_Modifications:
+    - target: {fileID: 8326977060605732400, guid: a49f4ad1536c1fd45b0fa8bb86ff990f, type: 3}
+      propertyPath: dishScriptableObject
+      value: 
+      objectReference: {fileID: 11400000, guid: 1cbb793bd8d46404099c6a6ed7ba94a2, type: 2}
     - target: {fileID: 8326977060605732403, guid: a49f4ad1536c1fd45b0fa8bb86ff990f, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -14064,7 +14072,7 @@ PrefabInstance:
     - target: {fileID: 8326977060605732400, guid: a49f4ad1536c1fd45b0fa8bb86ff990f, type: 3}
       propertyPath: dishScriptableObject
       value: 
-      objectReference: {fileID: 11400000, guid: 37b23b2c6725dfd41a618b55fd491c95, type: 2}
+      objectReference: {fileID: 11400000, guid: da01fcf26a4f5df419c6293dcaa82c9d, type: 2}
     - target: {fileID: 8326977060605732403, guid: a49f4ad1536c1fd45b0fa8bb86ff990f, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
