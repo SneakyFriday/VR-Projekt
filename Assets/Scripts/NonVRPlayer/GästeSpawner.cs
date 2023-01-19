@@ -7,21 +7,24 @@ public class GästeSpawner : MonoBehaviour
     [SerializeField] private GameObject[] waypoints;
     [SerializeField] private GameObject whatToSpawnPrefab;
     public SettingsScriptableObject settingsScriptableObject;
-    public float spawnTime = 1f;
+    public float spawnTime = 1;
     private float spawnDelay;
     private bool[] seatTaken;
     public GameObject spawnPoint;
     public GameObject seat;
     private int seatNumber;
+    public Animator anim;
     
     void Start()
-    {   spawnDelay = settingsScriptableObject.spawnDelay;
+    {   
+        spawnDelay = settingsScriptableObject.spawnDelay;
         seatTaken = new bool[waypoints.Length];
-        InvokeRepeating("spawnObjekt", spawnTime, spawnDelay = Random.Range(45,90));
+        InvokeRepeating("spawnObjekt", spawnTime, spawnDelay = Random.Range(30,40));
     }
 
     public void spawnObjekt()
     { 
+        anim.SetTrigger("OpenDoor");
         seatNumber = Random.Range(0, waypoints.Length);
         if (!seatTaken[seatNumber]) {
             seatTaken[seatNumber] = true;
@@ -33,7 +36,8 @@ public class GästeSpawner : MonoBehaviour
     public Transform SetAgentDestination()
     {
         return seat.transform;
-    }
+    }    
+    
 }
 
 
