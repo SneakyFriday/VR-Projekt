@@ -32,6 +32,9 @@ public class PlayerInteraction : MonoBehaviour
     private string _order;
     private Dictionary<string, List<string>> _orderItems;
     public bool istBedient;
+    public AudioSource rightOrder;
+    public AudioSource wrongOrder;
+    public bool timeOver = false;
 
 
     private void Start()
@@ -119,7 +122,7 @@ public class PlayerInteraction : MonoBehaviour
                     _playerPickUpController.SetScore();
                     //_pointsController.SetScore();
                     //servedCustomerRight.Invoke();
-                    //istBedient = true;
+                    istBedient = true;
                 }
             }
         }
@@ -138,6 +141,10 @@ public class PlayerInteraction : MonoBehaviour
         return istBedient;
     }
 
+    public bool timeIsOver()
+    {
+        return timeOver;
+    }
 
 // Wenn der Gast sitzt, nicht bestellt hat soll er "Will bestellen" anzeigen.
 // Wenn der Gast sitzt, bestellt hat soll der Timer angezeigt werden außer der Spieler ist nahe dem Gast dann wird das Menü angezeigt.
@@ -160,6 +167,12 @@ public class PlayerInteraction : MonoBehaviour
             willBestellen.SetActive(false);
             timerObjekt.transform.localScale = new Vector3(0, 0, 0);
             //menuIcons[4].SetActive(false);
+          }
+           if (timeOver == true){
+            wrongOrder.Play();
+          }
+          if (istBedient == true){
+            rightOrder.Play();
           }
     }
 }

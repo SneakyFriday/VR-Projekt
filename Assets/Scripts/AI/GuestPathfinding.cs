@@ -28,6 +28,18 @@ public class GuestPathfinding : MonoBehaviour
         {
             _agent.destination = SpawnPoint.transform.position;
 
+              if (Vector3.Distance(transform.position, SpawnPoint.transform.position) < 1f)
+            {
+                Destroy(gameObject);
+            }
+        }
+
+         bool timeOver = playerInteraction.timeIsOver();
+        if (timeOver == true)
+        {
+            _agent.destination = SpawnPoint.transform.position;
+
+
             if (Vector3.Distance(transform.position, SpawnPoint.transform.position) < 1f)
             {
                 Destroy(gameObject);
