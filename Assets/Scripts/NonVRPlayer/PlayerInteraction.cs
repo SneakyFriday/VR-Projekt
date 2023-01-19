@@ -18,10 +18,7 @@ public class PlayerInteraction : MonoBehaviour
     [SerializeField] private GuestPathfinding guestPathfinding;
     [SerializeField] public Timer timer;
     public GameObject timerObjekt;
-
-
-
-
+    
     private int _orderNumber;
     private string[] _menues = { };
     private PlayerController _playerController;

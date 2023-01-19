@@ -365,8 +365,8 @@ MonoBehaviour:
   timer: {fileID: 0}
   timerObjekt: {fileID: 6340052451485791016}
   istBedient: 0
-  rightOrder: {fileID: 0}
-  wrongOrder: {fileID: 0}
+  rightOrder: {fileID: 3315640544301290261}
+  wrongOrder: {fileID: 8912873325187335608}
   timeOver: 0
 --- !u!114 &-5459022510430821124
 MonoBehaviour:
