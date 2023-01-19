@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Steak
   points: 50
-  dishArt: {fileID: 0}
+  dishArt: {fileID: 21300000, guid: c304bed3bccbb0b47a034b8191f1fd7c, type: 3}

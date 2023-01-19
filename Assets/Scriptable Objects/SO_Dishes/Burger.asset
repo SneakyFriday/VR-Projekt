@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Burger
   points: 100
-  dishArt: {fileID: 0}
+  dishArt: {fileID: 21300000, guid: 49d88814680771d47baf6e074878c4d6, type: 3}
