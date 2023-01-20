@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75b0cc81d6e17e844b00f69c7dc28005, type: 3}
   m_Name: SettingsScriptableObject
   m_EditorClassIdentifier: 
-  spawnTime: 1
-  morningShiftLength: 600
+  spawnDelay: 656
+  morningShiftLength: 60
   middayShiftLength: 60
   eveningShiftLength: 60
-  volume: 0
-  offset: {x: 0, y: 8, z: -6.5}
+  volume: 0.16259705
+  offset: {x: 0, y: 44, z: 8}
   smoothSpeed: 10

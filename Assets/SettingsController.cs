@@ -46,10 +46,10 @@ public class SettingsController : MonoBehaviour
         morningShiftText.text = "Morning Shift: " + settingsScriptableObject.morningShiftLength + "s";
         middayShiftText.text = "Midday Shift: " + settingsScriptableObject.middayShiftLength + "s";
         eveningShiftText.text = "Evening Shift: " + settingsScriptableObject.eveningShiftLength + "s";
+        offsetXtext.text = "Offset X: " + settingsScriptableObject.offset.x;
+        offsetYtext.text = "Offset Y: " + settingsScriptableObject.offset.y;
+        offsetZtext.text = "Offset Z: " + settingsScriptableObject.offset.z;
         offset = settingsScriptableObject.offset;
-        offsetXtext.text = "Offset X: " + offset.x;
-        offsetYtext.text = "Offset Y: " + offset.y;
-        offsetZtext.text = "Offset Z: " + offset.z;
         smoothSpeedText.text = "Smoothing: " + settingsScriptableObject.smoothSpeed;
         DontDestroyOnLoad(settingsScriptableObject);
     }
@@ -99,22 +99,22 @@ public class SettingsController : MonoBehaviour
     public void changeOffsetX()
     {
         float newOffsetX = float.Parse(offsetXinputField.text);
-        offset.x = newOffsetX;
-        offsetXtext.text = "Offset X: " + offset.x;
+        settingsScriptableObject.offset.x = newOffsetX;
+        offsetXtext.text = "Offset X: " + settingsScriptableObject.offset.x;
     }
 
     public void changeOffsetY()
     {
         float newOffsetY = float.Parse(offsetYinputField.text);
-        offset.y = newOffsetY;
-        offsetYtext.text = "Offset Y: " + offset.y;
+        settingsScriptableObject.offset.y = newOffsetY;
+        offsetYtext.text = "Offset Y: " + settingsScriptableObject.offset.y;
     }
 
     public void changeOffsetZ()
     {
         float newOffsetZ = float.Parse(offsetZinputField.text);
-        offset.z = newOffsetZ;
-        offsetZtext.text = "Offset Z: " + offset.z;
+        settingsScriptableObject.offset.z = newOffsetZ;
+        offsetZtext.text = "Offset Z: " + settingsScriptableObject.offset.z;
     }
 
     public void changeSmoothSpeed()
