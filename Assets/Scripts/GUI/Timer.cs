@@ -14,6 +14,7 @@ public class Timer : MonoBehaviour , IPointerClickHandler
 
     [SerializeField] private Image uiFill;
     [SerializeField] private TMP_Text uiText;
+    [SerializeField] private int spawnTimerStart, spawnTimerEnd;
     public PlayerInteraction playerInteraction;
 
     private int duration;
@@ -24,7 +25,7 @@ public class Timer : MonoBehaviour , IPointerClickHandler
 
     private void Start()
     {
-        duration = Random.Range(55, 70);
+        duration = Random.Range(spawnTimerStart, spawnTimerEnd);
         Being(duration);
     }
 
