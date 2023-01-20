@@ -11,30 +11,21 @@ public class CameraFollow : MonoBehaviour
   public float smoothSpeed = 10f;
   public Vector3 offset;
 
+    void Start()
+    {
+         offset = settingsScriptableObject.offset;
+         print("Start(): offset: "+ offset);
+    }
+
     void LateUpdate (){
-
-        LoadOffset();
-        DontDestroyOnLoad(settingsScriptableObject);
-
 
         Vector3 desiredPosition = target.position + offset;
         Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed * Time.deltaTime);
         transform.position = smoothedPosition;
-        print("offset: "+ offset);
+        print("LateUpdate(): offset: "+ offset);
         transform.LookAt(target);
     }
 
-    public void SaveOffset()
-    {
-        settingsScriptableObject.offset = offset;
-        settingsScriptableObject.smoothSpeed = smoothSpeed;
-    } 
-
-    public void LoadOffset()
-    {
-        offset = settingsScriptableObject.offset;
-        smoothSpeed = settingsScriptableObject.smoothSpeed;
-    }
 
 
 

@@ -13,7 +13,7 @@ public class SettingsScriptableObject : ScriptableObject
     public int middayShiftLength = 60;
     public int eveningShiftLength = 60;
     public float volume = 1f;
-    public Vector3 offset;
+    public Vector3 offset = new Vector3(0, 0, 0);
     public float smoothSpeed = 10f;
 
 }

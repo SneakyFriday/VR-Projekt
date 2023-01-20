@@ -16606,67 +16606,6 @@ Transform:
   m_Father: {fileID: 5942347590300552662}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &2277469512694195545
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 5974636849511519675, guid: 615b438459631304d8a75cd706965ea1, type: 3}
-      propertyPath: m_RootOrder
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 5974636849511519675, guid: 615b438459631304d8a75cd706965ea1, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5974636849511519675, guid: 615b438459631304d8a75cd706965ea1, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 17.836
-      objectReference: {fileID: 0}
-    - target: {fileID: 5974636849511519675, guid: 615b438459631304d8a75cd706965ea1, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -14.783
-      objectReference: {fileID: 0}
-    - target: {fileID: 5974636849511519675, guid: 615b438459631304d8a75cd706965ea1, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.8910066
-      objectReference: {fileID: 0}
-    - target: {fileID: 5974636849511519675, guid: 615b438459631304d8a75cd706965ea1, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0.45399043
-      objectReference: {fileID: 0}
-    - target: {fileID: 5974636849511519675, guid: 615b438459631304d8a75cd706965ea1, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5974636849511519675, guid: 615b438459631304d8a75cd706965ea1, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5974636849511519675, guid: 615b438459631304d8a75cd706965ea1, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 54
-      objectReference: {fileID: 0}
-    - target: {fileID: 5974636849511519675, guid: 615b438459631304d8a75cd706965ea1, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5974636849511519675, guid: 615b438459631304d8a75cd706965ea1, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5974636849511519677, guid: 615b438459631304d8a75cd706965ea1, type: 3}
-      propertyPath: m_Name
-      value: Non-VR-Camera
-      objectReference: {fileID: 0}
-    - target: {fileID: 5974636849511519677, guid: 615b438459631304d8a75cd706965ea1, type: 3}
-      propertyPath: m_Layer
-      value: 7
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 615b438459631304d8a75cd706965ea1, type: 3}
 --- !u!1001 &2390690588355920445
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17354,6 +17293,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8279d675f5346534bb4fd027a69469fe, type: 3}
+--- !u!4 &5580275480163823842
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5580275480163823844}
+  m_LocalRotation: {x: 0.45399043, y: 0, z: 0, w: 0.8910066}
+  m_LocalPosition: {x: -2, y: 17.836, z: -14.783}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 54, y: 0, z: 0}
 --- !u!20 &5580275480163823843
 Camera:
   m_ObjectHideFlags: 0
@@ -17397,11 +17351,24 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!1 &5580275480163823844 stripped
+--- !u!1 &5580275480163823844
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 5974636849511519677, guid: 615b438459631304d8a75cd706965ea1, type: 3}
-  m_PrefabInstance: {fileID: 2277469512694195545}
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5580275480163823842}
+  - component: {fileID: 5580275480163823843}
+  - component: {fileID: 5580275480163823845}
+  m_Layer: 7
+  m_Name: Non-VR-Camera
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!114 &5580275480163823845
 MonoBehaviour:
   m_ObjectHideFlags: 0
