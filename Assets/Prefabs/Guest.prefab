@@ -1228,6 +1228,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   uiFill: {fileID: 3727084517368062851}
   uiText: {fileID: 5987318234443448016}
+  spawnTimerStart: 100
+  spawnTimerEnd: 120
   playerInteraction: {fileID: -2883736962318656494}
 --- !u!1 &6801598451486852152
 GameObject:

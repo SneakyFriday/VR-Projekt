@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class trashCan : MonoBehaviour
 {
     public PlayerPickUpController playerPickUpController;
     private bool _inTrigger;
     public AudioSource trashSound;
+    private bool isUsing;
     private void Update()
     {
         if (Input.GetButtonDown("B Button") && _inTrigger == true)
@@ -18,9 +20,9 @@ public class trashCan : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("PlayerContainer"))
+        if (other.GetComponent<PlayerController>())
         {
-            //print("Player Entered");
+            print("Player Entered");
             _inTrigger = true;
         }
         
@@ -29,8 +31,13 @@ public class trashCan : MonoBehaviour
     {
         if (other.CompareTag("PlayerContainer"))
         {
-            //print("Player Exited");
+            print("Player Exited");
             _inTrigger = false;
         }
+    }
+    
+    public void OnDash(InputAction.CallbackContext context)
+    {
+        isUsing = context.action.triggered;
     }
 }

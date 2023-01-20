@@ -19,7 +19,7 @@ public class GästeSpawner : MonoBehaviour
     {   
         spawnDelay = settingsScriptableObject.spawnDelay;
         seatTaken = new bool[waypoints.Length];
-        InvokeRepeating("spawnObjekt", spawnTime, spawnDelay = Random.Range(30,40));
+        InvokeRepeating("spawnObjekt", spawnTime, spawnDelay = Random.Range(5,8));
     }
 
     public void spawnObjekt()

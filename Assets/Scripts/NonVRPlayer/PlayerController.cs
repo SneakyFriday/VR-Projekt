@@ -57,7 +57,7 @@ public class PlayerController : MonoBehaviour
         if (hasDashed && groundedPlayer)
         {
             // TODO: Change to Dash-Function
-            //print("Dashing!");
+            print("Dashing!");
         }
 
         playerVelocity.y += gravityValue * Time.deltaTime;
