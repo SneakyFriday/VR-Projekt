@@ -21,7 +21,7 @@ public class GuestPathfinding : MonoBehaviour
     IEnumerator FreezeObjekt()
     {
         print("test");
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds((float)2);
         _agent.isStopped = false;
         SetDestination();
     }
