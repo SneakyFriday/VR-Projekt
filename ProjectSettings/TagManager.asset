@@ -33,6 +33,7 @@ TagManager:
   - bun_whole
   - salat_whole
   - tray
+  - floor
   layers:
   - Default
   - TransparentFX
