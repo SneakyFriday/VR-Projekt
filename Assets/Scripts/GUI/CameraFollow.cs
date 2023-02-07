@@ -14,7 +14,6 @@ public class CameraFollow : MonoBehaviour
     void Start()
     {
          offset = settingsScriptableObject.offset;
-         print("Start(): offset: "+ offset);
     }
 
     void LateUpdate (){
@@ -22,14 +21,6 @@ public class CameraFollow : MonoBehaviour
         Vector3 desiredPosition = target.position + offset;
         Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed * Time.deltaTime);
         transform.position = smoothedPosition;
-        print("LateUpdate(): offset: "+ offset);
         transform.LookAt(target);
     }
-
-
-
-
-
-
-
 }

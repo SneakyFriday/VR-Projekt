@@ -9,11 +9,13 @@ public class FoodSpawnPoint : MonoBehaviour
     public Transform spawnPosition;
     public float spawnDelay = 2f;
 
-    private bool itemAvailable = true;
+    private bool itemAvailable;
+    private List<Collider> registeredColliders = new();
 
     private void Start()
     {
-        Instantiate(spawnedObject, spawnPosition.position, Quaternion.identity);
+        Instantiate(spawnedObject, spawnPosition.position + new Vector3(0,0.05f,0), Quaternion.identity);
+        itemAvailable = true;
     }
 
     void Update()
@@ -32,17 +34,19 @@ public class FoodSpawnPoint : MonoBehaviour
         itemAvailable = true;
     }
 
-    private void OnTriggerExit(Collider other)
+    private void OnCollisionExit(Collision other)
     {
-        
+        print("Collision exit");
+
         if (other.gameObject.CompareTag(spawnedObject.tag))
         {
-            OnItemTaken();
+            if (registeredColliders.Contains(other.gameObject.GetComponent<Collider>()))
+            {
+                return;
+            }
+            registeredColliders.Add(other.gameObject.GetComponent<Collider>());
+            itemAvailable = false;
+            print("Item taken: " + other.gameObject.name);
         }
-    }
-
-    public void OnItemTaken()
-    {
-        itemAvailable = false;
     }
 }
