@@ -103,7 +103,7 @@
                     "id": "71c5ccae-cb7c-406e-a7e8-e33ddc09340c",
                     "path": "<Gamepad>/leftStick",
                     "interactions": "",
-                    "processors": "",
+                    "processors": "ScaleVector2(x=0.52,y=0.52)",
                     "groups": "Gamepad",
                     "action": "Movement",
                     "isComposite": false,
@@ -160,6 +160,17 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
+                    "action": "Use",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "31c0908e-9d3b-49df-b8ab-9b3d67c57a94",
+                    "path": "<Keyboard>/anyKey",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
                     "action": "Use",
                     "isComposite": false,
                     "isPartOfComposite": false

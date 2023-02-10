@@ -17,7 +17,7 @@ public class PlayerController : MonoBehaviour
     private bool hasDashed;
     private bool isInteracting;
     public UnityEvent playerInteraction;
-    
+    [SerializeField] private float rotationSpeed = 100f;
 
     private void Start()
     {
@@ -62,6 +62,20 @@ public class PlayerController : MonoBehaviour
 
         playerVelocity.y += gravityValue * Time.deltaTime;
         _controller.Move(playerVelocity * Time.deltaTime);
+        
+        // Rotiert den Player in die Bewegungsrichtung, wenn es eine Bewegungsrichtung gibt.
+        if (move != Vector3.zero)
+        {
+            // Direkte Rotation in die Bewegungsrichtung ohne übergang.
+            //transform.forward = move;
+
+
+            // Alternativer versuch die Rotation geschmeidiger zu machen. 
+            //  -Zieht sich die Bewegungsrichtung des Spielers in die toRotation. Diese Varaiable sagt an in welche richtung rotiert werden soll.
+            Quaternion toRotation = Quaternion.LookRotation(move, Vector3.up);
+            //  -Rotiert den Spieler in die richtung von toRotation. Die RotationSpeed gibt an wie schnell der Spieler rotiert.
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
+        }
     }
     
     
