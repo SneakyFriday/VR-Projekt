@@ -9,6 +9,7 @@ public class RestartButtonController : MonoBehaviour
 
     public void RestartGame()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name); // loads current scene
+         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+         Time.timeScale = 1;
     }
 }
