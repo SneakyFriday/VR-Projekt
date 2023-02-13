@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
@@ -18,10 +19,12 @@ public class PlayerController : MonoBehaviour
     private bool isInteracting;
     public UnityEvent playerInteraction;
     [SerializeField] private float rotationSpeed = 100f;
+    private Animator _animator;
 
     private void Start()
     {
         _controller = gameObject.GetComponent<CharacterController>();
+        _animator = gameObject.GetComponent<Animator>();
     }
     
     public void OnMove(InputAction.CallbackContext context)
@@ -52,6 +55,10 @@ public class PlayerController : MonoBehaviour
         
         Vector3 move = new Vector3(movementInput.x, 0, movementInput.y);
         _controller.Move(move * (Time.deltaTime * playerSpeed));
+        if (move != Vector3.zero)
+        {
+            _animator.Play("Move");
+        }
 
         // Jump Button for now...
         if (hasDashed && groundedPlayer)

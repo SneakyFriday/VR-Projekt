@@ -40,6 +40,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Swivel",
+                    "type": "PassThrough",
+                    "id": "5a8b5aa9-c30f-44a9-9ad4-d444037d5127",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -167,11 +176,33 @@
                 {
                     "name": "",
                     "id": "31c0908e-9d3b-49df-b8ab-9b3d67c57a94",
-                    "path": "<Keyboard>/anyKey",
+                    "path": "<Keyboard>/e",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard",
                     "action": "Use",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "473ef817-5f76-43fe-b892-d75d064afaf6",
+                    "path": "<Mouse>/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "Swivel",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "dd0403f5-2a9c-4f4c-96df-ef7c425c9bbc",
+                    "path": "<Gamepad>/rightStick",
+                    "interactions": "",
+                    "processors": "NormalizeVector2",
+                    "groups": "Gamepad",
+                    "action": "Swivel",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
