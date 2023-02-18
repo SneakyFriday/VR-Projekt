@@ -8,9 +8,11 @@ public class FoodSpawnPoint : MonoBehaviour
     public GameObject spawnedObject;
     public Transform spawnPosition;
     public float spawnDelay = 2f;
+    public Animator animator;
 
     private bool itemAvailable;
     private List<Collider> registeredColliders = new();
+    private static readonly int SpawnBeamActive = Animator.StringToHash("spawnBeamActive");
 
     private void Start()
     {
@@ -30,6 +32,7 @@ public class FoodSpawnPoint : MonoBehaviour
     {
         itemAvailable = true;
         yield return new WaitForSeconds(spawnDelay);
+        animator.SetTrigger(SpawnBeamActive);
         Instantiate(spawnedObject, spawnPosition.position, Quaternion.identity);
         itemAvailable = true;
     }
