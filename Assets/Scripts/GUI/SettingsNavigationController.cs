@@ -28,6 +28,22 @@ public class SettingsNavigationController : MonoBehaviour
                 selectedOptionIndex = 0;
             }
         }
+        else if (Input.GetAxis("DPadVertical") < 0)
+        {
+            selectedOptionIndex++;
+            if (selectedOptionIndex >= settingsOptions.Length)
+            {
+                selectedOptionIndex = 0;
+            }
+        }
+        else if (Input.GetAxis("DPadVertical") > 0)
+        {
+            selectedOptionIndex--;
+            if (selectedOptionIndex < 0)
+            {
+                selectedOptionIndex = settingsOptions.Length - 1;
+            }
+        }
 
         // Highlight the selected option
         for (int i = 0; i < settingsOptions.Length; i++)
