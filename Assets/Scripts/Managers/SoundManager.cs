@@ -3,6 +3,9 @@ using UnityEngine;
 public class SoundManager : MonoBehaviour
 {
     public static SoundManager Instance;
+    public SettingsScriptableObject settingsScriptableObject;
+    public SettingsController settingsController;
+    
 
     [SerializeField] private AudioSource _musicSource;
     [SerializeField] private AudioClip _backgroundMusic;
@@ -21,6 +24,21 @@ public class SoundManager : MonoBehaviour
             }
         }
     #endregion
+
+    void Start()
+    {
+        settingsController.VolumeChanged += UpdateVolume;
+    }
+    
+    public void UpdateVolume()
+    {
+        _musicSource.volume = settingsScriptableObject.volume;
+    }
+
+    void OnDestroy()
+    {
+        settingsController.VolumeChanged -= UpdateVolume;
+    }
 
     public void PlayMusicSound()
     {
