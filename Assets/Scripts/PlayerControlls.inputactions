@@ -103,7 +103,7 @@
                     "id": "71c5ccae-cb7c-406e-a7e8-e33ddc09340c",
                     "path": "<Gamepad>/leftStick",
                     "interactions": "",
-                    "processors": "ScaleVector2(x=0.52,y=0.52)",
+                    "processors": "ScaleVector2",
                     "groups": "Gamepad",
                     "action": "Movement",
                     "isComposite": false,
