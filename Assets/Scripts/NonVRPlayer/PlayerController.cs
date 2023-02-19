@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float playerSpeed = 2.0f;
     [SerializeField] private float dashPower = 1.0f;
     [SerializeField] private float gravityValue = -9.81f;
+    [SerializeField] private PlayerPickUpController playerPickUpController;
 
     private CharacterController _controller;
     private Vector3 playerVelocity;
@@ -39,7 +40,13 @@ public class PlayerController : MonoBehaviour
     public void Interaction(InputAction.CallbackContext context)
     {
         isInteracting = context.action.triggered;
-        if(isInteracting) playerInteraction.Invoke();
+        if (isInteracting)
+        {
+            playerInteraction.Invoke();
+            playerPickUpController.PickUpRefill();
+            playerPickUpController.RefillItems();
+        }
+        
     }
 
     void Update()

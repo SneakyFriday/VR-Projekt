@@ -9,12 +9,16 @@ public class PlayerPickUpController : MonoBehaviour
     [SerializeField] private bool isCarrying;
     [SerializeField] private ShiftEndResume shiftEndResume;
 
-    private List<String> _carriedMenu;
+    private List<string> _carriedMenu;
     //private List<String> testMenu = new();
     public TextMeshProUGUI testScore;
     private int _currentScore;
     private int _burgerScore = 100;
     private int _servedCustomers;
+    private int _refillItems;
+    private bool hasRefillAccess;
+    private bool hasRefillStationAccess;
+    private FoodSpawnPoint _foodSpawnPoint;
 
     private void Start()
     {
@@ -40,6 +44,34 @@ public class PlayerPickUpController : MonoBehaviour
             {
                 print(item);
             }
+        }
+
+        if (other.GetComponent<FoodSpawnPoint>())
+        {
+            hasRefillAccess = true;
+            _foodSpawnPoint = other.GetComponent<FoodSpawnPoint>();
+            print("RefillKitchen: " + hasRefillAccess);
+        }
+
+        if (other.GetComponent<RefillStationController>())
+        {
+            hasRefillStationAccess = true;
+            print("Refill: " + hasRefillStationAccess);
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.GetComponent<FoodSpawnPoint>())
+        {
+            hasRefillAccess = false;
+            print("RefillKitchen: " + hasRefillAccess);
+        }
+
+        if (other.GetComponent<RefillStationController>())
+        {
+            hasRefillStationAccess = false;
+            print("Refill: " + hasRefillStationAccess);
         }
     }
 
@@ -67,5 +99,24 @@ public class PlayerPickUpController : MonoBehaviour
     {
         //return testMenu;
         return _carriedMenu;
+    }
+
+    public void PickUpRefill()
+    {
+        if (hasRefillStationAccess)
+        {
+            _refillItems += 10;
+            print("RefillItems PickUp: " + _refillItems);
+        }
+    }
+
+    public void RefillItems()
+    {
+        if (hasRefillAccess && _refillItems > 0)
+        {
+            _foodSpawnPoint.RefillItems();
+            _refillItems -= 1;
+            print("RefillItems Kitchen: " + _refillItems);
+        }
     }
 }
