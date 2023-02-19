@@ -199,9 +199,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cookingTime: 3
-  cookedPatty: {fileID: 452136946655479785, guid: 3867e256670ab3e4e800886c8b6f622e, type: 3}
+  cookedFood: {fileID: 452136946655479785, guid: 3867e256670ab3e4e800886c8b6f622e, type: 3}
   _fryStart: {fileID: 8300000, guid: d095d61490756a541a09edb9bb570ddc, type: 3}
-  _fryEnd: {fileID: 8300000, guid: dd98f4f30f6060742ae2c4d16317d6b9, type: 3}
+  _fryParticle: {fileID: 0}
 --- !u!82 &-8482348086510457492
 AudioSource:
   m_ObjectHideFlags: 0
