@@ -99,6 +99,8 @@ public class SettingsController : MonoBehaviour
         
     }
 
+
+  
     public void changeMorningShiftLength()
     {
         int newMorningShiftLength = int.Parse(morningShiftLengthInputField.text);

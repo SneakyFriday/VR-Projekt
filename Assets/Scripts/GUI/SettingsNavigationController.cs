@@ -28,7 +28,7 @@ public class SettingsNavigationController : MonoBehaviour
                 selectedOptionIndex = 0;
             }
         }
-        else if (Input.GetAxis("DPadVertical") < 0)
+        else if (Input.GetAxis("joystick button 6") < 0)
         {
             selectedOptionIndex++;
             if (selectedOptionIndex >= settingsOptions.Length)
@@ -36,7 +36,7 @@ public class SettingsNavigationController : MonoBehaviour
                 selectedOptionIndex = 0;
             }
         }
-        else if (Input.GetAxis("DPadVertical") > 0)
+        else if (Input.GetAxis("joystick button 5") > 0)
         {
             selectedOptionIndex--;
             if (selectedOptionIndex < 0)

@@ -7,6 +7,7 @@ public class CameraFollow : MonoBehaviour
 {
 
   public SettingsScriptableObject settingsScriptableObject;
+  public SettingsController settingsController;
   public Transform target;
   public float smoothSpeed = 10f;
   public Vector3 offset;
@@ -14,8 +15,30 @@ public class CameraFollow : MonoBehaviour
     void Start()
     {
          offset = settingsScriptableObject.offset;
+         settingsController.OffsetChanged += UpdateOffset;
     }
 
+    // Kein bock mehr gehabt XD
+    void Update()
+    {
+        // Check if the offset value has changed
+        if (offset != settingsScriptableObject.offset)
+        {
+            // Update the offset value and store the new value
+            offset = settingsScriptableObject.offset;
+        }
+    }
+
+    void UpdateOffset()
+    {
+        offset = settingsScriptableObject.offset;
+    }
+
+    void OnDestroy()
+    {
+        settingsController.OffsetChanged -= UpdateOffset;
+    }
+    
     void LateUpdate (){
 
         Vector3 desiredPosition = target.position + offset;

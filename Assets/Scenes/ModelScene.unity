@@ -1597,7 +1597,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7201112672338392573, guid: 17f1217ebb0e33249acbc2df38ac7bde, type: 3}
       propertyPath: m_JoinAction.m_Action.m_SingletonActionBindings.Array.data[2].m_Id
-      value: 26c7f9d1-7506-4533-a6ba-16fb4429758a
+      value: 3f71ad75-4e3f-409c-93a6-5af7ef63ff1e
       objectReference: {fileID: 0}
     - target: {fileID: 7201112672338392573, guid: 17f1217ebb0e33249acbc2df38ac7bde, type: 3}
       propertyPath: m_PlayerJoinedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -1609,7 +1609,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7201112672338392573, guid: 17f1217ebb0e33249acbc2df38ac7bde, type: 3}
       propertyPath: m_JoinAction.m_Action.m_SingletonActionBindings.Array.data[2].m_Path
-      value: <Keyboard>/escape
+      value: <Gamepad>/dpad/up
       objectReference: {fileID: 0}
     - target: {fileID: 7201112672338392573, guid: 17f1217ebb0e33249acbc2df38ac7bde, type: 3}
       propertyPath: m_JoinAction.m_Action.m_SingletonActionBindings.Array.data[1].m_Action
@@ -1625,7 +1625,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7201112672338392573, guid: 17f1217ebb0e33249acbc2df38ac7bde, type: 3}
       propertyPath: m_JoinAction.m_Action.m_SingletonActionBindings.Array.data[2].m_Interactions
-      value: Press
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 7201112672338392574, guid: 17f1217ebb0e33249acbc2df38ac7bde, type: 3}
       propertyPath: m_RootOrder
@@ -8104,15 +8104,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   settingsOptions:
   - {fileID: 1975080627}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
 --- !u!4 &964981891 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4094406833103131708, guid: 7c219d72d53e9f04a8f94367fb191383, type: 3}
@@ -14992,6 +14983,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   settingsScriptableObject: {fileID: 11400000, guid: 386792999e5f7f34c932b724c266471a, type: 2}
+  settingsController: {fileID: 0}
   morningShiftLength: 45
   middayShiftLength: 45
   eveningShiftLength: 45
@@ -15421,6 +15413,10 @@ PrefabInstance:
       value: 45
       objectReference: {fileID: 0}
     - target: {fileID: 825274838, guid: 343c38af19bdd40448d4dac7d2fdd216, type: 3}
+      propertyPath: settingsController
+      value: 
+      objectReference: {fileID: 964981892}
+    - target: {fileID: 825274838, guid: 343c38af19bdd40448d4dac7d2fdd216, type: 3}
       propertyPath: playerPickUpController
       value: 
       objectReference: {fileID: 0}
@@ -15813,6 +15809,18 @@ PrefabInstance:
       value: 488.88196
       objectReference: {fileID: 0}
     - target: {fileID: 2938582847196547907, guid: 343c38af19bdd40448d4dac7d2fdd216, type: 3}
+      propertyPath: m_Colors.m_SelectedColor.b
+      value: 0.20784314
+      objectReference: {fileID: 0}
+    - target: {fileID: 2938582847196547907, guid: 343c38af19bdd40448d4dac7d2fdd216, type: 3}
+      propertyPath: m_Colors.m_SelectedColor.g
+      value: 0.20784314
+      objectReference: {fileID: 0}
+    - target: {fileID: 2938582847196547907, guid: 343c38af19bdd40448d4dac7d2fdd216, type: 3}
+      propertyPath: m_Colors.m_SelectedColor.r
+      value: 0.20784314
+      objectReference: {fileID: 0}
+    - target: {fileID: 2938582847196547907, guid: 343c38af19bdd40448d4dac7d2fdd216, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -16034,7 +16042,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4907684173082274387, guid: 343c38af19bdd40448d4dac7d2fdd216, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5179224463480866235, guid: 343c38af19bdd40448d4dac7d2fdd216, type: 3}
       propertyPath: m_fontSize
@@ -17659,6 +17667,10 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 1317481409}
+    - target: {fileID: 4746622282033397846, guid: 2b4e0b986863c4f478d65466058e1377, type: 3}
+      propertyPath: settingsController
+      value: 
+      objectReference: {fileID: 964981892}
     - target: {fileID: 4746622282033397847, guid: 2b4e0b986863c4f478d65466058e1377, type: 3}
       propertyPath: m_Name
       value: Non-VR-Camera

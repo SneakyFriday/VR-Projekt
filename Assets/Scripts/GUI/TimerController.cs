@@ -42,12 +42,9 @@ public class TimerController : MonoBehaviour
         eveningShiftImage.fillAmount = _maxFillAmount * (morningShiftLength + eveningShiftLength + middayShiftLength);
 
         SetTime();
-        
-
-
     }
 
-        public void SaveValuesToScriptableObject()
+    public void SaveValuesToScriptableObject()
     {
         settingsScriptableObject.morningShiftLength = morningShiftLength;
         settingsScriptableObject.middayShiftLength = middayShiftLength;
@@ -80,6 +77,7 @@ public class TimerController : MonoBehaviour
         
         DisplayTime(_currentTimeValue, _timeForFill);
         DisplayShift();
+
     }
 
     private void SetTime()
