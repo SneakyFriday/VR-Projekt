@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using Unity.VisualScripting.FullSerializer;
 using UnityEngine;
+using UnityEngine.Events;
 
 
 [CreateAssetMenu(fileName = "SettingsScriptableObject", menuName = "ScriptableObjects/Globals")]
@@ -16,4 +17,10 @@ public class SettingsScriptableObject : ScriptableObject
     public Vector3 offset = new Vector3(0, 0, 0);
     public float smoothSpeed = 10f;
 
+    [System.Serializable]
+    public class SettingsChangedEvent : UnityEvent { }
+
+    public SettingsChangedEvent onSettingsChanged;  
+
 }
+

@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.Events;
 
 public class SettingsController : MonoBehaviour
 {
     public SettingsScriptableObject settingsScriptableObject;
+    private SettingsScriptableObject previousSettings;
 
     public TMP_InputField spawnDelayInputField;
     public TMP_Text spawnDelayText;
@@ -38,9 +40,37 @@ public class SettingsController : MonoBehaviour
     public TMP_Text smoothSpeedText;
     public TMP_InputField smoothSpeedInputField;
 
+    // Declare a delegate type for the settings change event
+    public delegate void SettingsChangeEvent();
+    public delegate void SettingChangedEventHandler();
+
+    public event SettingChangedEventHandler SpawnDelayChanged;
+    public event SettingChangedEventHandler MorningShiftChanged;
+    public event SettingChangedEventHandler MiddayShiftChanged;
+    public event SettingChangedEventHandler EveningShiftChanged;
+    public event SettingChangedEventHandler VolumeChanged;
+    public event SettingChangedEventHandler OffsetChanged;
+    public event SettingChangedEventHandler SmoothSpeedChanged;
+    // Declare a settings change event
+    public static event SettingsChangeEvent OnSettingsChanged;
+
+
+    void Update()
+    {
+        // check if the settings have changed
+        if (!settingsScriptableObject.Equals(previousSettings))
+        {
+            // trigger the event
+            settingsScriptableObject.onSettingsChanged.Invoke();
+
+            // update the previous settings
+            previousSettings = Instantiate(settingsScriptableObject);
+        }
+    }
 
     void Start()
     {
+
         volumeText.text = "Volume: " + settingsScriptableObject.volume * 100 + "%";
         spawnDelayText.text = "SpawnDelay: " + settingsScriptableObject.spawnDelay ;
         morningShiftText.text = "Morning Shift: " + settingsScriptableObject.morningShiftLength + "s";
@@ -52,6 +82,8 @@ public class SettingsController : MonoBehaviour
         offset = settingsScriptableObject.offset;
         smoothSpeedText.text = "Smoothing: " + settingsScriptableObject.smoothSpeed;
         DontDestroyOnLoad(settingsScriptableObject);
+        // store the initial settings for comparison
+        previousSettings = Instantiate(settingsScriptableObject);
     }
 
     public void changeSpawnDelay()
@@ -59,13 +91,26 @@ public class SettingsController : MonoBehaviour
         float newSpawnDelay = float.Parse(spawnDelayInputField.text);
         settingsScriptableObject.spawnDelay = newSpawnDelay;
         spawnDelayText.text = "Spawndelay: " + settingsScriptableObject.spawnDelay + "s";
+        OnSettingsChanged?.Invoke();
+        if (SpawnDelayChanged != null)
+        {
+            SpawnDelayChanged();
+        }
+        
     }
 
+
+  
     public void changeMorningShiftLength()
     {
         int newMorningShiftLength = int.Parse(morningShiftLengthInputField.text);
         settingsScriptableObject.morningShiftLength = newMorningShiftLength;
         morningShiftText.text = "Morning Shift: " + settingsScriptableObject.morningShiftLength + "s";
+        OnSettingsChanged?.Invoke();
+        if (MorningShiftChanged != null)
+        {
+            MorningShiftChanged();
+        }
     }
 
     public void changeMiddayShiftLength()
@@ -73,6 +118,11 @@ public class SettingsController : MonoBehaviour
         int newMiddayShiftLength = int.Parse(middayShiftLengthInputField.text);
         settingsScriptableObject.middayShiftLength = newMiddayShiftLength;
         middayShiftText.text = "Midday Shift: " + settingsScriptableObject.middayShiftLength + "s"; 
+        OnSettingsChanged?.Invoke();
+        if (MiddayShiftChanged != null)
+        {
+            MiddayShiftChanged();
+        }
     }
 
     public void changeEveningShiftLength()
@@ -80,6 +130,12 @@ public class SettingsController : MonoBehaviour
         int newEveningShiftLength = int.Parse(eveningShiftLengthInputField.text);
         settingsScriptableObject.eveningShiftLength = newEveningShiftLength;
         eveningShiftText.text = "Evening Shift: " + settingsScriptableObject.eveningShiftLength + "s";
+        OnSettingsChanged?.Invoke();
+        if (EveningShiftChanged != null)
+        {
+            EveningShiftChanged();
+        }
+        
     }
 
     public void changeVolume() 
@@ -88,12 +144,23 @@ public class SettingsController : MonoBehaviour
         settingsScriptableObject.volume = newVolume;
         volumeText.text = "Volume: " + Mathf.RoundToInt(settingsScriptableObject.volume * 100) + "%"; 
         audioSource.volume = settingsScriptableObject.volume;
+        OnSettingsChanged?.Invoke();
+        if (VolumeChanged != null)
+        {
+            VolumeChanged();
+        }
+        
     }
 
      public void changeOffset()
     {
         settingsScriptableObject.offset = offset;
         settingsScriptableObject.smoothSpeed = smoothSpeed;
+        OnSettingsChanged?.Invoke();
+        if (OffsetChanged != null)
+        {
+            OffsetChanged();
+        }
     } 
 
     public void changeOffsetX()
@@ -101,6 +168,8 @@ public class SettingsController : MonoBehaviour
         float newOffsetX = float.Parse(offsetXinputField.text);
         settingsScriptableObject.offset.x = newOffsetX;
         offsetXtext.text = "Offset X: " + settingsScriptableObject.offset.x;
+        OnSettingsChanged?.Invoke();
+
     }
 
     public void changeOffsetY()
@@ -108,6 +177,7 @@ public class SettingsController : MonoBehaviour
         float newOffsetY = float.Parse(offsetYinputField.text);
         settingsScriptableObject.offset.y = newOffsetY;
         offsetYtext.text = "Offset Y: " + settingsScriptableObject.offset.y;
+        OnSettingsChanged?.Invoke();
     }
 
     public void changeOffsetZ()
@@ -115,6 +185,7 @@ public class SettingsController : MonoBehaviour
         float newOffsetZ = float.Parse(offsetZinputField.text);
         settingsScriptableObject.offset.z = newOffsetZ;
         offsetZtext.text = "Offset Z: " + settingsScriptableObject.offset.z;
+        OnSettingsChanged?.Invoke();
     }
 
     public void changeSmoothSpeed()
@@ -122,6 +193,26 @@ public class SettingsController : MonoBehaviour
         float newSmoothSpeed = float.Parse(smoothSpeedInputField.text);
         smoothSpeed = newSmoothSpeed;
         smoothSpeedText.text = "Smoothing: " + smoothSpeed;
+        OnSettingsChanged?.Invoke();
+        if (SmoothSpeedChanged != null)
+        {
+            SmoothSpeedChanged();
+        }
     }
 
+
+    public void UpdateSettings()
+    {
+        volumeText.text = "Volume: " + settingsScriptableObject.volume * 100 + "%";
+        spawnDelayText.text = "SpawnDelay: " + settingsScriptableObject.spawnDelay;
+        morningShiftText.text = "Morning Shift: " + settingsScriptableObject.morningShiftLength + "s";
+        middayShiftText.text = "Midday Shift: " + settingsScriptableObject.middayShiftLength + "s";
+        eveningShiftText.text = "Evening Shift: " + settingsScriptableObject.eveningShiftLength + "s";
+        offsetXtext.text = "Offset X: " + settingsScriptableObject.offset.x;
+        offsetYtext.text = "Offset Y: " + settingsScriptableObject.offset.y;
+        offsetZtext.text = "Offset Z: " + settingsScriptableObject.offset.z;
+        offset = settingsScriptableObject.offset;
+        smoothSpeedText.text = "Smoothing: " + settingsScriptableObject.smoothSpeed;
+
+    }
 }
