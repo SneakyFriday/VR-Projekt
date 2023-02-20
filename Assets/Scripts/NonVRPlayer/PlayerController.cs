@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float dashPower = 1.0f;
     [SerializeField] private float gravityValue = -9.81f;
     [SerializeField] private PlayerPickUpController playerPickUpController;
+    [SerializeField] private PlayerRefillController playerRefillController;
 
     private CharacterController _controller;
     private Vector3 playerVelocity;

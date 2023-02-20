@@ -8,6 +8,7 @@ public class PlayerPickUpController : MonoBehaviour
     [SerializeField] private GameObject tray;
     [SerializeField] private bool isCarrying;
     [SerializeField] private ShiftEndResume shiftEndResume;
+    [SerializeField] private PlayerRefillController playerRefillController;
 
     private List<string> _carriedMenu;
     //private List<String> testMenu = new();
@@ -51,14 +52,14 @@ public class PlayerPickUpController : MonoBehaviour
         {
             hasRefillAccess = true;
             _foodSpawnPoint = other.GetComponent<FoodSpawnPoint>();
-            print("RefillKitchen Access: " + hasRefillAccess);
+            //print("RefillKitchen Access: " + hasRefillAccess);
         }
 
         if (other.GetComponent<RefillStationController>())
         {
             hasRefillStationAccess = true;
             _refillStationController = other.GetComponent<RefillStationController>();
-            print("Refill Access: " + hasRefillStationAccess + "|| Got RefillStationController Component: " + _refillStationController.enabled);
+            //print("Refill Access: " + hasRefillStationAccess + "|| Got RefillStationController Component: " + _refillStationController.enabled);
         }
     }
 
@@ -67,13 +68,13 @@ public class PlayerPickUpController : MonoBehaviour
         if (other.GetComponent<FoodSpawnPoint>())
         {
             hasRefillAccess = false;
-            print("RefillKitchen: " + hasRefillAccess);
+            //print("RefillKitchen: " + hasRefillAccess);
         }
 
         if (other.GetComponent<RefillStationController>())
         {
             hasRefillStationAccess = false;
-            print("Refill: " + hasRefillStationAccess);
+            //print("Refill: " + hasRefillStationAccess);
         }
     }
 
@@ -111,6 +112,7 @@ public class PlayerPickUpController : MonoBehaviour
         if (hasRefillStationAccess && _refillStationController.GetAvailableItems() > 0)
         {
             _refillItems = _refillStationController.RefillStockOnPlayer();
+            playerRefillController.ShowAndFade(true);
             print("RefillItems PickUp: " + _refillItems);
         }
     }
@@ -120,6 +122,7 @@ public class PlayerPickUpController : MonoBehaviour
         if (hasRefillAccess && _refillItems > 0)
         {
             if(_foodSpawnPoint.GetAvailableItems() >= _foodSpawnPoint.GetMaxItemsAvailable()) return;
+            playerRefillController.ShowAndFade(false);
             _foodSpawnPoint.RefillItems();
             _refillItems -= 1;
             print("RefillItems Kitchen: " + _refillItems);
