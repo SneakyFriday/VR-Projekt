@@ -18,6 +18,7 @@ public class PlayerPickUpController : MonoBehaviour
     private int _refillItems;
     private bool hasRefillAccess;
     private bool hasRefillStationAccess;
+    private RefillStationController _refillStationController;
     private FoodSpawnPoint _foodSpawnPoint;
 
     private void Start()
@@ -50,13 +51,14 @@ public class PlayerPickUpController : MonoBehaviour
         {
             hasRefillAccess = true;
             _foodSpawnPoint = other.GetComponent<FoodSpawnPoint>();
-            print("RefillKitchen: " + hasRefillAccess);
+            print("RefillKitchen Access: " + hasRefillAccess);
         }
 
         if (other.GetComponent<RefillStationController>())
         {
             hasRefillStationAccess = true;
-            print("Refill: " + hasRefillStationAccess);
+            _refillStationController = other.GetComponent<RefillStationController>();
+            print("Refill Access: " + hasRefillStationAccess + "|| Got RefillStationController Component: " + _refillStationController.enabled);
         }
     }
 
@@ -101,11 +103,14 @@ public class PlayerPickUpController : MonoBehaviour
         return _carriedMenu;
     }
 
+
+    #region RefillStation
+    
     public void PickUpRefill()
     {
-        if (hasRefillStationAccess)
+        if (hasRefillStationAccess && _refillStationController.GetAvailableItems() > 0)
         {
-            _refillItems += 10;
+            _refillItems = _refillStationController.RefillStockOnPlayer();
             print("RefillItems PickUp: " + _refillItems);
         }
     }
@@ -120,4 +125,6 @@ public class PlayerPickUpController : MonoBehaviour
             print("RefillItems Kitchen: " + _refillItems);
         }
     }
+    
+    #endregion
 }
