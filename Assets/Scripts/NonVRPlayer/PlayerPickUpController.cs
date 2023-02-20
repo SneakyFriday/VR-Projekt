@@ -114,6 +114,7 @@ public class PlayerPickUpController : MonoBehaviour
     {
         if (hasRefillAccess && _refillItems > 0)
         {
+            if(_foodSpawnPoint.GetAvailableItems() >= _foodSpawnPoint.GetMaxItemsAvailable()) return;
             _foodSpawnPoint.RefillItems();
             _refillItems -= 1;
             print("RefillItems Kitchen: " + _refillItems);

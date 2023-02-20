@@ -12,15 +12,16 @@ public class FoodSpawnPoint : MonoBehaviour
     public Animator animator;
     
     [SerializeField] private Image refillImage;
-    private int _availableItemsCount;
+    
+    private float _availableItemsCount;
     private bool itemAvailable;
-    private int maxItemsAvailable = 10;
+    private float maxItemsAvailable = 10f;
     private List<Collider> registeredColliders = new();
     private static readonly int SpawnBeamActive = Animator.StringToHash("spawnBeamActive");
 
     private void Start()
     {
-        _availableItemsCount = 0;
+        _availableItemsCount = maxItemsAvailable;
         if(refillImage != null) refillImage.fillAmount = 1;
         Instantiate(spawnedObject, spawnPosition.position + new Vector3(0,0.05f,0), Quaternion.identity);
         itemAvailable = true;
@@ -28,7 +29,7 @@ public class FoodSpawnPoint : MonoBehaviour
 
     void Update()
     {
-        if (!itemAvailable)
+        if (!itemAvailable && _availableItemsCount > 0)
         {
             StartCoroutine(SpawnItem());
         }
@@ -38,7 +39,6 @@ public class FoodSpawnPoint : MonoBehaviour
     {
         itemAvailable = true;
         yield return new WaitForSeconds(spawnDelay);
-        refillImage.fillAmount -= 0.1f;
         animator.SetTrigger(SpawnBeamActive);
         Instantiate(spawnedObject, spawnPosition.position, Quaternion.identity);
         itemAvailable = true;
@@ -47,7 +47,7 @@ public class FoodSpawnPoint : MonoBehaviour
     public void RefillItems()
     {
         _availableItemsCount += 1;
-        refillImage.fillAmount = _availableItemsCount / 100;
+        refillImage.fillAmount = _availableItemsCount / 10;
         print("Refilled Items at Kitchen: " + _availableItemsCount);
     }
 
@@ -62,8 +62,20 @@ public class FoodSpawnPoint : MonoBehaviour
                 return;
             }
             registeredColliders.Add(other.gameObject.GetComponent<Collider>());
+            _availableItemsCount -= 1;
+            refillImage.fillAmount = _availableItemsCount / 10;
             itemAvailable = false;
             print("Item taken: " + other.gameObject.name);
         }
+    }
+
+    public int GetAvailableItems()
+    {
+        return (int)_availableItemsCount;
+    }
+
+    public int GetMaxItemsAvailable()
+    {
+        return (int)maxItemsAvailable;
     }
 }
