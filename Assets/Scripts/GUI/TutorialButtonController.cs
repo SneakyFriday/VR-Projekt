@@ -8,6 +8,6 @@ public class TutorialButtonController : MonoBehaviour
 
     public void StartTutorial()
     {
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene("Tutorial");
     }
 }
