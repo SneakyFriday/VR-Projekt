@@ -14,6 +14,9 @@ public class TutorialController : MonoBehaviour
     public Image progressBar;
     private int currentImageIndex = 0;
 
+    // Add the ScrollingText component to the tutorial controller
+    public ScrollingText scrollingText;
+
     void Start()
     {
         imageDisplay.sprite = images[currentImageIndex];
@@ -34,6 +37,10 @@ public class TutorialController : MonoBehaviour
             return;
         }
 
+        // Activate the scrolling text for the current image
+        scrollingText.itemInfo = imageTexts[currentImageIndex].Split('\n');
+        scrollingText.ActivateText();
+
         currentImageIndex = (currentImageIndex + 1) % images.Length;
         imageDisplay.sprite = images[currentImageIndex];
         imageTextDisplay.text = imageTexts[currentImageIndex];
@@ -46,6 +53,10 @@ public class TutorialController : MonoBehaviour
 
     void ShowPreviousImage()
     {
+        // Activate the scrolling text for the current image
+        scrollingText.itemInfo = imageTexts[currentImageIndex].Split('\n');
+        scrollingText.ActivateText();
+
         currentImageIndex = (currentImageIndex - 1 + images.Length) % images.Length;
         imageDisplay.sprite = images[currentImageIndex];
         imageTextDisplay.text = imageTexts[currentImageIndex];
