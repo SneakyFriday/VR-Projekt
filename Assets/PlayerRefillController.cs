@@ -35,7 +35,7 @@ public class PlayerRefillController : MonoBehaviour
 
     public void ShowAndFade(bool atStation)
     {
-        refillText.text = atStation ? "+ Item" : "- Item";
+        refillText.text = atStation ? "+ Fuel" : "- Fuel";
         refillText.gameObject.SetActive(true);
         refillText.color = new Color(refillText.color.r, refillText.color.g, refillText.color.b, 1.0f);
         isFading = true;
