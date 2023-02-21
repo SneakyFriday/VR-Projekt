@@ -737,6 +737,7 @@ MonoBehaviour:
   displayTime: 1
   fadeTime: 1
   subtractTime: 15
+  AddPointsText: {fileID: 5290192332649367451, guid: 5f4c9f48f6e29554f9ffd24e344612c0, type: 3}
 --- !u!1 &6240232711896036697
 GameObject:
   m_ObjectHideFlags: 0
