@@ -8,21 +8,24 @@ public class InteractionScript : MonoBehaviour
 {
     [Header("Pickup Options")]
     [SerializeField] private float _pickupRange = 3;
-    [SerializeField] private float _pickupDistance = 7.0f;
-    [SerializeField] private float _pickupHeight = 1.29f;
+    
+    
     [SerializeField] private LayerMask _pickupLayer;
 
     [Header("View")] [SerializeField]
     private Camera _camera;
     
+    private float _rotationHeight = 1.29f;
     private Transform _pivotPoint;
     private Transform _rotationTarget;
     private Transform _pickupPoint;
     private PlayerInput _input;
     private Vector2 _swivelInput;
     private float _rotation;
-    private Rigidbody _object;
-
+    private float _pickupDistance = 7.0f;
+    
+    public Rigidbody _object;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -44,7 +47,7 @@ public class InteractionScript : MonoBehaviour
             Vector3 direction = _pickupPoint.position - _object.position;
                     float distance = direction.magnitude;
             
-                    _object.velocity = direction * 12f * distance;
+                    _object.velocity = direction * 32f * distance;
         }
         
     }
@@ -81,7 +84,7 @@ public class InteractionScript : MonoBehaviour
         Vector2 relativeInput = _swivelInput * relative;
         */
 
-        _rotationTarget.localPosition = new Vector3(_swivelInput.x*_pickupDistance, _pickupHeight, _swivelInput.y*_pickupDistance);
+        _rotationTarget.localPosition = new Vector3(_swivelInput.x*_pickupDistance, _rotationHeight, _swivelInput.y*_pickupDistance);
         _pivotPoint.LookAt(_rotationTarget);
     }
     private void KeyboardSwivel(InputAction.CallbackContext context)
@@ -104,7 +107,7 @@ public class InteractionScript : MonoBehaviour
         direction.Normalize();
         
         // Does the Rotation
-        _rotationTarget.localPosition = new Vector3(direction.x*_pickupDistance, _pickupHeight, direction.y*_pickupDistance);
+        _rotationTarget.localPosition = new Vector3(direction.x*_pickupDistance, _rotationHeight, direction.y*_pickupDistance);
 
         transform.LookAt(new Vector3(point.x, transform.position.y, point.z));
 
@@ -133,7 +136,7 @@ public class InteractionScript : MonoBehaviour
     // (Physical Pickup in FixedUpdate Method)
     private void DetectObject()
     {
-        Collider[] objects = Physics.OverlapSphere(_rotationTarget.position, _pickupRange, _pickupLayer);
+        Collider[] objects = Physics.OverlapSphere(_pickupPoint.position, _pickupRange, _pickupLayer);
         if (objects[0])
         {
             _object = objects[0].attachedRigidbody;
