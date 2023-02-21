@@ -34,6 +34,7 @@ TagManager:
   - salat_whole
   - tray
   - floor
+  - refillShip
   layers:
   - Default
   - TransparentFX
