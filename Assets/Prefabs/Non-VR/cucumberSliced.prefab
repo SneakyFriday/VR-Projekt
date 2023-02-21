@@ -338,7 +338,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 461ca674768b41d48be9555f18ed7036, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selfDestruct: 5
+  selfDestruct: 7
 --- !u!1 &2829590167219847627
 GameObject:
   m_ObjectHideFlags: 0
@@ -734,6 +734,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveRadius: 1.5
   moveSpeed: 1
+  isFalling: 0
+  fallgeschwindingkeit: 10
 --- !u!114 &6093753567912196650
 MonoBehaviour:
   m_ObjectHideFlags: 0

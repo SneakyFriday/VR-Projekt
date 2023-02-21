@@ -8,15 +8,26 @@ public class randomMover : MonoBehaviour
     private Vector3 startingPosition; // Die Startposition des Objekts
     private Vector3 targetPosition; // Die Zielposition des Objekts
     private bool movingToTarget = false; // Gibt an, ob sich das Objekt gerade zur Zielposition bewegt
+    public bool isFalling;
+    public float fallgeschwindingkeit = 10f;
 
     private void Start()
     {
-        startingPosition = transform.position;
+        startingPosition = new Vector3 (transform.position.x, 0.1f, transform.position.z);
+        print(startingPosition);
         targetPosition = GetRandomPosition();
+        isFalling = true;
     }
 
     private void Update()
     {
+        if (isFalling ){
+            transform.Translate(Vector3.down * Time.deltaTime * fallgeschwindingkeit);
+        }
+        if (transform.position.y <= 0.1f){
+            isFalling = false;
+        }
+
         if (!movingToTarget)
         {
             // Wenn sich das Objekt nicht zur Zielposition bewegt, wähle eine neue zufällige Position aus
