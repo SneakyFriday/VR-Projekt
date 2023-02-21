@@ -8,4 +8,9 @@ public class destroyOnContact : MonoBehaviour
   {
       Destroy(gameObject);
   }
+  private void Update(){
+  if (transform.position.y < -1)
+  {
+      Destroy(gameObject);
+  }}
 }

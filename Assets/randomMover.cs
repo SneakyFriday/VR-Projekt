@@ -14,7 +14,6 @@ public class randomMover : MonoBehaviour
     private void Start()
     {
         startingPosition = new Vector3 (transform.position.x, 0.1f, transform.position.z);
-        print(startingPosition);
         targetPosition = GetRandomPosition();
         isFalling = true;
     }
