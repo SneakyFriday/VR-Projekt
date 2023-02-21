@@ -71,5 +71,10 @@ public class TutorialController : MonoBehaviour
     {
         int progressPercent = Mathf.RoundToInt((float)currentImageIndex / (images.Length - 1) * 100f);
         progressText.text = $"{progressPercent}%";
+
+        if (progressPercent == 100)
+        {
+            PlayerPrefs.SetInt("tutorialCompleted", 1);
+        }
     }
 }
