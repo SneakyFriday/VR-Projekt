@@ -109,6 +109,13 @@ public class PlayerPickUpController : MonoBehaviour
         testScore.text = "Score: " + _currentScore;
         shiftEndResume.HandleTextValues(_servedCustomers, 0, 0, _currentScore, 0, 0);
     }
+    
+    public void ChangeCurrentScore(int score)
+    {
+        _currentScore += score;
+        testScore.text = "Score: " + _currentScore;
+        shiftEndResume.HandleTextValues(_servedCustomers, 0, 0, _currentScore, 0, 0);
+    }
 
     /**
      * Gibt das aktuelle Menu des Spielers zurück.
