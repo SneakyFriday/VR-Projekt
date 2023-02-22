@@ -2,64 +2,79 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-
 public class TutorialController : MonoBehaviour
 {
-    public Sprite[] images; // Das Image Array für die Bilder die angezeigt werden sollen
-    public string[] imageTexts; // Array für die Texte die zu den Bildern gehören
-    public Image imageDisplay; // Das Image Objekt das die Bilder anzeigt
-    public TMP_Text imageTextDisplay; // Text Objekt das den Text zu den Bildern anzeigt
-    public Button nextButton; // Button um zum nächsten Bild zu wechseln
-    public Button previousButton; // Button um zum vorherigen Bild zu wechseln
-    private int currentImageIndex = 0; // Der Index des aktuellen Bildes
-    public Slider progressBar; // Slider zum anzeigen des Fortschritts der Tutorial Galerie 
-    public TMP_Text progressText; // TextMeshPro text zum anzeigen des Fortschritts der Tutorial Galerie
+    public Sprite[] images;
+    [TextArea] public string[] imageTexts;
+    public Image imageDisplay;
+    public TMP_Text imageTextDisplay;
+    public TMP_Text progressText;
+    public Button nextButton;
+    public Button previousButton;
+    public Image progressBar;
+    private int currentImageIndex = 0;
 
-
-
+    // Add the ScrollingText component to the tutorial controller
+    public ScrollingText scrollingText;
 
     void Start()
     {
-        // Setze das erste Bild als Anzeige Bild und füge die Listener für die Buttons hinzu 
         imageDisplay.sprite = images[currentImageIndex];
         imageTextDisplay.text = imageTexts[currentImageIndex];
-
-        // Setze den Wert des Sliders auf den aktuellen Bild Index geteilt durch die Anzahl der Bilder
-        progressBar.value = (float)currentImageIndex / (images.Length - 1);
-        progressText.text = (progressBar.value * 100f).ToString("F0") + "%";
+        progressBar.fillAmount = (float)currentImageIndex / (images.Length - 1);
+        UpdateProgressText();
 
         nextButton.onClick.AddListener(ShowNextImage);
         previousButton.onClick.AddListener(ShowPreviousImage);
     }
 
-    // Funktion um das nächste Bild in der Galerie anzuzeigen
     void ShowNextImage()
     {
-        // Inkrementiere den aktuellen Bild Index und loope zurück zum Anfang wenn nötig
+        if (progressBar.fillAmount >= 1f)
+        {
+            // If the progress is already at 100%, disable the next button and return
+            nextButton.interactable = false;
+            return;
+        }
+
+        // Activate the scrolling text for the current image
+        scrollingText.itemInfo = imageTexts[currentImageIndex].Split('\n');
+        scrollingText.ActivateText();
+
         currentImageIndex = (currentImageIndex + 1) % images.Length;
-        // Aktualisiere das Bild das angezeigt wird mit dem neuen Bild
         imageDisplay.sprite = images[currentImageIndex];
         imageTextDisplay.text = imageTexts[currentImageIndex];
+        progressBar.fillAmount = (float)currentImageIndex / (images.Length - 1);
+        UpdateProgressText();
 
-        // Update die Position des Sliders mit dem aktuellen Bild Index geteilt durch die Anzahl der Bilder
-        progressBar.value = (float)currentImageIndex / (images.Length - 1);
-        progressText.text = (progressBar.value * 100f).ToString("F0") + "%";
+        // Re-enable the next button in case it was previously disabled
+        nextButton.interactable = true;
     }
 
-    // Funktion um das vorherige Bild in der Galerie anzuzeigen
     void ShowPreviousImage()
     {
-        // Dekrementiere den aktuellen Bild Index und loope zum Ende wenn nötig 
+        // Activate the scrolling text for the current image
+        scrollingText.itemInfo = imageTexts[currentImageIndex].Split('\n');
+        scrollingText.ActivateText();
+
         currentImageIndex = (currentImageIndex - 1 + images.Length) % images.Length;
-        // Aktualisiere das Bild das angezeigt wird mit dem neuen Bild
         imageDisplay.sprite = images[currentImageIndex];
         imageTextDisplay.text = imageTexts[currentImageIndex];
+        progressBar.fillAmount = (float)currentImageIndex / (images.Length - 1);
+        UpdateProgressText();
 
-        // Update die Position des Sliders mit dem aktuellen Bild Index geteilt durch die Anzahl der Bilder
-        progressBar.value = (float)currentImageIndex / (images.Length - 1);
-        progressText.text = (progressBar.value * 100f).ToString("F0") + "%";
+        // Re-enable the next button if it was disabled
+        nextButton.interactable = true;
     }
 
+    void UpdateProgressText()
+    {
+        int progressPercent = Mathf.RoundToInt((float)currentImageIndex / (images.Length - 1) * 100f);
+        progressText.text = $"{progressPercent}%";
 
+        if (progressPercent == 100)
+        {
+            PlayerPrefs.SetInt("tutorialCompleted", 1);
+        }
+    }
 }
-
