@@ -33,6 +33,9 @@ public class PlayerRefillController : MonoBehaviour
         refillText.transform.LookAt(refillText.transform.position + Camera.main.transform.rotation * Vector3.forward, Camera.main.transform.rotation * Vector3.up);
     }
 
+    /**
+     * Zeigt den Text über Spieler an und startet den Fade Effekt
+     */
     public void ShowAndFade(bool atStation)
     {
         refillText.text = atStation ? "+ Fuel" : "- Fuel";

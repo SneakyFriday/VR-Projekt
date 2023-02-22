@@ -22,6 +22,9 @@ public class PlayerPickUpController : MonoBehaviour
     private RefillStationController _refillStationController;
     private FoodSpawnPoint _foodSpawnPoint;
 
+    /**
+     * Hier ist ein Test Menu auskommentiert, welches zum Debuggen genutzt werden kann
+     */
     private void Start()
     {
         //testMenu.Add("bun_top");
@@ -78,6 +81,11 @@ public class PlayerPickUpController : MonoBehaviour
         }
     }
 
+    /**
+     * Bei Menuabgabe beim Gast wird das Menu geleert.
+     * Der Spieler kann wieder ein neues Menu tragen.
+     * Das Tablet wird deaktiviert.
+     */
     public void DisableTray()
     {
         //print("Disabling Tray");
@@ -90,6 +98,10 @@ public class PlayerPickUpController : MonoBehaviour
         }
     }
 
+    /**
+     * Punkte werden gesetzt
+     * Bediente Gäste werden gezählt
+     */
     public void SetScore()
     {
         _servedCustomers += 1;
@@ -98,6 +110,9 @@ public class PlayerPickUpController : MonoBehaviour
         shiftEndResume.HandleTextValues(_servedCustomers, 0, 0, _currentScore, 0, 0);
     }
 
+    /**
+     * Gibt das aktuelle Menu des Spielers zurück.
+     */
     public List<string> GetMenuItemsFromPlayer()
     {
         //return testMenu;
@@ -107,16 +122,24 @@ public class PlayerPickUpController : MonoBehaviour
 
     #region RefillStation
     
+    /**
+     * Player bekommt von der RefillStation die Refillanzahl.
+     * Bis zu 10 Items kann der Spieler tragen.
+     */
     public void PickUpRefill()
     {
         if (hasRefillStationAccess && _refillStationController.GetAvailableItems() > 0)
         {
-            _refillItems = _refillStationController.RefillStockOnPlayer();
+            if(_refillItems >= 10) return;
+            _refillItems += _refillStationController.RefillStockOnPlayer();
             playerRefillController.ShowAndFade(true);
             print("RefillItems PickUp: " + _refillItems);
         }
     }
 
+    /**
+     * Player füllt die Items in der Kitchen auf.
+     */
     public void RefillItems()
     {
         if (hasRefillAccess && _refillItems > 0)

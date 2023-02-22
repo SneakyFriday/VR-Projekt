@@ -32,10 +32,10 @@ public class RefillStationController : MonoBehaviour
     
     public int RefillStockOnPlayer()
     {
-        print("Refilling Player with: " + currentRefillItemCount);
+        //print("Refilling Player with: " + currentRefillItemCount);
         currentRefillItemCount -= refillAmountOnPlayer;
         print("Left on Station: " + currentRefillItemCount);
-        return currentRefillItemCount;
+        return refillAmountOnPlayer;
     }
 
      public void Start()
