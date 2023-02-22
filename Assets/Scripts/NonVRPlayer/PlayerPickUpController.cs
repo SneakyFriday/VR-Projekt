@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerPickUpController : MonoBehaviour
 {
@@ -9,6 +10,8 @@ public class PlayerPickUpController : MonoBehaviour
     [SerializeField] private bool isCarrying;
     [SerializeField] private ShiftEndResume shiftEndResume;
     [SerializeField] private PlayerRefillController playerRefillController;
+    [SerializeField] private Image _refillImage;
+    [SerializeField] private TextMeshProUGUI _refillText;
 
     private List<string> _carriedMenu;
     //private List<String> testMenu = new();
@@ -32,6 +35,8 @@ public class PlayerPickUpController : MonoBehaviour
         //testMenu.Add("Patty_done");
         //testMenu.Add("bun_buttom");
         
+        _refillImage.fillAmount = 0;
+        _refillText.text = _refillItems.ToString();
         _carriedMenu = new List<string>();
     }
 
@@ -140,6 +145,8 @@ public class PlayerPickUpController : MonoBehaviour
             if(_refillItems >= 10) return;
             _refillItems += _refillStationController.RefillStockOnPlayer();
             playerRefillController.ShowAndFade(true);
+            _refillImage.fillAmount = _refillItems / 10f;
+            _refillText.text = _refillItems.ToString();
             print("RefillItems PickUp: " + _refillItems);
         }
     }
@@ -155,6 +162,8 @@ public class PlayerPickUpController : MonoBehaviour
             playerRefillController.ShowAndFade(false);
             _foodSpawnPoint.RefillItems();
             _refillItems -= 1;
+            _refillImage.fillAmount = _refillItems / 10f;
+            _refillText.text = _refillItems.ToString();
             print("RefillItems Kitchen: " + _refillItems);
         }
     }
