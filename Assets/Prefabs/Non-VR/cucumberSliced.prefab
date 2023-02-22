@@ -245,6 +245,7 @@ GameObject:
   - component: {fileID: 4919850257226690559}
   - component: {fileID: 957816694215654764}
   - component: {fileID: 4130418817448470678}
+  - component: {fileID: 1774064245794413903}
   m_Layer: 7
   m_Name: '!willBestellen Icon'
   m_TagString: Untagged
@@ -325,6 +326,19 @@ MonoBehaviour:
   pulseSpeed: 1.3
   minScale: 0.8
   maxScale: 1.2
+--- !u!114 &1774064245794413903
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2800344807826469603}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 461ca674768b41d48be9555f18ed7036, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selfDestruct: 7
 --- !u!1 &2829590167219847627
 GameObject:
   m_ObjectHideFlags: 0
@@ -720,6 +734,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveRadius: 1.5
   moveSpeed: 1
+  isFalling: 0
+  fallgeschwindingkeit: 10
 --- !u!114 &6093753567912196650
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -737,6 +753,7 @@ MonoBehaviour:
   displayTime: 1
   fadeTime: 1
   subtractTime: 15
+  AddPointsText: {fileID: 5290192332649367451, guid: 5f4c9f48f6e29554f9ffd24e344612c0, type: 3}
 --- !u!1 &6240232711896036697
 GameObject:
   m_ObjectHideFlags: 0

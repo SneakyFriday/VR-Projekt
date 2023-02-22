@@ -9,10 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6310018067061663756}
+  - component: {fileID: 2927016854664517689}
   - component: {fileID: 8345919494651371249}
   - component: {fileID: 7888578633925396939}
   - component: {fileID: -1048209767300336417}
-  - component: {fileID: 2927016854664517689}
   m_Layer: 0
   m_Name: Egg_whole
   m_TagString: Untagged
@@ -36,6 +36,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &2927016854664517689
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6822541496391884252}
+  m_Material: {fileID: 13400000, guid: 88a2127567114e149906e28577950403, type: 2}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.0048525, y: 2.205691, z: 1}
+  m_Center: {x: -0.025563389, y: 1.3702965, z: 0}
 --- !u!54 &8345919494651371249
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -186,19 +199,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxCutStrokes: 1
   cuttedPrefab: {fileID: 41215445842743935, guid: 0e02893c88728b34c88e66b7c85fa97e, type: 3}
---- !u!65 &2927016854664517689
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6822541496391884252}
-  m_Material: {fileID: 13400000, guid: 88a2127567114e149906e28577950403, type: 2}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.0048525, y: 2.205691, z: 1}
-  m_Center: {x: -0.025563389, y: 1.3702965, z: 0}
 --- !u!1001 &5500161183752124516
 PrefabInstance:
   m_ObjectHideFlags: 0

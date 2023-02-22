@@ -1,36 +1,27 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-using System.Collections;
 
-public class EnemyController : MonoBehaviour
+public class EnemyAddPoints : MonoBehaviour
 {
     public TextMeshProUGUI pointsText;
     public int pointsToDisplay;
     public float displayTime;
     public float fadeTime;
-    public float subtractTime;
-    public GameObject AddPointsText;
 
     private bool hasBeenDestroyed = false;
 
     public void Start()
     {
-        InvokeRepeating("SubtractPoints", subtractTime, subtractTime);
+        AddPoints();
     }
 
     // Hier werden die Punkte angezeigt. Es wird ein kleiner Animationseffekt hinzugefügt.
-    private IEnumerator DisplayPoints()
+    private IEnumerator DisplayPoints(int pointsToDisplay)
     {
-        if (pointsToDisplay < 3)
-        {
-            pointsText.text = "-" + Mathf.Abs(pointsToDisplay).ToString() + " points";
-            pointsText.color = Color.red;
-        }
-        else
-        {
             pointsText.text = "+" + pointsToDisplay.ToString() + " points";
             pointsText.color = Color.green;
-        }
 
     pointsText.transform.position = transform.position + Vector3.up * 1f;
     pointsText.CrossFadeAlpha(1f, fadeTime, false);
@@ -54,31 +45,20 @@ public class EnemyController : MonoBehaviour
     yield break;
 }
 
-    // Zieht eine Punktezahl nach einer gewissen Zeit ab.
-    public void SubtractPoints()
-    {
-        pointsToDisplay = -2;
-        StartCoroutine(DisplayPoints());
-    }
-
     // Vergibt einmalig eine gesetzte Punktzahl
     public void AddPoints()
     {
         if (!hasBeenDestroyed)
         {
-
-            Instantiate(AddPointsText, transform.position, Quaternion.identity);
+            pointsToDisplay = 10;
+            StartCoroutine(DisplayPoints(pointsToDisplay));
             hasBeenDestroyed = true;
-            Destroy(gameObject);
+            Invoke("Destroy", 2f);
         }
     }
 
-    // Sobald der Spieler den Gegner berührt, wird die Punktzahl vergeben und der Gegner zerstört.
-    void OnTriggerEnter(Collider collider)
+    public void Destroy ()
     {
-        if (collider.CompareTag("PlayerContainer"))
-        {
-            AddPoints();
-        }
+        Destroy(gameObject);
     }
 }
