@@ -74,7 +74,7 @@ public class TutorialController : MonoBehaviour
 
         if (progressPercent == 100)
         {
-            PlayerPrefs.SetInt("tutorialCompleted", 1);
+            PlayerPrefs.SetInt("tutCompleted", 1);
         }
     }
 }
