@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,7 +11,7 @@ public class FoodSpawnPoint : MonoBehaviour
     public Animator animator;
     
     [SerializeField] private Image refillImage;
-    
+
     private float _availableItemsCount;
     private bool itemAvailable;
     private float maxItemsAvailable = 10f;
