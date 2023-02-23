@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &5474717407581717785
+--- !u!1 &3072489562823616162
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,48 +8,48 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 5472988313374087587}
-  - component: {fileID: 5443429914875801891}
-  - component: {fileID: 5452044722742574961}
-  - component: {fileID: 5411340204246839363}
-  - component: {fileID: 1654299288811434104}
-  m_Layer: 0
-  m_Name: SM_Prop_Stool_01
-  m_TagString: Untagged
+  - component: {fileID: 2730003726523946237}
+  - component: {fileID: 1759300873353011210}
+  - component: {fileID: 6569582202978970277}
+  - component: {fileID: 1930321797775065140}
+  - component: {fileID: -7864219337968136950}
+  m_Layer: 9
+  m_Name: CucumberSliced.004 (1)
+  m_TagString: BodyPart
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &5472988313374087587
+--- !u!4 &2730003726523946237
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5474717407581717785}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.00061983, y: 0.20164, z: 0.063241}
-  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
-  m_ConstrainProportionsScale: 1
+  m_GameObject: {fileID: 3072489562823616162}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -7.4647007, y: 0.12, z: 0.15396227}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.34}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &5443429914875801891
+--- !u!33 &1759300873353011210
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5474717407581717785}
-  m_Mesh: {fileID: 4300000, guid: f143a78ccb4199042bb1d2e520f46960, type: 3}
---- !u!23 &5452044722742574961
+  m_GameObject: {fileID: 3072489562823616162}
+  m_Mesh: {fileID: 5017497810213661924, guid: 8d0852e4769b9c247ad02039ebb63d85, type: 3}
+--- !u!23 &6569582202978970277
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5474717407581717785}
+  m_GameObject: {fileID: 3072489562823616162}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -63,7 +63,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 4cee7a5983b187943adc589b9cb1f084, type: 2}
+  - {fileID: 2100000, guid: 9fc1a1f5b303fa246901f07b074a72d6, type: 2}
+  - {fileID: 2100000, guid: b764107a037bfcb469c935aa5d5c71c4, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -85,29 +86,30 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &5411340204246839363
-MeshCollider:
+--- !u!65 &1930321797775065140
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5474717407581717785}
+  m_GameObject: {fileID: 3072489562823616162}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 43301591695294798, guid: e803962aaa4537e4c949b48e1eee2b2b, type: 2}
---- !u!114 &1654299288811434104
+  serializedVersion: 2
+  m_Size: {x: 1.9182649, y: 1.9182644, z: 0.48712915}
+  m_Center: {x: 0, y: 0, z: 0.7664605}
+--- !u!114 &-7864219337968136950
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5474717407581717785}
-  m_Enabled: 0
+  m_GameObject: {fileID: 3072489562823616162}
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6e21e04ccba1f8c48b1d08e2af18daeb, type: 3}
+  m_Script: {fileID: 11500000, guid: e0f934b2b08deeb43b04f8b2b831380a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  destroyHeight: -1
+  colliderDisableDelay: 2

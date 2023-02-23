@@ -10,6 +10,8 @@ public class EnemyController : MonoBehaviour
     public float fadeTime;
     public float subtractTime;
     public GameObject AddPointsText;
+    public GameObject DeathAnimationPrefab;
+    public GameObject EnemyReamains;
 
     [SerializeField] private int scoreForEnemy = 10;
     
@@ -72,6 +74,7 @@ public class EnemyController : MonoBehaviour
         if (!hasBeenDestroyed)
         {
             Instantiate(AddPointsText, transform.position, Quaternion.identity);
+            Instantiate(EnemyReamains, new Vector3 (transform.position.x, 0.1f, transform.position.z ), Quaternion.identity);
             playerPickUpController.ChangeCurrentScore(scoreForEnemy);
             hasBeenDestroyed = true;
             Destroy(gameObject);
@@ -84,6 +87,11 @@ public class EnemyController : MonoBehaviour
         if (collider.CompareTag("PlayerContainer"))
         {
             AddPoints();
+            DeathAnimation();
+            print("Player touched the enemy");
         }
+    }
+    void DeathAnimation(){
+        Instantiate(DeathAnimationPrefab, transform.position, Quaternion.identity);
     }
 }
