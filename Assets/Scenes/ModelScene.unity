@@ -47094,7 +47094,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ab89603edca928c4ea1d5ba90e2b77af, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.054
+      value: 1.404
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ab89603edca928c4ea1d5ba90e2b77af, type: 3}
       propertyPath: m_LocalPosition.z
@@ -51418,7 +51418,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8476463100935973685, guid: f1098ce63d6f5d740bfe53b425273e73, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.151
+      value: -3.106
       objectReference: {fileID: 0}
     - target: {fileID: 8476463100935973685, guid: f1098ce63d6f5d740bfe53b425273e73, type: 3}
       propertyPath: m_LocalPosition.y
@@ -51426,7 +51426,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8476463100935973685, guid: f1098ce63d6f5d740bfe53b425273e73, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 3.26
+      value: 2.505
       objectReference: {fileID: 0}
     - target: {fileID: 8476463100935973685, guid: f1098ce63d6f5d740bfe53b425273e73, type: 3}
       propertyPath: m_LocalRotation.w
@@ -51459,6 +51459,10 @@ PrefabInstance:
     - target: {fileID: 8476463100980827219, guid: f1098ce63d6f5d740bfe53b425273e73, type: 3}
       propertyPath: m_Depth
       value: -100
+      objectReference: {fileID: 0}
+    - target: {fileID: 8476463100980827219, guid: f1098ce63d6f5d740bfe53b425273e73, type: 3}
+      propertyPath: far clip plane
+      value: 10000
       objectReference: {fileID: 0}
     - target: {fileID: 8476463100980827231, guid: f1098ce63d6f5d740bfe53b425273e73, type: 3}
       propertyPath: m_Layer
@@ -51588,15 +51592,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 825274838, guid: 343c38af19bdd40448d4dac7d2fdd216, type: 3}
       propertyPath: middayShiftLength
-      value: 45
+      value: 120
       objectReference: {fileID: 0}
     - target: {fileID: 825274838, guid: 343c38af19bdd40448d4dac7d2fdd216, type: 3}
       propertyPath: eveningShiftLength
-      value: 45
+      value: 120
       objectReference: {fileID: 0}
     - target: {fileID: 825274838, guid: 343c38af19bdd40448d4dac7d2fdd216, type: 3}
       propertyPath: morningShiftLength
-      value: 45
+      value: 120
       objectReference: {fileID: 0}
     - target: {fileID: 825274838, guid: 343c38af19bdd40448d4dac7d2fdd216, type: 3}
       propertyPath: settingsController
