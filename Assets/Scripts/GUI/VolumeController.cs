@@ -11,23 +11,19 @@ public class VolumeController : MonoBehaviour
     public AudioSource audioSource;
     public TextMeshProUGUI volumeText;
 
-    void Start()
+    private void Start()
     {
-        volumeSlider.value = PlayerPrefs.GetFloat("Volume", 1f);
-        volumeSlider.value = settingsScriptableObject.volume;
+        volumeSlider.value = PlayerPrefs.GetFloat("Volume", settingsScriptableObject.volume);
     }
 
     public void SetVolume()
     {
-        audioSource.volume = volumeSlider.value;
-        PlayerPrefs.SetFloat("Volume", volumeSlider.value);
+        if (audioSource != null && volumeSlider != null)
+        {
+            audioSource.volume = volumeSlider.value;
+            PlayerPrefs.SetFloat("Volume", volumeSlider.value);
 
-        volumeText.text = Mathf.RoundToInt(volumeSlider.value * 100) + "%";
+            volumeText.text = $"{Mathf.RoundToInt(volumeSlider.value * 100)}%";
+        }
     }
 }
-
-
-
-
-
-

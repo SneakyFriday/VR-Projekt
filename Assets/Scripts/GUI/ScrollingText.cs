@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.InputSystem;
 
 public class ScrollingText : MonoBehaviour
 {
@@ -14,8 +15,22 @@ public class ScrollingText : MonoBehaviour
     [SerializeField] private Button noButton;
     [SerializeField] private GameObject tutorialCanvas;
     [SerializeField] private GameObject tutorialDialogue;
+    private DefaultInputActions inputActions;
     private int currentItemIndex = 0;
 
+
+
+    void OnEnable()
+    {
+        inputActions = new DefaultInputActions();
+        inputActions.UI.Enable();
+    }
+
+        void OnDisable()
+    {
+        inputActions.UI.Disable();
+        inputActions.Dispose();
+    }
 
     void Start()
     {
@@ -24,7 +39,8 @@ public class ScrollingText : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        // also use  the submit binding from the default input actions asset to advance the text 
+        if (Input.GetKeyDown(KeyCode.Space) || inputActions.UI.Submit.triggered)
         {
             currentItemIndex++; // Increment to the next item in the array
             if (currentItemIndex == 2)

@@ -10,8 +10,4 @@ public class StartButtonController : MonoBehaviour
         SceneManager.LoadScene("ModelScene");
     }
 
-    public void tutorialCompleted() 
-    {
-        PlayerPrefs.SetInt("tutCompleted", 1);
-    }
 }

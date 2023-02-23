@@ -77,6 +77,12 @@ public class PlayerController : MonoBehaviour
         {
             // TODO: Change to Dash-Function
             print("Dashing!");
+
+            // Add a force in whatever direction the player is facing
+            playerVelocity.y += Mathf.Sqrt(dashPower * -3.0f * gravityValue);
+            hasDashed = false;
+
+
         }
 
         playerVelocity.y += gravityValue * Time.deltaTime;
