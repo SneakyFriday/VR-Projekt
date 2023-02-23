@@ -11,10 +11,14 @@ public class EnemyController : MonoBehaviour
     public float subtractTime;
     public GameObject AddPointsText;
 
+    [SerializeField] private int scoreForEnemy = 10;
+    
     private bool hasBeenDestroyed = false;
+    private PlayerPickUpController playerPickUpController;
 
     public void Start()
     {
+        playerPickUpController = FindObjectOfType<PlayerPickUpController>();
         InvokeRepeating("SubtractPoints", subtractTime, subtractTime);
     }
 
@@ -58,16 +62,17 @@ public class EnemyController : MonoBehaviour
     public void SubtractPoints()
     {
         pointsToDisplay = -2;
+        playerPickUpController.ChangeCurrentScore(pointsToDisplay);
         StartCoroutine(DisplayPoints());
     }
 
     // Vergibt einmalig eine gesetzte Punktzahl
-    public void AddPoints()
+    private void AddPoints()
     {
         if (!hasBeenDestroyed)
         {
-
             Instantiate(AddPointsText, transform.position, Quaternion.identity);
+            playerPickUpController.ChangeCurrentScore(scoreForEnemy);
             hasBeenDestroyed = true;
             Destroy(gameObject);
         }
