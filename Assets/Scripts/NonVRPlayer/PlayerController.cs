@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
@@ -11,7 +12,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float gravityValue = -9.81f;
     [SerializeField] private PlayerPickUpController playerPickUpController;
     [SerializeField] private PlayerRefillController playerRefillController;
-
+    
+    private trashCan trashCan;
     private CharacterController _controller;
     private Vector3 playerVelocity;
     private bool groundedPlayer;
@@ -46,8 +48,17 @@ public class PlayerController : MonoBehaviour
             playerInteraction.Invoke();
             playerPickUpController.PickUpRefill();
             playerPickUpController.RefillItems();
+            trashCan.UseTrashCan();
         }
         
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.GetComponent<trashCan>())
+        {
+            trashCan = other.GetComponent<trashCan>();
+        }
     }
 
     void Update()

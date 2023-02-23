@@ -17,9 +17,11 @@ public class FoodSpawnPoint : MonoBehaviour
     private float maxItemsAvailable = 10f;
     private List<Collider> registeredColliders = new();
     private static readonly int SpawnBeamActive = Animator.StringToHash("spawnBeamActive");
+    private bool _isAnimatorNotNull;
 
     private void Start()
     {
+        _isAnimatorNotNull = animator != null;
         _availableItemsCount = maxItemsAvailable;
         if(refillImage != null) refillImage.fillAmount = 1;
         Instantiate(spawnedObject, spawnPosition.position + new Vector3(0,0.05f,0), Quaternion.identity);
@@ -38,7 +40,7 @@ public class FoodSpawnPoint : MonoBehaviour
     {
         itemAvailable = true;
         yield return new WaitForSeconds(spawnDelay);
-        animator.SetTrigger(SpawnBeamActive);
+        if(_isAnimatorNotNull) animator.SetTrigger(SpawnBeamActive);
         Instantiate(spawnedObject, spawnPosition.position, Quaternion.identity);
         itemAvailable = true;
     }
@@ -46,7 +48,7 @@ public class FoodSpawnPoint : MonoBehaviour
     public void RefillItems()
     {
         _availableItemsCount += 1;
-        refillImage.fillAmount = _availableItemsCount / 10;
+        if(refillImage != null) refillImage.fillAmount = _availableItemsCount / 10;
         print("Refilled Items at Kitchen: " + _availableItemsCount);
     }
 
@@ -62,7 +64,7 @@ public class FoodSpawnPoint : MonoBehaviour
             }
             registeredColliders.Add(other.gameObject.GetComponent<Collider>());
             _availableItemsCount -= 1;
-            refillImage.fillAmount = _availableItemsCount / 10;
+            if(refillImage != null) refillImage.fillAmount = _availableItemsCount / 10;
             itemAvailable = false;
             print("Item taken: " + other.gameObject.name);
         }

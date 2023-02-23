@@ -6,7 +6,7 @@ public class isTutorialCompleted : MonoBehaviour
     void Start()
     {
 
-        PlayerPrefs.DeleteAll();
+        //PlayerPrefs.DeleteAll();
         if (PlayerPrefs.GetInt("tutCompleted", 0) == 1)
         {
             SceneManager.LoadScene("Start"); 

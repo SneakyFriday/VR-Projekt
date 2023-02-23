@@ -9,6 +9,8 @@ public class RefillStationController : MonoBehaviour
     [SerializeField] private int maxRefillItems = 10;
     [SerializeField] private int currentRefillItemCount = 10;
     [SerializeField] private int refillAmountOnPlayer = 1;
+    [SerializeField] private float refillTime = 5f;
+    [SerializeField] private float shipCallRepeatRate = 5f;
     public GameObject refillShip;
     public GameObject refillShipSpawnpoint;
     
@@ -42,6 +44,11 @@ public class RefillStationController : MonoBehaviour
      public void Start()
     {
         // Diese Zeile Code aus der Start Mehtode später rausnehmen und jedes mal aufrufen wenn die Station aufgefüllt werden soll.
-        Instantiate(refillShip, refillShipSpawnpoint.transform.position, refillShipSpawnpoint.transform.rotation);
+        InvokeRepeating(nameof(CallRefillShip), refillTime, shipCallRepeatRate);
     }
+     
+     private void CallRefillShip()
+     {
+         Instantiate(refillShip, refillShipSpawnpoint.transform.position, refillShipSpawnpoint.transform.rotation);
+     }
 }
