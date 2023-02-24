@@ -71,7 +71,7 @@ public class SettingsController : MonoBehaviour
     void Start()
     {
 
-        volumeText.text = "Volume: " + settingsScriptableObject.volume * 100 + "%";
+        volumeText.text = "Volume: " + settingsScriptableObject.volume + "%";
         spawnDelayText.text = "SpawnDelay: " + settingsScriptableObject.spawnDelay ;
         morningShiftText.text = "Morning Shift: " + settingsScriptableObject.morningShiftLength + "s";
         middayShiftText.text = "Midday Shift: " + settingsScriptableObject.middayShiftLength + "s";
@@ -203,7 +203,7 @@ public class SettingsController : MonoBehaviour
 
     public void UpdateSettings()
     {
-        volumeText.text = "Volume: " + settingsScriptableObject.volume * 100 + "%";
+        volumeText.text = "Volume: " + settingsScriptableObject.volume + "%";
         spawnDelayText.text = "SpawnDelay: " + settingsScriptableObject.spawnDelay;
         morningShiftText.text = "Morning Shift: " + settingsScriptableObject.morningShiftLength + "s";
         middayShiftText.text = "Midday Shift: " + settingsScriptableObject.middayShiftLength + "s";

@@ -7,6 +7,7 @@ public class StartButtonController : MonoBehaviour
 {
     public void StartGame() 
     {   
+        Time.timeScale = 1;
         SceneManager.LoadScene("ModelScene");
     }
 
