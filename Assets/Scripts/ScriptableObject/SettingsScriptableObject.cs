@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using Unity.VisualScripting.FullSerializer;
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.Events;
 
 
@@ -16,6 +17,7 @@ public class SettingsScriptableObject : ScriptableObject
     public float volume = 1f;
     public Vector3 offset = new Vector3(0, 0, 0);
     public float smoothSpeed = 10f;
+    public AudioMixer masterAudioMixer; 
 
     [System.Serializable]
     public class SettingsChangedEvent : UnityEvent { }

@@ -71,7 +71,7 @@ public class SettingsController : MonoBehaviour
     void Start()
     {
 
-        volumeText.text = "Volume: " + settingsScriptableObject.volume * 100 + "%";
+        volumeText.text = "Volume: " + settingsScriptableObject.volume + "%";
         spawnDelayText.text = "SpawnDelay: " + settingsScriptableObject.spawnDelay ;
         morningShiftText.text = "Morning Shift: " + settingsScriptableObject.morningShiftLength + "s";
         middayShiftText.text = "Midday Shift: " + settingsScriptableObject.middayShiftLength + "s";
@@ -142,7 +142,7 @@ public class SettingsController : MonoBehaviour
     {
         float newVolume = volumeSlider.value;
         settingsScriptableObject.volume = newVolume;
-        volumeText.text = "Volume: " + Mathf.RoundToInt(settingsScriptableObject.volume * 100) + "%"; 
+        volumeText.text = "Volume: " + Mathf.RoundToInt(settingsScriptableObject.volume) + "%"; 
         audioSource.volume = settingsScriptableObject.volume;
         OnSettingsChanged?.Invoke();
         if (VolumeChanged != null)
@@ -203,7 +203,7 @@ public class SettingsController : MonoBehaviour
 
     public void UpdateSettings()
     {
-        volumeText.text = "Volume: " + settingsScriptableObject.volume * 100 + "%";
+        volumeText.text = "Volume: " + settingsScriptableObject.volume + "%";
         spawnDelayText.text = "SpawnDelay: " + settingsScriptableObject.spawnDelay;
         morningShiftText.text = "Morning Shift: " + settingsScriptableObject.morningShiftLength + "s";
         middayShiftText.text = "Midday Shift: " + settingsScriptableObject.middayShiftLength + "s";

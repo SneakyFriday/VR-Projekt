@@ -13,7 +13,9 @@ public class VolumeController : MonoBehaviour
 
     private void Start()
     {
-        volumeSlider.value = PlayerPrefs.GetFloat("Volume", settingsScriptableObject.volume);
+        //volumeSlider.value = PlayerPrefs.GetFloat("Volume", settingsScriptableObject.volume);
+        volumeSlider.value = PlayerPrefs.GetFloat("Volume", 1f);
+        volumeSlider.value = settingsScriptableObject.volume;
     }
 
     public void SetVolume()
