@@ -6,6 +6,6 @@ using UnityEngine.SceneManagement;
 public class StartMenuController : MonoBehaviour
 {
     public void StartMenu() {   
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene("Start");
     }
 }

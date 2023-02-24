@@ -5,7 +5,6 @@ public class isTutorialCompleted : MonoBehaviour
 {
     void Start()
     {
-
         //PlayerPrefs.DeleteAll();
         if (PlayerPrefs.GetInt("tutCompleted", 0) == 1)
         {

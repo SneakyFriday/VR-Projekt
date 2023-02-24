@@ -7,10 +7,13 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         SoundManager.Instance.PlayMusicSound();
+        
     }
+
+
     
     public void StartMenu() {   
-        SceneManager.LoadScene("StartMenu");
+        SceneManager.LoadScene("Start");
     }
 
     public void RestartGame()
