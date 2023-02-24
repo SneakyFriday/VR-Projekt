@@ -3,7 +3,22 @@ guid: 817b1a5c94768d740af95f273a8c9008
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Clamp
+    second: {fileID: 2100000, guid: 7bd031a6ddba70546bad90d587e1ed1d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Clamp Body
+    second: {fileID: 2100000, guid: fd15d531bfa732848942bfeaa22a9fed, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Upright Rod
+    second: {fileID: 2100000, guid: 5c123a7a0bb29084bbbb2d88b9d6d6c3, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

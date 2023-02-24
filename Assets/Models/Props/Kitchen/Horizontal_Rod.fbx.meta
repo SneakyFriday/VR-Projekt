@@ -3,7 +3,17 @@ guid: 668f63a52fa2c4e45b0f6a6cbe52d0b8
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Connector
+    second: {fileID: 2100000, guid: fd15d531bfa732848942bfeaa22a9fed, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Horizontal Rod
+    second: {fileID: 2100000, guid: 5c123a7a0bb29084bbbb2d88b9d6d6c3, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

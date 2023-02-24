@@ -6509,6 +6509,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 62812315906607920, guid: 81ab2623bbe51c748a370e15eab0e2c0, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 463abe60b7d197242a30dce82e665a7e, type: 2}
     - target: {fileID: 1515468455807578684, guid: 81ab2623bbe51c748a370e15eab0e2c0, type: 3}
       propertyPath: m_Name
       value: Kitchen
@@ -6557,6 +6561,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4500308740408471258, guid: 81ab2623bbe51c748a370e15eab0e2c0, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 463abe60b7d197242a30dce82e665a7e, type: 2}
+    - target: {fileID: 8225201359914040001, guid: 81ab2623bbe51c748a370e15eab0e2c0, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 463abe60b7d197242a30dce82e665a7e, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 81ab2623bbe51c748a370e15eab0e2c0, type: 3}
 --- !u!1001 &1071939814
