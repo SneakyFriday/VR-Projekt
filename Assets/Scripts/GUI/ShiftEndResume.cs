@@ -19,7 +19,7 @@ public class ShiftEndResume : MonoBehaviour
         pointValues[2].text = s3p.ToString();
 
         int totalPoints = s1p + s2p + s3p;
-        print("Total Points: " + totalPoints);
+        //print("Total Points: " + totalPoints);
 
         if (totalPoints <= 500)
         {

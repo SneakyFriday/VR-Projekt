@@ -15,7 +15,7 @@ public class FixMenuElementsOnPlate : MonoBehaviour
         {
             _items.Add(coll.gameObject);
             _itemNames.Add(coll.tag);
-            print("Item added to list: " + coll.tag);
+            print("Item added to list (Trigger Enter): " + coll.tag);
             print("Size: " + _items.Count);
         }
     }
@@ -26,7 +26,7 @@ public class FixMenuElementsOnPlate : MonoBehaviour
         {
           _items.Remove(coll.gameObject);
           _itemNames.Remove(coll.tag);
-          print("Item removed from list: " + coll.tag);
+          print("Item removed from list (Trigger Exit): " + coll.tag);
         }
         
     }
@@ -39,7 +39,7 @@ public class FixMenuElementsOnPlate : MonoBehaviour
             item.GetComponent<Rigidbody>().isKinematic = true;
             item.GetComponent<Collider>().enabled = false;
             item.transform.SetParent(transform, true);
-            print(item.name);
+            print("Fix Item on Plate: " + item.name);
         }
     }
 

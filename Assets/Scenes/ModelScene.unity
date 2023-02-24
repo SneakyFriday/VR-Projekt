@@ -14056,6 +14056,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Food Dispenser_cheese
       objectReference: {fileID: 0}
+    - target: {fileID: 5795962334568332134, guid: f7757f5e2ce13e44d9d59b03e0facd99, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1161813243, guid: f7757f5e2ce13e44d9d59b03e0facd99, type: 3}
     - {fileID: 1161813244, guid: f7757f5e2ce13e44d9d59b03e0facd99, type: 3}
@@ -49713,7 +49717,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f4302931f13a44f4395f8253d84d9229, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.183
+      value: 2.338
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f4302931f13a44f4395f8253d84d9229, type: 3}
       propertyPath: m_LocalRotation.w
@@ -52810,7 +52814,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8476463100935973685, guid: f1098ce63d6f5d740bfe53b425273e73, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.106
+      value: -2.35
       objectReference: {fileID: 0}
     - target: {fileID: 8476463100935973685, guid: f1098ce63d6f5d740bfe53b425273e73, type: 3}
       propertyPath: m_LocalPosition.y
@@ -52818,7 +52822,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8476463100935973685, guid: f1098ce63d6f5d740bfe53b425273e73, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.505
+      value: 2.4
       objectReference: {fileID: 0}
     - target: {fileID: 8476463100935973685, guid: f1098ce63d6f5d740bfe53b425273e73, type: 3}
       propertyPath: m_LocalRotation.w

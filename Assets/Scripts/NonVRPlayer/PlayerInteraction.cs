@@ -118,7 +118,7 @@ public class PlayerInteraction : MonoBehaviour
                 {
                     print("Richtige Bestellung erhalten");
                     _playerPickUpController.DisableTray();
-                    _playerPickUpController.SetScore();
+                    _playerPickUpController.SetScore(_order);
                     //_pointsController.SetScore();
                     //servedCustomerRight.Invoke();
                     istBedient = true;
