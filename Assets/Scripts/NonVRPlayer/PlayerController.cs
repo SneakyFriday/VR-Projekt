@@ -20,6 +20,7 @@ public class PlayerController : MonoBehaviour
     private Vector2 movementInput = Vector2.zero;
     private bool hasDashed;
     private bool isInteracting;
+    private bool isOnTrashCan;
     public UnityEvent playerInteraction;
     [SerializeField] private float rotationSpeed = 100f;
 
@@ -48,7 +49,7 @@ public class PlayerController : MonoBehaviour
             playerInteraction.Invoke();
             playerPickUpController.PickUpRefill();
             playerPickUpController.RefillItems();
-            trashCan.UseTrashCan();
+            if(isOnTrashCan) trashCan.UseTrashCan();
         }
         
     }
@@ -57,6 +58,7 @@ public class PlayerController : MonoBehaviour
     {
         if(other.GetComponent<trashCan>())
         {
+            isOnTrashCan = true;
             trashCan = other.GetComponent<trashCan>();
         }
     }

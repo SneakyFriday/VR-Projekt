@@ -4,6 +4,7 @@ using UnityEngine;
 public class PointsController : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI currentScoreTxt;
+    [SerializeField] private TextMeshProUGUI vrScoreTxt;
     //private int _currentScore;
     //private int _burgerScore = 100;
 
@@ -11,6 +12,7 @@ public class PointsController : MonoBehaviour
     {
         //_currentScore = 0;
         currentScoreTxt.text = "Score: 0";
+        vrScoreTxt.text = "Score: 0";
     }
 
     // public void SetScore()

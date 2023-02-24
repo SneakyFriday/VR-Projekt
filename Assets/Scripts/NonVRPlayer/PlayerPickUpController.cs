@@ -16,6 +16,7 @@ public class PlayerPickUpController : MonoBehaviour
     private List<string> _carriedMenu;
     //private List<String> testMenu = new();
     public TextMeshProUGUI testScore;
+    public TextMeshProUGUI vrScoreDisplay;
     private int _currentScore;
     private int _burgerScore = 100;
     private int _servedCustomers;
@@ -112,6 +113,7 @@ public class PlayerPickUpController : MonoBehaviour
         _servedCustomers += 1;
         _currentScore += _burgerScore;
         testScore.text = "Score: " + _currentScore;
+        vrScoreDisplay.text = "Score: " + _currentScore;
         shiftEndResume.HandleTextValues(_servedCustomers, 0, 0, _currentScore, 0, 0);
     }
     
