@@ -16,10 +16,9 @@ MonoBehaviour:
   morningShiftLength: 60
   middayShiftLength: 60
   eveningShiftLength: 60
-  volume: 0
+  volume: 1
   offset: {x: 0, y: 8, z: -6}
   smoothSpeed: 10
-  masterAudioMixer: {fileID: 24100000, guid: 9b747540e1e7cbd499a2b7b3b8a8007e, type: 2}
   onSettingsChanged:
     m_PersistentCalls:
       m_Calls: []

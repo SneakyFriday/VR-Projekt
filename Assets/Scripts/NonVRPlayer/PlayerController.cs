@@ -81,13 +81,13 @@ public class PlayerController : MonoBehaviour
             print("Dashing!");
 
             // Jump
-/*             playerVelocity.y += Mathf.Sqrt(dashPower * -3.0f * gravityValue);
-            hasDashed = false; */
+            playerVelocity.y += Mathf.Sqrt(dashPower * -3.0f * gravityValue);
+            hasDashed = false;
 
             // Dash 
-            Vector3 dashDirection = transform.forward;
-            playerVelocity += dashDirection * dashPower;
-            hasDashed = false;
+            //Vector3 dashDirection = transform.forward;
+            //playerVelocity += dashDirection * dashPower;
+            //hasDashed = false;
 
 
         }
