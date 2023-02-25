@@ -166,8 +166,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 2c8403a309991ec4f93c7c88dfff87c9, type: 2}
+  m_sharedMaterial: {fileID: -3254979250125598209, guid: 2c8403a309991ec4f93c7c88dfff87c9, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -561,6 +561,7 @@ MonoBehaviour:
   AddPointsText: {fileID: 5290192332649367451, guid: 5f4c9f48f6e29554f9ffd24e344612c0, type: 3}
   DeathAnimationPrefab: {fileID: 7243749774943640997, guid: 0c2e8289df875bf4ba796d3661c4677c, type: 3}
   EnemyReamains: {fileID: 7705012201753886604, guid: d8f5b8f1bde9ceb4092049c64aa1a731, type: 3}
+  scoreForEnemy: 10
 --- !u!82 &2176473520505413288
 AudioSource:
   m_ObjectHideFlags: 0

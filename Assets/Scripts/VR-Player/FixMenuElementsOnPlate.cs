@@ -39,6 +39,7 @@ public class FixMenuElementsOnPlate : MonoBehaviour
             item.GetComponent<Rigidbody>().isKinematic = true;
             item.GetComponent<Collider>().enabled = false;
             item.transform.SetParent(transform, true);
+            gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
             print("Fix Item on Plate: " + item.name);
         }
     }

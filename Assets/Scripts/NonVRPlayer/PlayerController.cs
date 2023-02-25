@@ -78,7 +78,7 @@ public class PlayerController : MonoBehaviour
         if (hasDashed && groundedPlayer)
         {
             // TODO: Change to Dash-Function
-            print("Dashing!");
+            print("Jumping!");
 
             // Jump
             playerVelocity.y += Mathf.Sqrt(dashPower * -3.0f * gravityValue);
