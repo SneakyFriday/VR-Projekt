@@ -5,6 +5,7 @@ public class PlayerRefillController : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI refillText;
     [SerializeField] private float fadeDuration = 1.0f;
+    [SerializeField] private Camera nonVRCamera;
     private bool isFading;
 
     private void Start()
@@ -30,7 +31,7 @@ public class PlayerRefillController : MonoBehaviour
     private void LateUpdate()
     {
         // Aktualisieren der Drehung des Texts zur Kamera
-        refillText.transform.LookAt(refillText.transform.position + Camera.main.transform.rotation * Vector3.forward, Camera.main.transform.rotation * Vector3.up);
+        refillText.transform.LookAt(refillText.transform.position + nonVRCamera.transform.rotation * Vector3.forward, nonVRCamera.transform.rotation * Vector3.up);
     }
 
     /**
