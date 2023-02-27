@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2947772353970918107}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Cooked Steak
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26,6 +26,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4505503816131400267}
   m_Father: {fileID: 0}
@@ -85,6 +86,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 9ba2d2e5596942c4c878551f99d65090, type: 3}
       propertyPath: m_Name
       value: Steak.fbx_Cooked_Steak
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9ba2d2e5596942c4c878551f99d65090, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9ba2d2e5596942c4c878551f99d65090, type: 3}

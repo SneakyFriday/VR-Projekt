@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1298609480405844665}
   - component: {fileID: 7194254544469924139}
   - component: {fileID: -5015272022962092160}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Bottom Bun
   m_TagString: bun_buttom
   m_Icon: {fileID: 0}
@@ -206,7 +206,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2062979417351835216}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Bottom_Bun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -240,7 +240,7 @@ GameObject:
   - component: {fileID: 1500007549036920584}
   - component: {fileID: 4325205753328420418}
   - component: {fileID: 946756023895384790}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: default
   m_TagString: Untagged
   m_Icon: {fileID: 0}
