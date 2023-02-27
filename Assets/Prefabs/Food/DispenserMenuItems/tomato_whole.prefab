@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -7724278755736914860}
   - component: {fileID: 8084287539485526955}
   - component: {fileID: 7517846045309081796}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: tomato_whole
   m_TagString: tomato_whole
   m_Icon: {fileID: 0}
@@ -233,6 +233,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4403116294046266433}
     m_Modifications:
+    - target: {fileID: -8961359253771211100, guid: 86747fd86a2ea244598c9bd61705d88c, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 86747fd86a2ea244598c9bd61705d88c, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -277,9 +281,33 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7029948723529949830, guid: 86747fd86a2ea244598c9bd61705d88c, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: -5568371526223589888, guid: 86747fd86a2ea244598c9bd61705d88c, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 86747fd86a2ea244598c9bd61705d88c, type: 3}
       propertyPath: m_Name
       value: tomato
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 86747fd86a2ea244598c9bd61705d88c, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5148817236446094103, guid: 86747fd86a2ea244598c9bd61705d88c, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6507901977716847365, guid: 86747fd86a2ea244598c9bd61705d88c, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8636548577921754592, guid: 86747fd86a2ea244598c9bd61705d88c, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 86747fd86a2ea244598c9bd61705d88c, type: 3}
