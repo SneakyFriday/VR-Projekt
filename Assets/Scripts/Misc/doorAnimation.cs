@@ -5,13 +5,10 @@ using UnityEngine;
 public class doorAnimation : MonoBehaviour
 {
     public Animator anim;
-    // Start is called before the first frame update
- 
- 
 
-    // Update is called once per frame  
     void OnTriggerEnter(Collider other)
     {
+        print("trigger" + other.gameObject.tag);
         if (other.gameObject.tag == "Guest")
             anim.SetTrigger("OpenDoor");
     }

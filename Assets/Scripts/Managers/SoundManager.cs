@@ -5,8 +5,6 @@ public class SoundManager : MonoBehaviour
     public static SoundManager Instance;
     public SettingsScriptableObject settingsScriptableObject;
     public SettingsController settingsController;
-
-
     [SerializeField] private AudioSource _musicSource;
     [SerializeField] private AudioClip _backgroundMusic;
 
@@ -28,6 +26,7 @@ public class SoundManager : MonoBehaviour
     // Start(), UpdateVolume() und OnDestroy() sind für die SettingsScriptableObject.cs und SettingsController.cs notwendig. 
     void Start()
     {
+        if(settingsController != null)
         settingsController.VolumeChanged += UpdateVolume;
     }
     

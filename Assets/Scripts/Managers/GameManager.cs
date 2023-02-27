@@ -4,15 +4,14 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    // TODO: Make this a singleton, so that it can be accessed from anywhere
     private void Start()
     {
         SoundManager.Instance.PlayMusicSound();
-        
     }
-
-
     
     public void StartMenu() {   
+        SoundManager.Instance.StopMusicSound();
         SceneManager.LoadScene("Start");
     }
 
