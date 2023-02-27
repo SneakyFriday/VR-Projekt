@@ -14,6 +14,7 @@ public class TutorialController : MonoBehaviour
     public Image progressBar;
     private int currentImageIndex = 0;
     public Button skipButton;
+    public Button jumpIntoGameButton;
 
     // Add the ScrollingText component to the tutorial controller
     public ScrollingText scrollingText;
@@ -76,27 +77,30 @@ public class TutorialController : MonoBehaviour
         if (progressPercent == 100)
         {
             PlayerPrefs.SetInt("tutCompleted", 1);
+            skipButton.gameObject.SetActive(false);
+            jumpIntoGameButton.gameObject.SetActive(true);
+
         }
     }
 
-public void SkipTutorial()
-{
-    // Set the current image index to the last image in the array
-    currentImageIndex = images.Length - 1;
+    public void SkipTutorial()
+    {
+        // Set the current image index to the last image in the array
+        currentImageIndex = images.Length - 1;
 
-    // Update the image and text displays
-    imageDisplay.sprite = images[currentImageIndex];
-    imageTextDisplay.text = imageTexts[currentImageIndex];
+        // Update the image and text displays
+        imageDisplay.sprite = images[currentImageIndex];
+        imageTextDisplay.text = imageTexts[currentImageIndex];
 
-    // Update the progress bar and progress text
-    progressBar.fillAmount = 1f;
-    UpdateProgressText();
+        // Update the progress bar and progress text
+        progressBar.fillAmount = 1f;
+        UpdateProgressText();
 
-    // Disable the next button
-    nextButton.interactable = false;
+        // Disable the next button
+        nextButton.interactable = false;
 
-    // Activate the scrolling text for the current image
-    scrollingText.itemInfo = imageTexts[currentImageIndex].Split('\n');
-    scrollingText.ActivateText();
-}
+        // Activate the scrolling text for the current image
+        scrollingText.itemInfo = imageTexts[currentImageIndex].Split('\n');
+        scrollingText.ActivateText();
+    }
 }
