@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 135826175712677465}
   - component: {fileID: -3283524410185310340}
   - component: {fileID: 5448085589200582392}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: bun_whole
   m_TagString: bun_whole
   m_Icon: {fileID: 0}
@@ -280,6 +280,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: ef8c450b39bea3b4699a3e9f902271ca, type: 3}
       propertyPath: m_Name
       value: bun_whole
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: ef8c450b39bea3b4699a3e9f902271ca, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ef8c450b39bea3b4699a3e9f902271ca, type: 3}

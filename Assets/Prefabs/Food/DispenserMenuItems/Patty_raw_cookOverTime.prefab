@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2718718617125226067}
   - component: {fileID: 7721960619287728425}
   - component: {fileID: 1952459523475112180}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Patty_raw_cookOverTime
   m_TagString: Patty_raw
   m_Icon: {fileID: 0}
@@ -323,7 +323,7 @@ GameObject:
   - component: {fileID: 8018643577140497271}
   - component: {fileID: 5156866236433265213}
   - component: {fileID: 8553853722905302697}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: default
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -406,7 +406,7 @@ GameObject:
   - component: {fileID: 1845354113805632150}
   - component: {fileID: 4786346168330731608}
   - component: {fileID: 7393804676848175130}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Smoke
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5216,7 +5216,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7437630926984608303}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Patty
   m_TagString: Untagged
   m_Icon: {fileID: 0}

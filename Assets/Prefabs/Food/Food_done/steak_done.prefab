@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -1184540679425525398}
   - component: {fileID: -800050189445449992}
   - component: {fileID: 210555490118916021}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: steak_done
   m_TagString: steak_raw
   m_Icon: {fileID: 0}
@@ -212,9 +212,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cookingTime: 3
-  cookedPatty: {fileID: 41215445842743935, guid: d27ed04f68e8f47438214d1ce080912b, type: 3}
+  cookedFood: {fileID: 0}
   _fryStart: {fileID: 8300000, guid: d095d61490756a541a09edb9bb570ddc, type: 3}
-  _fryEnd: {fileID: 8300000, guid: dd98f4f30f6060742ae2c4d16317d6b9, type: 3}
+  _fryParticle: {fileID: 0}
 --- !u!82 &210555490118916021
 AudioSource:
   m_ObjectHideFlags: 0
