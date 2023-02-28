@@ -212,9 +212,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cookingTime: 3
-  cookedPatty: {fileID: 41215445842743935, guid: d27ed04f68e8f47438214d1ce080912b, type: 3}
+  cookedFood: {fileID: 0}
   _fryStart: {fileID: 8300000, guid: d095d61490756a541a09edb9bb570ddc, type: 3}
-  _fryEnd: {fileID: 8300000, guid: dd98f4f30f6060742ae2c4d16317d6b9, type: 3}
+  _fryParticle: {fileID: 0}
 --- !u!82 &210555490118916021
 AudioSource:
   m_ObjectHideFlags: 0
@@ -377,6 +377,14 @@ PrefabInstance:
     - target: {fileID: 3189546291901302995, guid: 084ebf7d0bcf0f246a9506150f7efda3, type: 3}
       propertyPath: m_Name
       value: Cooked Steak
+      objectReference: {fileID: 0}
+    - target: {fileID: 3189546291901302995, guid: 084ebf7d0bcf0f246a9506150f7efda3, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3876776251295107313, guid: 084ebf7d0bcf0f246a9506150f7efda3, type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 084ebf7d0bcf0f246a9506150f7efda3, type: 3}

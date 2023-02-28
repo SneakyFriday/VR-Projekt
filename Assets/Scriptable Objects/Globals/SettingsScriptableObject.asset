@@ -16,6 +16,9 @@ MonoBehaviour:
   morningShiftLength: 60
   middayShiftLength: 60
   eveningShiftLength: 60
-  volume: 0.16259705
+  volume: 1
   offset: {x: 0, y: 8, z: -6}
   smoothSpeed: 10
+  onSettingsChanged:
+    m_PersistentCalls:
+      m_Calls: []

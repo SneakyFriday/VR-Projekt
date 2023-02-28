@@ -5187,9 +5187,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4019205539651630708, guid: 2e7e6c2a8443ca04e884ee1378c9193a, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8321711244687847070, guid: 2e7e6c2a8443ca04e884ee1378c9193a, type: 3}
       propertyPath: m_Name
       value: Raw Egg
+      objectReference: {fileID: 0}
+    - target: {fileID: 8321711244687847070, guid: 2e7e6c2a8443ca04e884ee1378c9193a, type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1504952394054090029, guid: 2e7e6c2a8443ca04e884ee1378c9193a, type: 3}

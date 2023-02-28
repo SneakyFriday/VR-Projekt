@@ -19,6 +19,9 @@ public class PlayerPickUpController : MonoBehaviour
     public TextMeshProUGUI vrScoreDisplay;
     private int _currentScore;
     private int _burgerScore = 100;
+    private int _burgerExpertScore = 150;
+    private int _steakMenuScore = 50;
+    private int _eggMenuScore = 50;
     private int _servedCustomers;
     private int _refillItems;
     private bool hasRefillAccess;
@@ -105,13 +108,29 @@ public class PlayerPickUpController : MonoBehaviour
     }
 
     /**
+     * TODO: In Switch Case umwandeln
      * Punkte werden gesetzt
      * Bediente Gäste werden gezählt
      */
-    public void SetScore()
+    public void SetScore(string order)
     {
         _servedCustomers += 1;
-        _currentScore += _burgerScore;
+        if (order == "burgerStandard")
+        {
+            _currentScore += _burgerScore;
+        }
+        else if (order == "burgerExpert")
+        {
+            _currentScore += _burgerExpertScore;
+        }
+        else if (order == "steakMenu")
+        {
+           _currentScore += _steakMenuScore; 
+        }
+        else if (order == "eggMenu")
+        {
+            _currentScore += _eggMenuScore;
+        }
         testScore.text = "Score: " + _currentScore;
         vrScoreDisplay.text = "Score: " + _currentScore;
         shiftEndResume.HandleTextValues(_servedCustomers, 0, 0, _currentScore, 0, 0);
@@ -121,6 +140,7 @@ public class PlayerPickUpController : MonoBehaviour
     {
         _currentScore += score;
         testScore.text = "Score: " + _currentScore;
+        vrScoreDisplay.text = "Score: " + _currentScore;
         shiftEndResume.HandleTextValues(_servedCustomers, 0, 0, _currentScore, 0, 0);
     }
 

@@ -2,13 +2,14 @@ using System;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
+using UnityEngine.Serialization;
 
 // Adds CharacterController automatically
 [RequireComponent(typeof(CharacterController))]
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] private float playerSpeed = 2.0f;
-    [SerializeField] private float dashPower = 1.0f;
+    [FormerlySerializedAs("dashPower")] [SerializeField] private float jumpPower = 1.0f;
     [SerializeField] private float gravityValue = -9.81f;
     [SerializeField] private PlayerPickUpController playerPickUpController;
     [SerializeField] private PlayerRefillController playerRefillController;
@@ -78,7 +79,18 @@ public class PlayerController : MonoBehaviour
         if (hasDashed && groundedPlayer)
         {
             // TODO: Change to Dash-Function
-            print("Dashing!");
+            print("Jumping!");
+
+            // Jump
+            playerVelocity.y += Mathf.Sqrt(jumpPower * -3.0f * gravityValue);
+            hasDashed = false;
+
+            // Dash 
+            //Vector3 dashDirection = transform.forward;
+            //playerVelocity += dashDirection * dashPower;
+            //hasDashed = false;
+
+
         }
 
         playerVelocity.y += gravityValue * Time.deltaTime;

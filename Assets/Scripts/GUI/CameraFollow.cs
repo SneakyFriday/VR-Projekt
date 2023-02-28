@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CameraFollow : MonoBehaviour
@@ -11,14 +9,14 @@ public class CameraFollow : MonoBehaviour
   public Transform target;
   public float smoothSpeed = 10f;
   public Vector3 offset;
-
+  
+  
     void Start()
     {
          offset = settingsScriptableObject.offset;
          settingsController.OffsetChanged += UpdateOffset;
     }
 
-    // Kein bock mehr gehabt XD
     void Update()
     {
         // Check if the offset value has changed
@@ -28,7 +26,7 @@ public class CameraFollow : MonoBehaviour
             offset = settingsScriptableObject.offset;
         }
     }
-
+    
     void UpdateOffset()
     {
         offset = settingsScriptableObject.offset;
@@ -39,8 +37,8 @@ public class CameraFollow : MonoBehaviour
         settingsController.OffsetChanged -= UpdateOffset;
     }
     
-    void LateUpdate (){
-
+    void LateUpdate ()
+    {
         Vector3 desiredPosition = target.position + offset;
         Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed * Time.deltaTime);
         transform.position = smoothedPosition;

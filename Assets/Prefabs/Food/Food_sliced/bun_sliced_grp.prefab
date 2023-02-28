@@ -106,6 +106,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Top Bun
       objectReference: {fileID: 0}
+    - target: {fileID: 452136946655479785, guid: 14b8460d3dcc999459e3a45f86830e9b, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3756351179925998593, guid: 14b8460d3dcc999459e3a45f86830e9b, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5308889224781018328, guid: 14b8460d3dcc999459e3a45f86830e9b, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6632582335857536368, guid: 14b8460d3dcc999459e3a45f86830e9b, type: 3}
       propertyPath: m_RootOrder
       value: 1

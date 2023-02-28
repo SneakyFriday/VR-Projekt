@@ -361,6 +361,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cooked Steak
       objectReference: {fileID: 0}
+    - target: {fileID: 3189546291901302995, guid: 084ebf7d0bcf0f246a9506150f7efda3, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3876776251295107313, guid: 084ebf7d0bcf0f246a9506150f7efda3, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 084ebf7d0bcf0f246a9506150f7efda3, type: 3}
 --- !u!4 &3914721180662860018 stripped
