@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3263199798413590224}
   - component: {fileID: 5642207513222238137}
   - component: {fileID: 8930179121652753477}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Salad Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -108,7 +108,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5006941738611655547}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Whole Salad Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 103652043896082980}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Lettuce
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45,7 +45,7 @@ GameObject:
   - component: {fileID: 7756162802390429543}
   - component: {fileID: 1261986559560868824}
   - component: {fileID: 8920335668610170710}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: salat_sliced
   m_TagString: Lettuce
   m_Icon: {fileID: 0}
@@ -240,7 +240,7 @@ GameObject:
   - component: {fileID: 648530229142643580}
   - component: {fileID: 2438459036350569014}
   - component: {fileID: 1221214043938193058}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: default
   m_TagString: Untagged
   m_Icon: {fileID: 0}

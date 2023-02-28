@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1830354790553634960}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Tomato
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45,7 +45,7 @@ GameObject:
   - component: {fileID: 5404362952972397115}
   - component: {fileID: 7617663828880605856}
   - component: {fileID: 6155662523951257965}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Tomato_sliced
   m_TagString: IngredientCooked
   m_Icon: {fileID: 0}
@@ -240,7 +240,7 @@ GameObject:
   - component: {fileID: 1231327443792394696}
   - component: {fileID: 4161786291807928450}
   - component: {fileID: 640664208449365014}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: default
   m_TagString: Untagged
   m_Icon: {fileID: 0}

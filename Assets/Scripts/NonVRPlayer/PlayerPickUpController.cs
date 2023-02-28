@@ -108,6 +108,7 @@ public class PlayerPickUpController : MonoBehaviour
     }
 
     /**
+     * TODO: In Switch Case umwandeln
      * Punkte werden gesetzt
      * Bediente Gäste werden gezählt
      */

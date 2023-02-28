@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -3283524410185310340}
   - component: {fileID: 1959252172167898905}
   - component: {fileID: 7662441434083402563}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: salat_head
   m_TagString: salat_whole
   m_Icon: {fileID: 0}
@@ -283,7 +283,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 13972f7647e999a43a5e2338c69c1249, type: 3}
       propertyPath: m_Layer
-      value: 10
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 13972f7647e999a43a5e2338c69c1249, type: 3}

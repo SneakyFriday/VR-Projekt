@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8422151007942876468}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Tomato_sliced_grp
   m_TagString: Untagged
   m_Icon: {fileID: 0}

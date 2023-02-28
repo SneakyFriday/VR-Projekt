@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3516046699773111549}
   - component: {fileID: 2198997968155078202}
   - component: {fileID: 735624604047828582}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Salad Leaf (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -128,7 +128,7 @@ GameObject:
   - component: {fileID: 4954577455017396206}
   - component: {fileID: 3574216094642222858}
   - component: {fileID: 8799923999650806882}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Salad Leaf (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -243,7 +243,7 @@ GameObject:
   - component: {fileID: 4782424710934093033}
   - component: {fileID: 5547636470280437684}
   - component: {fileID: 3997942849970509547}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Salad Leaf (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -354,7 +354,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7242808797356915053}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Cut Salad
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -394,7 +394,7 @@ GameObject:
   - component: {fileID: 5761148694772175702}
   - component: {fileID: 976477353769555955}
   - component: {fileID: 8031372567130416582}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Salad Stump
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -510,7 +510,7 @@ GameObject:
   - component: {fileID: 1189031115666623449}
   - component: {fileID: 4308621572776452711}
   - component: {fileID: 8842634332463322516}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Salad Leaf
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2718718617125226067}
   - component: {fileID: 5859283337916081992}
   - component: {fileID: 5139092198527413705}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: steak_raw_cookOverTime
   m_TagString: steak_raw
   m_Icon: {fileID: 0}
@@ -323,7 +323,7 @@ GameObject:
   - component: {fileID: 5505860907501791314}
   - component: {fileID: 8893102123142947959}
   - component: {fileID: 6930639796542220355}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Smoke
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5193,11 +5193,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7125244533026478684, guid: c02307a78b496ce4888cf2fdee22c345, type: 3}
       propertyPath: m_Layer
-      value: 10
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7146959308420927141, guid: c02307a78b496ce4888cf2fdee22c345, type: 3}
       propertyPath: m_Layer
-      value: 10
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c02307a78b496ce4888cf2fdee22c345, type: 3}

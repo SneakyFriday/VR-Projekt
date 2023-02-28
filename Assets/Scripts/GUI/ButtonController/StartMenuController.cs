@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class StartMenuController : MonoBehaviour
 {
     public void StartMenu() {   
-        SoundManager.Instance.StopMusicSound();
+        SoundManager.Instance?.StopMusicSound();
         SceneManager.LoadScene("Start");
     }
 }

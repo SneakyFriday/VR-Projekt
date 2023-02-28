@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 525337310254856}
   - component: {fileID: 135826175712677465}
   - component: {fileID: -3283524410185310340}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Cheese
   m_TagString: Cheese
   m_Icon: {fileID: 0}
@@ -208,7 +208,7 @@ GameObject:
   - component: {fileID: 5241365038391326880}
   - component: {fileID: 6947434540660244970}
   - component: {fileID: 5859047629642950014}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: default
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -289,7 +289,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4669429659899415032}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Cheese
   m_TagString: Untagged
   m_Icon: {fileID: 0}
